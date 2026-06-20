@@ -1,0 +1,37 @@
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/shared/icons";
+import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+
+export default function DownloadCTA() {
+  return (
+    <section id="download" className="scroll-mt-20 py-20 md:py-24">
+      <MaxWidthWrapper>
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl lg:text-[42px]">
+            Start comparing models today
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Download Arco free. Bring your own OpenRouter key and you&apos;re
+            ready in under two minutes.
+          </p>
+          <Link
+            href="#download"
+            className={cn(
+              buttonVariants({ size: "lg", rounded: "lg" }),
+              "mt-9 inline-flex gap-2 px-8 text-base",
+            )}
+          >
+            <Icons.apple className="size-[18px]" />
+            Download free for Mac
+          </Link>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Free forever · macOS 13+ · Apple Silicon
+          </p>
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
+}

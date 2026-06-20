@@ -1,23 +1,37 @@
-import { infos } from "@/config/landing";
-import BentoGrid from "@/components/sections/bentogrid";
+import { PricingCards } from "@/components/pricing/pricing-cards";
+import { PricingFaq } from "@/components/pricing/pricing-faq";
+import ComparisonTable from "@/components/sections/comparison-table";
+import DownloadCTA from "@/components/sections/download-cta";
 import Features from "@/components/sections/features";
 import HeroLanding from "@/components/sections/hero-landing";
+import HowItWorks from "@/components/sections/how-it-works";
 import InfoLanding from "@/components/sections/info-landing";
-import Powered from "@/components/sections/powered";
 import PreviewLanding from "@/components/sections/preview-landing";
-import Testimonials from "@/components/sections/testimonials";
+import UseCases from "@/components/sections/use-cases";
+import { infos } from "@/config/landing";
+import { getCurrentUser } from "@/lib/session";
+import { getUserSubscriptionPlan } from "@/lib/subscription";
 
-export default function IndexPage() {
+export default async function IndexPage() {
+  const user = await getCurrentUser();
+
+  let subscriptionPlan;
+  if (user?.id) {
+    subscriptionPlan = await getUserSubscriptionPlan(user.id);
+  }
+
   return (
     <>
       <HeroLanding />
       <PreviewLanding />
-      <Powered />
-      <BentoGrid />
-      <InfoLanding data={infos[0]} reverse={true} />
-      {/* <InfoLanding data={infos[1]} /> */}
       <Features />
-      <Testimonials />
+      <HowItWorks />
+      <InfoLanding data={infos[0]} />
+      <UseCases />
+      <ComparisonTable />
+      <PricingCards userId={user?.id} subscriptionPlan={subscriptionPlan} />
+      <PricingFaq />
+      <DownloadCTA />
     </>
   );
 }

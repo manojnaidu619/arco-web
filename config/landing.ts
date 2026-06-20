@@ -1,52 +1,37 @@
-import { FeatureLdg, InfoLdg, TestimonialType } from "types";
+import {
+  ComparisonRow,
+  FeatureLdg,
+  HowItWorksStep,
+  InfoLdg,
+  UseCaseLdg,
+} from "types";
 
 export const infos: InfoLdg[] = [
   {
-    title: "Empower your projects",
+    title: "One click to the best answer",
     description:
-      "Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.",
+      "When multiple models reply, Arco's Summarize feature sends all their responses to a judge model of your choice. You get a structured breakdown of what each model said, where they agree, and which answer is strongest.",
     image: "/_static/illustrations/work-from-home.jpg",
     list: [
       {
-        title: "Collaborative",
-        description: "Work together with your team members in real-time.",
-        icon: "laptop",
+        title: "Picks any model from your library as the judge",
+        description: "",
+        icon: "check",
       },
       {
-        title: "Innovative",
-        description: "Stay ahead of the curve with access constant updates.",
-        icon: "settings",
+        title: "Streams the comparison in real-time",
+        description: "",
+        icon: "check",
       },
       {
-        title: "Scalable",
-        description:
-          "Our platform offers the scalability needed to adapt to your needs.",
-        icon: "search",
-      },
-    ],
-  },
-  {
-    title: "Seamless Integration",
-    description:
-      "Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.",
-    image: "/_static/illustrations/work-from-home.jpg",
-    list: [
-      {
-        title: "Flexible",
-        description:
-          "Customize your integrations to fit your unique requirements.",
-        icon: "laptop",
+        title: "Copy the summary to clipboard in one click",
+        description: "",
+        icon: "check",
       },
       {
-        title: "Efficient",
-        description: "Streamline your processes and reducing manual effort.",
-        icon: "search",
-      },
-      {
-        title: "Reliable",
-        description:
-          "Rely on our robust infrastructure and comprehensive documentation.",
-        icon: "settings",
+        title: "Regenerate anytime with a different judge model",
+        description: "",
+        icon: "check",
       },
     ],
   },
@@ -54,97 +39,142 @@ export const infos: InfoLdg[] = [
 
 export const features: FeatureLdg[] = [
   {
-    title: "Feature 1",
+    icon: "⚡",
+    title: "Broadcast to all models",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "nextjs",
+      "Type once, send to every model simultaneously. No copying, no pasting, no switching tabs.",
   },
   {
-    title: "Feature 2",
+    icon: "🔒",
+    title: "Stays on your Mac",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "google",
+      "Your API key is stored encrypted in macOS Keychain. Your conversations never leave your machine.",
   },
   {
-    title: "Feature 3",
+    icon: "✨",
+    title: "AI-powered summary",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "gitHub",
+      "Generate a structured comparison of all responses instantly and find the best answer in seconds.",
   },
   {
-    title: "Feature 4",
+    icon: "🧩",
+    title: "400+ models available",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "laptop",
+      "Access 400+ models on OpenRouter, from frontier models to open source, all with a single key.",
   },
   {
-    title: "Feature 5",
+    icon: "📐",
+    title: "Flexible layouts",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "user",
+      "Arrange panes in 1, 2, 3, or 4-column grids. Focus on what matters, hide the rest.",
   },
   {
-    title: "Feature 6",
+    icon: "💸",
+    title: "Pay only what you use",
     description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
-    icon: "copy",
+      "No subscription required. Arco is free, and you pay OpenRouter's per-token rates directly.",
   },
 ];
 
-export const testimonials: TestimonialType[] = [
+export const howItWorksSteps: HowItWorksStep[] = [
   {
-    name: "John Doe",
-    job: "Full Stack Developer",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
-    review:
-      "The next-saas-stripe-starter repo has truly revolutionized my development workflow. With its comprehensive features and seamless integration with Stripe, I've been able to build and deploy projects faster than ever before. The documentation is clear and concise, making it easy to navigate through the setup process. I highly recommend next-saas-stripe-starter to any developer.",
+    num: 1,
+    title: "Get an OpenRouter key",
+    description:
+      "Sign up at openrouter.ai and grab a free API key. You get access to every model through one account.",
   },
   {
-    name: "Alice Smith",
-    job: "UI/UX Designer",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-    review:
-      "Thanks to next-saas-stripe-starter, I've been able to create modern and attractive user interfaces in record time. The starter kit provides a solid foundation for building sleek and intuitive designs, allowing me to focus more on the creative aspects of my work.",
+    num: 2,
+    title: "Pick your models",
+    description:
+      "Choose from GPT-4o, Claude, Gemini, Mistral, and dozens more. Mix and match, change anytime.",
   },
   {
-    name: "David Johnson",
-    job: "DevOps Engineer",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-    review:
-      "Thanks to next-saas-stripe-starter, I was able to streamline the entire process and get payments up and running in no time. ",
+    num: 3,
+    title: "Ask anything",
+    description:
+      "Type your question once. Every model answers in parallel. Compare, copy, and keep chatting.",
+  },
+];
+
+export const useCases: UseCaseLdg[] = [
+  {
+    emoji: "🧑‍💻",
+    title: "Developers",
+    description:
+      "Debug code, compare architecture advice, and evaluate API design suggestions from multiple models at once.",
+    example: {
+      user: "How do I handle auth tokens securely in React?",
+      ai: "Use httpOnly cookies and avoid localStorage for tokens…",
+    },
   },
   {
-    name: "Michael Wilson",
-    job: "Project Manager",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-    review:
-      "I'm impressed by the quality of code and clear documentation of next-saas-stripe-starter. Kudos to the team!",
+    emoji: "✍️",
+    title: "Writers",
+    description:
+      "Generate multiple drafts, compare tone and style, and pick the version that fits your voice.",
+    example: {
+      user: "Write an opening line for a product launch email",
+      ai: "Today, everything changes. Introducing…",
+    },
   },
   {
-    name: "Sophia Garcia",
-    job: "Data Analyst",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    review:
-      "next-saas-stripe-starter provided me with the tools I needed to efficiently manage user data. Thank you so much!",
+    emoji: "🔬",
+    title: "Researchers",
+    description:
+      "Cross-check summaries, surface different perspectives on a topic, and validate sources across models.",
+    example: {
+      user: "Summarise the key findings of this paper",
+      ai: "Three models, three angles. Use Summarize to synthesise…",
+    },
   },
   {
-    name: "Emily Brown",
-    job: "Marketing Manager",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-    review:
-      "next-saas-stripe-starter has been an invaluable asset in my role as a marketing manager. With its seamless integration with Stripe, I've been able to launch targeted marketing campaigns with built-in payment functionality, allowing us to monetize our products and services more effectively.",
+    emoji: "📊",
+    title: "Business Teams",
+    description:
+      "Draft reports, generate exec summaries, and pressure-test strategy ideas with diverse AI perspectives.",
+    example: {
+      user: "Summarise Q3 performance for the board deck",
+      ai: "Revenue grew 18% QoQ driven by enterprise…",
+    },
+  },
+];
+
+export const comparisonRows: ComparisonRow[] = [
+  {
+    feature: "Send to all models at once",
+    arco: "yes",
+    tabSwitching: "no",
+    webInterfaces: "no",
   },
   {
-    name: "Jason Stan",
-    job: "Web Designer",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
-    review:
-      "Thanks to next-saas-stripe-starter, I've been able to create modern and attractive user interfaces in record time. The starter kit provides a solid foundation for building sleek and intuitive designs, allowing me to focus more on the creative aspects of my work.",
+    feature: "Persistent conversation history",
+    arco: "yes",
+    tabSwitching: "no",
+    webInterfaces: "yes",
+  },
+  {
+    feature: "Structured AI summary",
+    arco: "yes",
+    tabSwitching: "no",
+    webInterfaces: "no",
+  },
+  {
+    feature: "Your data stays local",
+    arco: "yes",
+    tabSwitching: "partial",
+    webInterfaces: "no",
+  },
+  {
+    feature: "Any model via one API key",
+    arco: "yes",
+    tabSwitching: "no",
+    webInterfaces: "partial",
+  },
+  {
+    feature: "No subscription",
+    arco: "yes",
+    tabSwitching: "yes",
+    webInterfaces: "no",
   },
 ];

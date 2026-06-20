@@ -42,7 +42,7 @@ const pricingFaqData = [
 
 export function PricingFaq() {
   return (
-    <section className="container max-w-4xl py-2">
+    <section id="faq" className="container max-w-4xl scroll-mt-20 py-20 md:py-24">
       <HeaderSection
         label="FAQ"
         title="Frequently Asked Questions"

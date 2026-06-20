@@ -72,52 +72,66 @@ export function NavMobile() {
             </li>
           ))}
 
-          {session ? (
+          {documentation ? (
             <>
-              {session.user.role === "ADMIN" ? (
-                <li className="py-3">
-                  <Link
-                    href="/admin"
-                    onClick={() => setOpen(false)}
-                    className="flex w-full font-medium capitalize"
-                  >
-                    Admin
-                  </Link>
-                </li>
-              ) : null}
+              {session ? (
+                <>
+                  {session.user.role === "ADMIN" ? (
+                    <li className="py-3">
+                      <Link
+                        href="/admin"
+                        onClick={() => setOpen(false)}
+                        className="flex w-full font-medium capitalize"
+                      >
+                        Admin
+                      </Link>
+                    </li>
+                  ) : null}
 
-              <li className="py-3">
-                <Link
-                  href="/dashboard"
-                  onClick={() => setOpen(false)}
-                  className="flex w-full font-medium capitalize"
-                >
-                  Dashboard
-                </Link>
-              </li>
+                  <li className="py-3">
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setOpen(false)}
+                      className="flex w-full font-medium capitalize"
+                    >
+                      Dashboard
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="py-3">
+                    <Link
+                      href="/login"
+                      onClick={() => setOpen(false)}
+                      className="flex w-full font-medium capitalize"
+                    >
+                      Login
+                    </Link>
+                  </li>
+
+                  <li className="py-3">
+                    <Link
+                      href="/register"
+                      onClick={() => setOpen(false)}
+                      className="flex w-full font-medium capitalize"
+                    >
+                      Sign up
+                    </Link>
+                  </li>
+                </>
+              )}
             </>
           ) : (
-            <>
-              <li className="py-3">
-                <Link
-                  href="/login"
-                  onClick={() => setOpen(false)}
-                  className="flex w-full font-medium capitalize"
-                >
-                  Login
-                </Link>
-              </li>
-
-              <li className="py-3">
-                <Link
-                  href="/register"
-                  onClick={() => setOpen(false)}
-                  className="flex w-full font-medium capitalize"
-                >
-                  Sign up
-                </Link>
-              </li>
-            </>
+            <li className="py-3">
+              <Link
+                href="#download"
+                onClick={() => setOpen(false)}
+                className="flex w-full font-medium capitalize"
+              >
+                Download free for Mac
+              </Link>
+            </li>
           )}
         </ul>
 
@@ -128,10 +142,16 @@ export function NavMobile() {
         ) : null}
 
         <div className="mt-5 flex items-center justify-end space-x-4">
-          <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-            <Icons.gitHub className="size-6" />
-            <span className="sr-only">GitHub</span>
-          </Link>
+          {siteConfig.links.github ? (
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icons.gitHub className="size-6" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          ) : null}
           <ModeToggle />
         </div>
       </nav>

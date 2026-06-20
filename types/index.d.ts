@@ -10,8 +10,9 @@ export type SiteConfig = {
   ogImage: string;
   mailSupport: string;
   links: {
-    twitter: string;
-    github: string;
+    email: string;
+    twitter?: string;
+    github?: string;
   };
 };
 
@@ -90,13 +91,32 @@ export type InfoLdg = {
 export type FeatureLdg = {
   title: string;
   description: string;
-  link: string;
-  icon: keyof typeof Icons;
+  icon: string;
 };
 
-export type TestimonialType = {
-  name: string;
-  job: string;
-  image: string;
-  review: string;
+export type HowItWorksStep = {
+  num: number;
+  title: string;
+  description: string;
+};
+
+export type UseCaseExample = {
+  user: string;
+  ai: string;
+};
+
+export type UseCaseLdg = {
+  emoji: string;
+  title: string;
+  description: string;
+  example: UseCaseExample;
+};
+
+export type ComparisonValue = "yes" | "no" | "partial";
+
+export type ComparisonRow = {
+  feature: string;
+  arco: ComparisonValue;
+  tabSwitching: ComparisonValue;
+  webInterfaces: ComparisonValue;
 };

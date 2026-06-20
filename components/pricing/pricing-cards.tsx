@@ -138,7 +138,10 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
 
   return (
     <MaxWidthWrapper>
-      <section className="flex flex-col items-center text-center">
+      <section
+        id="pricing"
+        className="flex scroll-mt-20 flex-col items-center py-20 text-center md:py-24"
+      >
         <HeaderSection label="Pricing" title="Start at full speed !" />
 
         <div className="mb-4 mt-10 flex items-center gap-5">
