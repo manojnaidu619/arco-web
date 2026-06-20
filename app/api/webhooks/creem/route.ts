@@ -1,0 +1,202 @@
+/**
+ * Creem Webhook Handler
+ * Route: POST /api/webhooks/creem
+ *
+ * This endpoint receives real-time payment event notifications from Creem,
+ * our payment provider for one-time lifetime license purchases.
+ *
+ * SECURITY: Every incoming request is verified using HMAC-SHA256 before any
+ * processing happens. Creem signs the raw request body with our webhook secret
+ * and sends the hex digest in the `creem-signature` header. We recompute the
+ * signature on our side and reject anything that doesn't match. This prevents
+ * unauthorized parties from triggering license creation or revocation.
+ *
+ * IMPORTANT: We must read the body as raw text (req.text()) before parsing it
+ * as JSON. The HMAC is computed over the exact bytes Creem sent — parsing and
+ * re-serializing would change whitespace and break the signature comparison.
+ *
+ * Handled events:
+ *
+ *   checkout.completed
+ *     Fired when a customer successfully pays. We:
+ *       1. Verify the order status is "paid" and a license_key is present
+ *       2. Call Creem's activate endpoint to register the license and get its
+ *          full details (id, mode, activation limits, expiry)
+ *       3. Create a License record in our DB linked to the user
+ *       4. Store the Creem customer ID on the User for future portal access
+ *
+ *   dispute.created
+ *     Fired when a customer files a chargeback with their bank. We disable all
+ *     of that customer's licenses so they can no longer use the product while
+ *     the dispute is open.
+ */
+
+import * as crypto from "crypto";
+import { headers } from "next/headers";
+
+import { prisma } from "@/lib/db";
+import { generateUniqueLicenseKey, activateCreemLicense } from "@/lib/creem";
+import type {
+  CreemWebhookCheckout,
+  CreemWebhookDispute,
+  CreemWebhookEvent,
+} from "@/types/creem";
+import { EnvironmentMode, LicenseStatus } from "@prisma/client";
+
+/**
+ * Verifies the webhook request is genuinely from Creem.
+ *
+ * Creem computes HMAC-SHA256 over the raw request body using our webhook
+ * secret, then hex-encodes the digest and sends it in the `creem-signature`
+ * header. We do the same computation and compare the two strings.
+ *
+ * @param payload   - Raw request body string (must not be parsed/modified)
+ * @param signature - Value from the `creem-signature` header
+ * @param secret    - Our webhook secret (STRIPE_WEBHOOK_SECRET env var)
+ */
+function verifyCreemSignature(
+  payload: string,
+  signature: string,
+  secret: string,
+): boolean {
+  const computedSignature = crypto
+    .createHmac("sha256", secret)
+    .update(payload)
+    .digest("hex");
+  return computedSignature === signature;
+}
+
+/**
+ * Maps Creem's mode string to our Prisma EnvironmentMode enum.
+ * Creem uses lowercase strings ("test", "prod", "sandbox") while our enum
+ * uses uppercase values. Defaults to PROD for any unrecognised value.
+ */
+function mapMode(mode: string): EnvironmentMode {
+  if (mode === "test") return EnvironmentMode.TEST;
+  if (mode === "sandbox") return EnvironmentMode.SANDBOX;
+  return EnvironmentMode.PROD;
+}
+
+export async function POST(req: Request) {
+  // Read raw body text — required for signature verification.
+  // Do NOT call req.json() here; that would prevent us from reading the body again.
+  const body = await req.text();
+  const headersList = headers();
+  const signature = headersList.get("creem-signature");
+
+  // Reject the request immediately if the signature is missing or invalid.
+  // This is the first line of defense against spoofed webhook calls.
+  if (
+    !signature ||
+    !verifyCreemSignature(
+      body,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET!,
+    )
+  ) {
+    return new Response("Invalid signature", { status: 401 });
+  }
+
+  // Safe to parse now that authenticity is confirmed.
+  const event = JSON.parse(body) as CreemWebhookEvent;
+
+  try {
+    // -----------------------------------------------------------------------
+    // checkout.completed
+    // A customer has successfully paid for a product. Activate their license
+    // and record it in the database.
+    // -----------------------------------------------------------------------
+    if (event.eventType === "checkout.completed") {
+      const checkout = event.object as CreemWebhookCheckout;
+      const { order, customer } = checkout;
+
+      // Guard: only proceed if payment was actually collected.
+      if (order.status === "paid") {
+        // Generate a license key in the format ARCO-XXXX-XXXX-XXXX-XXXX,
+        // verified to not already exist in our License table before use.
+        // Creem does not provide a key in the checkout payload — we create
+        // one ourselves and send it to Creem's activate endpoint.
+        const licenseKey = await generateUniqueLicenseKey();
+
+        // Activate the key with Creem. This registers the activation against
+        // the customer's email as the instance name, and returns the full
+        // license entity (id, mode, limits, expiry) we store in our DB.
+        const license = await activateCreemLicense(licenseKey, customer.email);
+
+        // Look up the user by their email. Creem sends us the customer's email
+        // in the webhook, and our users sign up with the same email address.
+        const user = await prisma.user.findUnique({
+          where: { email: customer.email },
+        });
+
+        if (user) {
+          // Create the License record. The key is the one we generated —
+          // Creem echoes it back but we use our own value to be explicit.
+          // Other fields (id, product_id, limits, expiry) come from Creem's response.
+          await prisma.license.create({
+            data: {
+              userId: user.id,
+              licenseId: license.id,        // Creem's unique ID for this license
+              productId: license.product_id,
+              key: licenseKey,              // The key we generated (ARCO-XXXX-XXXX-XXXX-XXXX)
+              status: LicenseStatus.ACTIVE,
+              mode: mapMode(license.mode),
+              activationCount: license.activation,
+              activationLimit: license.activation_limit ?? null, // null = unlimited
+              expiresAt: license.expires_at
+                ? new Date(license.expires_at)
+                : null, // null = never expires
+            },
+          });
+
+          // Store the Creem customer ID on the User so we can open the Creem
+          // billing portal for them later (e.g. to manage or refund a purchase).
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { stripeCustomerId: customer.id },
+          });
+        } else {
+          // This can happen if the customer paid using a different email than
+          // the one they registered with. Log it for manual investigation.
+          console.error(
+            `checkout.completed: no user found for email ${customer.email}`,
+          );
+        }
+      }
+    }
+
+    // -----------------------------------------------------------------------
+    // dispute.created
+    // A customer has filed a chargeback with their bank. Disable all of their
+    // licenses to prevent continued use of the product while the dispute is open.
+    // If the dispute is resolved in the customer's favour we would need to
+    // manually re-enable their licenses via the admin panel.
+    // -----------------------------------------------------------------------
+    if (event.eventType === "dispute.created") {
+      const dispute = event.object as CreemWebhookDispute;
+      const { customer } = dispute;
+
+      const user = await prisma.user.findUnique({
+        where: { email: customer.email },
+      });
+
+      if (user) {
+        // Disable every license belonging to this user in a single query.
+        await prisma.license.updateMany({
+          where: { userId: user.id },
+          data: { status: LicenseStatus.DISABLED },
+        });
+      } else {
+        console.error(
+          `dispute.created: no user found for email ${customer.email}`,
+        );
+      }
+    }
+
+    return new Response("Webhook processed", { status: 200 });
+  } catch (error) {
+    console.error("Creem webhook processing error:", error);
+    // Return 500 so Creem knows to retry the event delivery.
+    return new Response("Webhook processing failed", { status: 500 });
+  }
+}
