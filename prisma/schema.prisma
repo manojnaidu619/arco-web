@@ -95,6 +95,9 @@ model License {
   key             String        @unique
   status          LicenseStatus @default(INACTIVE)
   activationLimit Int           @default(1) @map(name: "activation_limit")
+  activatedAt     DateTime?     @map(name: "activated_at")
+  /// Set once on first successful activation; identifies the device the license is bound to.
+  deviceIdentifier String?      @map(name: "device_identifier")
   /// If null, the license is valid for lifetime.
   expiresAt       DateTime?     @map(name: "expires_at")
 
