@@ -26,6 +26,7 @@ import { prisma } from "@/lib/db";
 import { LicenseStatus } from "@prisma/client";
 
 // Matches keys generated in lib/creem.ts — same charset, no ambiguous chars (0, O, I, 1).
+// Important: Make sure to update this when the structure of the key changes.
 const LICENSE_KEY_REGEX =
   /^ARCO-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$/;
 
