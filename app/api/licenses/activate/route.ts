@@ -25,10 +25,7 @@ import { siteConfig } from "@/config/site";
 import { prisma } from "@/lib/db";
 import { LicenseStatus } from "@prisma/client";
 
-// Matches keys generated in lib/creem.ts — same charset, no ambiguous chars (0, O, I, 1).
-// Important: Make sure to update this when the structure of the key changes.
-const LICENSE_KEY_REGEX =
-  /^ARCO-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$/;
+const MAX_LICENSE_KEY_LENGTH = 50;
 
 const ERROR_INVALID_INPUT =
   "Unable to activate license. Please check your details and try again.";
@@ -88,15 +85,16 @@ export async function POST(req: Request) {
   const deviceId =
     typeof rawDeviceId === "string" ? rawDeviceId.trim() : "";
 
-  const keyValid = LICENSE_KEY_REGEX.test(normalizedKey);
+  const keyValid =
+    normalizedKey.length > 0 && normalizedKey.length <= MAX_LICENSE_KEY_LENGTH;
   const deviceIdValid = deviceId.length > 0 && deviceId.length <= 256;
 
   if (!keyValid || !deviceIdValid) {
     console.error("[License] Activation failed", {
       reason: "VALIDATION_ERROR",
-      keySuffix: keyValid ? getKeySuffix(normalizedKey) : null,
+      keySuffix: normalizedKey ? getKeySuffix(normalizedKey) : null,
       deviceId: deviceId || null,
-      keyValid,
+      keyLength: normalizedKey.length,
       deviceIdValid,
     });
     return activationResponse(false, null, ERROR_INVALID_INPUT);
