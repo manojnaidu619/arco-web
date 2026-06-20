@@ -143,7 +143,7 @@ export async function POST(req: Request) {
             userId: user.id,
             productId: product.id,
             key: licenseKey, // The key we generated (ARCO-XXXX-XXXX-XXXX-XXXX)
-            status: LicenseStatus.ACTIVE,
+            status: LicenseStatus.INACTIVE, // Activated when first used in the app
           },
         });
 
