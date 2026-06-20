@@ -6,13 +6,26 @@ generator client {
 }
 
 datasource db {
-  provider     = "postgresql"
-  url          = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 enum UserRole {
   ADMIN
   USER
+}
+
+enum LicenseStatus {
+  INACTIVE
+  ACTIVE
+  EXPIRED
+  DISABLED
+}
+
+enum EnvironmentMode {
+  TEST
+  PROD
+  SANDBOX
 }
 
 model Account {
@@ -61,6 +74,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
+  licenses License[]
 
   stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
   stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
@@ -77,4 +91,27 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map(name: "verification_tokens")
+}
+
+model License {
+  id              String          @id @default(cuid())
+  userId          String
+
+  licenseId       String          @unique @map(name: "license_id")
+  productId       String          @map(name: "product_id")
+  key             String          @unique
+  status          LicenseStatus   @default(INACTIVE)
+  mode            EnvironmentMode @default(PROD)
+  activationCount Int             @default(0) @map(name: "activation_count")
+  activationLimit Int?            @map(name: "activation_limit")
+  expiresAt       DateTime?       @map(name: "expires_at")
+
+  createdAt       DateTime        @default(now()) @map(name: "created_at")
+  updatedAt       DateTime        @updatedAt @map(name: "updated_at")
+
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@map(name: "licenses")
 }
