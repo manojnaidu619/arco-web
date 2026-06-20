@@ -19,11 +19,9 @@
  *
  *   checkout.completed
  *     Fired when a customer successfully pays. We:
- *       1. Verify the order status is "paid" and a license_key is present
- *       2. Call Creem's activate endpoint to register the license and get its
- *          full details (id, mode, activation limits, expiry)
- *       3. Create a License record in our DB linked to the user
- *       4. Store the Creem customer ID on the User for future portal access
+ *       1. Verify the order status is "paid"
+ *       2. Create or update the User from Creem's customer details
+ *       3. Generate a unique license key and create a License record in our DB
  *
  *   dispute.created
  *     Fired when a customer files a chargeback with their bank. We disable all
@@ -34,14 +32,14 @@
 import * as crypto from "crypto";
 import { headers } from "next/headers";
 
+import { generateUniqueLicenseKey } from "@/lib/creem";
 import { prisma } from "@/lib/db";
-import { generateUniqueLicenseKey, activateCreemLicense } from "@/lib/creem";
 import type {
   CreemWebhookCheckout,
   CreemWebhookDispute,
   CreemWebhookEvent,
 } from "@/types/creem";
-import { EnvironmentMode, LicenseStatus } from "@prisma/client";
+import { LicenseStatus } from "@prisma/client";
 
 /**
  * Verifies the webhook request is genuinely from Creem.
@@ -64,17 +62,6 @@ function verifyCreemSignature(
     .update(payload)
     .digest("hex");
   return computedSignature === signature;
-}
-
-/**
- * Maps Creem's mode string to our Prisma EnvironmentMode enum.
- * Creem uses lowercase strings ("test", "prod", "sandbox") while our enum
- * uses uppercase values. Defaults to PROD for any unrecognised value.
- */
-function mapMode(mode: string): EnvironmentMode {
-  if (mode === "test") return EnvironmentMode.TEST;
-  if (mode === "sandbox") return EnvironmentMode.SANDBOX;
-  return EnvironmentMode.PROD;
 }
 
 export async function POST(req: Request) {
@@ -103,65 +90,66 @@ export async function POST(req: Request) {
   try {
     // -----------------------------------------------------------------------
     // checkout.completed
-    // A customer has successfully paid for a product. Activate their license
+    // A customer has successfully paid for a product. Generate a license key
     // and record it in the database.
     // -----------------------------------------------------------------------
     if (event.eventType === "checkout.completed") {
       const checkout = event.object as CreemWebhookCheckout;
-      const { order, customer } = checkout;
+      const { order, customer, product } = checkout;
 
       // Guard: only proceed if payment was actually collected.
       if (order.status === "paid") {
+        const existingUser = await prisma.user.findUnique({
+          where: { email: customer.email },
+          select: { id: true },
+        });
+
+        // Ensure a User record exists before we attach a license. Many customers
+        // complete checkout before signing in, so we create the account here
+        // from Creem's customer details (email, name, customer ID).
+        const user = await prisma.user.upsert({
+          where: { email: customer.email },
+          create: {
+            email: customer.email,
+            name: customer?.name ?? null,
+            stripeCustomerId: customer.id,
+          },
+          update: {
+            stripeCustomerId: customer.id,
+          },
+        });
+
+        if (existingUser) {
+          console.log(
+            `[Creem] checkout.completed: updated user ${user.id} (${customer.email})`,
+          );
+        } else {
+          console.log(
+            `[Creem] checkout.completed: created user ${user.id} (${customer.email})`,
+          );
+        }
+
         // Generate a license key in the format ARCO-XXXX-XXXX-XXXX-XXXX,
         // verified to not already exist in our License table before use.
         // Creem does not provide a key in the checkout payload — we create
-        // one ourselves and send it to Creem's activate endpoint.
+        // one ourselves and store it in our database.
         const licenseKey = await generateUniqueLicenseKey();
 
-        // Activate the key with Creem. This registers the activation against
-        // the customer's email as the instance name, and returns the full
-        // license entity (id, mode, limits, expiry) we store in our DB.
-        const license = await activateCreemLicense(licenseKey, customer.email);
-
-        // Look up the user by their email. Creem sends us the customer's email
-        // in the webhook, and our users sign up with the same email address.
-        const user = await prisma.user.findUnique({
-          where: { email: customer.email },
+        // Create the License record in our database. productId comes from
+        // the checkout payload; activationLimit and expiresAt use schema
+        // defaults (1 activation, lifetime / null expiry).
+        await prisma.license.create({
+          data: {
+            userId: user.id,
+            productId: product.id,
+            key: licenseKey, // The key we generated (ARCO-XXXX-XXXX-XXXX-XXXX)
+            status: LicenseStatus.ACTIVE,
+          },
         });
 
-        if (user) {
-          // Create the License record. The key is the one we generated —
-          // Creem echoes it back but we use our own value to be explicit.
-          // Other fields (id, product_id, limits, expiry) come from Creem's response.
-          await prisma.license.create({
-            data: {
-              userId: user.id,
-              licenseId: license.id,        // Creem's unique ID for this license
-              productId: license.product_id,
-              key: licenseKey,              // The key we generated (ARCO-XXXX-XXXX-XXXX-XXXX)
-              status: LicenseStatus.ACTIVE,
-              mode: mapMode(license.mode),
-              activationCount: license.activation,
-              activationLimit: license.activation_limit ?? null, // null = unlimited
-              expiresAt: license.expires_at
-                ? new Date(license.expires_at)
-                : null, // null = never expires
-            },
-          });
-
-          // Store the Creem customer ID on the User so we can open the Creem
-          // billing portal for them later (e.g. to manage or refund a purchase).
-          await prisma.user.update({
-            where: { id: user.id },
-            data: { stripeCustomerId: customer.id },
-          });
-        } else {
-          // This can happen if the customer paid using a different email than
-          // the one they registered with. Log it for manual investigation.
-          console.error(
-            `checkout.completed: no user found for email ${customer.email}`,
-          );
-        }
+        console.log(
+          `[Creem] checkout.completed: created license for user ${user.id}, product ${product.id}, order ${order.id}, key ${licenseKey}`,
+        );
       }
     }
 
@@ -182,21 +170,23 @@ export async function POST(req: Request) {
 
       if (user) {
         // Disable every license belonging to this user in a single query.
-        await prisma.license.updateMany({
+        const { count } = await prisma.license.updateMany({
           where: { userId: user.id },
           data: { status: LicenseStatus.DISABLED },
         });
-      } else {
-        console.error(
-          `dispute.created: no user found for email ${customer.email}`,
+
+        console.log(
+          `[Creem] dispute.created: disabled ${count} license(s) for user ${user.id} (${customer.email})`,
         );
       }
     }
 
-    return new Response("Webhook processed", { status: 200 });
+    console.log(`[Creem] Webhook processed: ${event.eventType} (${event.id})`);
   } catch (error) {
-    console.error("Creem webhook processing error:", error);
+    console.error("[Creem] Webhook processing error:", error);
     // Return 500 so Creem knows to retry the event delivery.
     return new Response("Webhook processing failed", { status: 500 });
   }
+
+  return new Response("Webhook processed", { status: 200 });
 }

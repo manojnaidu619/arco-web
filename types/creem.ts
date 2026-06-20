@@ -2,15 +2,12 @@
  * Creem Payment Provider — TypeScript Type Definitions
  *
  * Creem is our payment provider for one-time lifetime license purchases.
- * These types cover two distinct areas:
+ * These types describe webhook payloads — the shape of events Creem sends to
+ * our endpoint (POST /api/webhooks/creem). Each event has a top-level
+ * `eventType` and an `object` field whose structure depends on that event type.
  *
- * 1. WEBHOOK PAYLOADS — the shape of events Creem sends to our webhook endpoint
- *    (POST /api/webhooks/creem). Each event has a top-level `eventType` and an
- *    `object` field whose structure depends on that event type.
- *
- * 2. LICENSE API RESPONSE — the shape returned by Creem's license activation
- *    endpoint (POST /v1/licenses/activate), which we call after a successful
- *    purchase to register the license against the customer.
+ * License keys are generated and stored in our database — Creem is used for
+ * payments only, not license management.
  *
  * Creem reuses the same Stripe-style naming convention (customer, order, product)
  * but is a separate provider. The API key and webhook secret live in the
@@ -76,8 +73,7 @@ export interface CreemWebhookProduct {
  * purchase and look up the user in our database.
  *
  * Note: Creem does NOT include a license key in this payload. We generate
- * our own license key on receipt of this event and send it to Creem's
- * activate endpoint — see generateLicenseKey() in lib/creem.ts.
+ * our own license key on receipt of this event — see lib/creem.ts.
  */
 export interface CreemWebhookCheckout {
   id: string;
@@ -164,45 +160,4 @@ export interface CreemWebhookEvent {
   eventType: string;
   created_at: number;
   object: CreemWebhookEventObject;
-}
-
-// ---------------------------------------------------------------------------
-// License API response types
-// Returned by POST /v1/licenses/activate after a successful purchase.
-// We use these fields to populate the License table in our database.
-// ---------------------------------------------------------------------------
-
-/**
- * Represents an individual activation instance of a license.
- * Each call to /activate creates one instance tied to a named context
- * (e.g. the customer's email address).
- */
-export interface CreemLicenseInstance {
-  id: string; // Instance ID — needed if we ever call /validate or /deactivate
-  name: string; // The instance_name we passed when activating
-}
-
-/**
- * The license entity returned by POST /v1/licenses/activate.
- * Field mapping to our License DB model:
- *   id               → License.licenseId
- *   key              → License.key
- *   product_id       → License.productId
- *   activation       → License.activationCount
- *   activation_limit → License.activationLimit
- *   expires_at       → License.expiresAt
- *   mode             → License.mode (mapped via mapMode())
- */
-export interface CreemLicenseEntity {
-  id: string; // Creem's unique license ID
-  key: string; // The actual license code shown to the customer
-  mode: string; // "test" | "prod" | "sandbox"
-  object: string;
-  product_id: string;
-  status: string; // "active" | "inactive" | "expired" | "disabled"
-  activation: number; // How many times this license has been activated so far
-  activation_limit: number | null; // Max allowed activations; null means unlimited
-  expires_at: string | null; // ISO date string, or null if the license never expires
-  created_at: string;
-  instance: CreemLicenseInstance | null; // The instance created by this activation call
 }

@@ -22,12 +22,6 @@ enum LicenseStatus {
   DISABLED
 }
 
-enum EnvironmentMode {
-  TEST
-  PROD
-  SANDBOX
-}
-
 model Account {
   id                String   @id @default(cuid())
   userId            String
@@ -94,17 +88,15 @@ model VerificationToken {
 }
 
 model License {
-  id              String          @id @default(cuid())
+  id              String        @id @default(cuid())
   userId          String
 
-  licenseId       String          @unique @map(name: "license_id")
-  productId       String          @map(name: "product_id")
-  key             String          @unique
-  status          LicenseStatus   @default(INACTIVE)
-  mode            EnvironmentMode @default(PROD)
-  activationCount Int             @default(0) @map(name: "activation_count")
-  activationLimit Int?            @map(name: "activation_limit")
-  expiresAt       DateTime?       @map(name: "expires_at")
+  productId       String        @map(name: "product_id")
+  key             String        @unique
+  status          LicenseStatus @default(INACTIVE)
+  activationLimit Int           @default(1) @map(name: "activation_limit")
+  /// If null, the license is valid for lifetime.
+  expiresAt       DateTime?     @map(name: "expires_at")
 
   createdAt       DateTime        @default(now()) @map(name: "created_at")
   updatedAt       DateTime        @updatedAt @map(name: "updated_at")
