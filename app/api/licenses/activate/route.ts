@@ -178,11 +178,9 @@ export async function POST(req: Request) {
       return activationResponse(false, null, ERROR_ACTIVATION_FAILED);
     }
 
-    console.log("[License] Activation succeeded", {
-      licenseId: license.id,
-      keySuffix: getKeySuffix(normalizedKey),
-      deviceId,
-    });
+    console.log(
+      `[License] Activated licenseId=${license.id} keySuffix=${getKeySuffix(normalizedKey)} deviceId=${deviceId}`,
+    );
 
     return activationResponse(true, license.expiresAt, null);
   } catch (error) {
