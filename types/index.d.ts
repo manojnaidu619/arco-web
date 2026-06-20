@@ -58,6 +58,9 @@ export type SubscriptionPlan = {
     monthly: string | null;
     yearly: string | null;
   };
+  isLifetime: boolean;
+  lifetimePrice?: number;
+  checkoutUrl?: string;
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &
@@ -67,12 +70,6 @@ export type UserSubscriptionPlan = SubscriptionPlan &
     interval: "month" | "year" | null;
     isCanceled?: boolean;
   };
-
-// compare plans
-export type ColumnType = string | boolean | null;
-export type PlansRow = { feature: string; tooltip?: string } & {
-  [key in (typeof plansColumns)[number]]: ColumnType;
-};
 
 // landing sections
 export type InfoList = {

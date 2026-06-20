@@ -30,6 +30,7 @@ import {
   Settings,
   SunMedium,
   Trash,
+  Unlock,
   User,
   X,
 } from "lucide-react";
@@ -132,6 +133,7 @@ export const Icons = {
   spinner: Loader2,
   sun: SunMedium,
   trash: Trash,
+  unlock: Unlock,
   twitter: ({ ...props }: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

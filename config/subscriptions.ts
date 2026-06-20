@@ -1,21 +1,20 @@
-import { PlansRow, SubscriptionPlan } from "types";
-import { env } from "@/env.mjs";
+import { SubscriptionPlan } from "types";
+
+export const CREEM_UNLIMITED_CHECKOUT_URL =
+  "https://www.creem.io/test/payment/prod_6FOGXk6mKLjdVuAdBDnKrA";
+
+export const FREE_DOWNLOAD_URL = "#download";
 
 export const pricingData: SubscriptionPlan[] = [
   {
-    title: "Starter",
-    description: "For Beginners",
+    title: "Free",
+    description: "Get started with Arco",
     benefits: [
-      "Up to 100 monthly posts",
-      "Basic analytics and reporting",
-      "Access to standard templates",
+      "Compare from 400+ AI models",
+      "Up to 2 saved conversations",
+      "Your data stays on your device (BYOK)",
     ],
-    limitations: [
-      "No priority access to new features.",
-      "Limited customer support",
-      "No custom branding",
-      "Limited access to business resources.",
-    ],
+    limitations: [],
     prices: {
       monthly: 0,
       yearly: 0,
@@ -24,140 +23,30 @@ export const pricingData: SubscriptionPlan[] = [
       monthly: null,
       yearly: null,
     },
+    isLifetime: false,
   },
   {
-    title: "Pro",
-    description: "Unlock Advanced Features",
+    title: "Unlimited",
+    description: "Lifetime access to Arco",
     benefits: [
-      "Up to 500 monthly posts",
-      "Advanced analytics and reporting",
-      "Access to business templates",
-      "Priority customer support",
-      "Exclusive webinars and training.",
-    ],
-    limitations: [
-      "No custom branding",
-      "Limited access to business resources.",
-    ],
-    prices: {
-      monthly: 15,
-      yearly: 144,
-    },
-    stripeIds: {
-      monthly: env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID,
-      yearly: env.NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID,
-    },
-  },
-  {
-    title: "Business",
-    description: "For Power Users",
-    benefits: [
-      "Unlimited posts",
-      "Real-time analytics and reporting",
-      "Access to all templates, including custom branding",
-      "24/7 business customer support",
-      "Personalized onboarding and account management.",
+      "Compare from 400+ AI models",
+      "Unlimited saved conversations",
+      "Your data stays on your device (BYOK)",
+      "Lifetime license - one payment, no subscription",
+      "Free updates",
+      "Works on 1 Device",
     ],
     limitations: [],
     prices: {
-      monthly: 30,
-      yearly: 300,
+      monthly: 0,
+      yearly: 0,
     },
     stripeIds: {
-      monthly: env.NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID,
-      yearly: env.NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID,
+      monthly: null,
+      yearly: null,
     },
+    isLifetime: true,
+    lifetimePrice: 39,
+    checkoutUrl: CREEM_UNLIMITED_CHECKOUT_URL,
   },
-];
-
-export const plansColumns = [
-  "starter",
-  "pro",
-  "business",
-  "enterprise",
-] as const;
-
-export const comparePlans: PlansRow[] = [
-  {
-    feature: "Access to Analytics",
-    starter: true,
-    pro: true,
-    business: true,
-    enterprise: "Custom",
-    tooltip: "All plans include basic analytics for tracking performance.",
-  },
-  {
-    feature: "Custom Branding",
-    starter: null,
-    pro: "500/mo",
-    business: "1,500/mo",
-    enterprise: "Unlimited",
-    tooltip: "Custom branding is available from the Pro plan onwards.",
-  },
-  {
-    feature: "Priority Support",
-    starter: null,
-    pro: "Email",
-    business: "Email & Chat",
-    enterprise: "24/7 Support",
-  },
-  {
-    feature: "Advanced Reporting",
-    starter: null,
-    pro: null,
-    business: true,
-    enterprise: "Custom",
-    tooltip:
-      "Advanced reporting is available in Business and Enterprise plans.",
-  },
-  {
-    feature: "Dedicated Manager",
-    starter: null,
-    pro: null,
-    business: null,
-    enterprise: true,
-    tooltip: "Enterprise plan includes a dedicated account manager.",
-  },
-  {
-    feature: "API Access",
-    starter: "Limited",
-    pro: "Standard",
-    business: "Enhanced",
-    enterprise: "Full",
-  },
-  {
-    feature: "Monthly Webinars",
-    starter: false,
-    pro: true,
-    business: true,
-    enterprise: "Custom",
-    tooltip: "Pro and higher plans include access to monthly webinars.",
-  },
-  {
-    feature: "Custom Integrations",
-    starter: false,
-    pro: false,
-    business: "Available",
-    enterprise: "Available",
-    tooltip:
-      "Custom integrations are available in Business and Enterprise plans.",
-  },
-  {
-    feature: "Roles and Permissions",
-    starter: null,
-    pro: "Basic",
-    business: "Advanced",
-    enterprise: "Advanced",
-    tooltip:
-      "User roles and permissions management improves with higher plans.",
-  },
-  {
-    feature: "Onboarding Assistance",
-    starter: false,
-    pro: "Self-service",
-    business: "Assisted",
-    enterprise: "Full Service",
-    tooltip: "Higher plans include more comprehensive onboarding assistance.",
-  },
-  // Add more rows as needed
 ];
