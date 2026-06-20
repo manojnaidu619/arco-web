@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { Icons } from "@/components/shared/icons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/shared/icons";
+import { cn } from "@/lib/utils";
 
 export default function HeroLanding() {
   return (
@@ -17,13 +17,12 @@ export default function HeroLanding() {
         </Badge>
 
         <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[60px]">
-          Compare every AI model{" "}
-          <span className="text-primary">side by side</span>
+          Ask once, reach every model,{" "}
+          <span className="text-primary">all on your Mac.</span>
         </h1>
 
-        <p className="max-w-xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-          Send one prompt to multiple models at once and instantly see how
-          GPT-4o, Claude, Gemini, and dozens more respond in one window.
+        <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
+          Choose from 400+ AI models and compare them side by side in one window with your own OpenRouter API key, while keeping all data on your device.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-4">
