@@ -9,7 +9,7 @@ export default function UseCases() {
         <HeaderSection
           label="Use Cases"
           title="Who uses Arco"
-          subtitle="Anyone who wants better answers faster, without the tab chaos."
+          subtitle="Anyone who wants better answers faster, without juggling multiple chat sites."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

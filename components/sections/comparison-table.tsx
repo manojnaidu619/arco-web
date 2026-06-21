@@ -23,14 +23,14 @@ function ComparisonCell({ value }: { value: ComparisonValue }) {
 
 function getPartialLabel(
   feature: string,
-  column: "tabSwitching" | "webInterfaces",
+  column: "comparisonApps" | "individualServices",
 ): string {
-  if (feature.includes("Privacy") && column === "tabSwitching") {
-    return "Varies";
+  if (feature.includes("summary") && column === "comparisonApps") {
+    return "Some apps";
   }
 
-  if (feature.includes("one API key") && column === "webInterfaces") {
-    return "Per-service";
+  if (feature.includes("400+") && column === "comparisonApps") {
+    return "Fewer models";
   }
 
   return "Partial";
@@ -42,8 +42,8 @@ export default function ComparisonTable() {
       <MaxWidthWrapper>
         <HeaderSection
           label="Why Arco"
-          title="vs switching tabs manually"
-          subtitle="The old way wastes your time. Arco was built to replace it."
+          title="How Arco compares"
+          subtitle="See how Arco stacks up against other multi-model apps and against using ChatGPT or Claude on their own."
         />
 
         <div className="mt-10 overflow-hidden rounded-2xl border">
@@ -54,10 +54,10 @@ export default function ComparisonTable() {
                 Arco
               </div>
               <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                Tab switching
+                Other comparison apps
               </div>
               <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                Web interfaces
+                Individual chat services
               </div>
             </div>
 
@@ -73,21 +73,21 @@ export default function ComparisonTable() {
                   <ComparisonCell value={row.arco} />
                 </div>
                 <div className="flex items-center justify-center border-l p-4">
-                  {row.tabSwitching === "partial" ? (
+                  {row.comparisonApps === "partial" ? (
                     <span className="text-sm font-medium text-amber-500">
-                      {getPartialLabel(row.feature, "tabSwitching")}
+                      {getPartialLabel(row.feature, "comparisonApps")}
                     </span>
                   ) : (
-                    <ComparisonCell value={row.tabSwitching} />
+                    <ComparisonCell value={row.comparisonApps} />
                   )}
                 </div>
                 <div className="flex items-center justify-center border-l p-4">
-                  {row.webInterfaces === "partial" ? (
+                  {row.individualServices === "partial" ? (
                     <span className="text-sm font-medium text-amber-500">
-                      {getPartialLabel(row.feature, "webInterfaces")}
+                      {getPartialLabel(row.feature, "individualServices")}
                     </span>
                   ) : (
-                    <ComparisonCell value={row.webInterfaces} />
+                    <ComparisonCell value={row.individualServices} />
                   )}
                 </div>
               </div>
@@ -105,26 +105,26 @@ export default function ComparisonTable() {
                   </div>
                   <div className="rounded-lg bg-muted/40 p-2">
                     <p className="mb-1 font-medium text-muted-foreground">
-                      Tabs
+                      Comparison apps
                     </p>
-                    {row.tabSwitching === "partial" ? (
+                    {row.comparisonApps === "partial" ? (
                       <span className="text-amber-500">
-                        {getPartialLabel(row.feature, "tabSwitching")}
+                        {getPartialLabel(row.feature, "comparisonApps")}
                       </span>
                     ) : (
-                      <ComparisonCell value={row.tabSwitching} />
+                      <ComparisonCell value={row.comparisonApps} />
                     )}
                   </div>
                   <div className="rounded-lg bg-muted/40 p-2">
                     <p className="mb-1 font-medium text-muted-foreground">
-                      Web
+                      Chat services
                     </p>
-                    {row.webInterfaces === "partial" ? (
+                    {row.individualServices === "partial" ? (
                       <span className="text-amber-500">
-                        {getPartialLabel(row.feature, "webInterfaces")}
+                        {getPartialLabel(row.feature, "individualServices")}
                       </span>
                     ) : (
-                      <ComparisonCell value={row.webInterfaces} />
+                      <ComparisonCell value={row.individualServices} />
                     )}
                   </div>
                 </div>

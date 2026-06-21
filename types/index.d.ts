@@ -114,6 +114,6 @@ export type ComparisonValue = "yes" | "no" | "partial";
 export type ComparisonRow = {
   feature: string;
   arco: ComparisonValue;
-  tabSwitching: ComparisonValue;
-  webInterfaces: ComparisonValue;
+  comparisonApps: ComparisonValue;
+  individualServices: ComparisonValue;
 };

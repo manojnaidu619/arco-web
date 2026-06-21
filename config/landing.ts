@@ -42,37 +42,37 @@ export const features: FeatureLdg[] = [
     icon: "⚡",
     title: "Broadcast to all models",
     description:
-      "Type once, send to every model simultaneously. No copying, no pasting, no switching tabs.",
+      "Type once, send to every model simultaneously. No copying, no pasting, no opening separate chat sites. Get answers from all your favorite models in one place.",
   },
   {
     icon: "🔒",
-    title: "Stays on your Mac",
+    title: "Fully private",
     description:
-      "Your API key is stored encrypted in macOS Keychain. Your conversations never leave your machine.",
+      "Every conversation stays on your device, stored locally and never uploaded. No servers storing your data, no middlemen in between. You're always in control.",
   },
   {
     icon: "✨",
     title: "AI-powered summary",
     description:
-      "Generate a structured comparison of all responses instantly and find the best answer in seconds.",
+      "Generate a structured comparison of all responses instantly. See where models agree, where they differ, and find the best answer in seconds.",
   },
   {
     icon: "🧩",
     title: "400+ models available",
     description:
-      "Access 400+ models on OpenRouter, from frontier models to open source, all with a single key.",
+      "Access 400+ models on OpenRouter, from frontier models to open source alternatives. All with a single API key.",
   },
   {
     icon: "📐",
     title: "Flexible layouts",
     description:
-      "Arrange panes in 1, 2, 3, or 4-column grids. Focus on what matters, hide the rest.",
+      "Arrange panes in 1, 2, 3, or 4-column grids. Focus on what matters, hide the rest. Your workspace, your way.",
   },
   {
     icon: "💸",
     title: "Pay only what you use",
     description:
-      "No subscription required. Arco is free, and you pay OpenRouter's per-token rates directly.",
+      "No subscription required. You pay OpenRouter's per-token rates directly. No hidden fees, no markup.",
   },
 ];
 
@@ -144,37 +144,37 @@ export const comparisonRows: ComparisonRow[] = [
   {
     feature: "Send to all models at once",
     arco: "yes",
-    tabSwitching: "no",
-    webInterfaces: "no",
-  },
-  {
-    feature: "Persistent conversation history",
-    arco: "yes",
-    tabSwitching: "no",
-    webInterfaces: "yes",
+    comparisonApps: "yes",
+    individualServices: "no",
   },
   {
     feature: "Structured AI summary",
     arco: "yes",
-    tabSwitching: "no",
-    webInterfaces: "no",
+    comparisonApps: "partial",
+    individualServices: "no",
   },
   {
     feature: "Your data stays local",
     arco: "yes",
-    tabSwitching: "partial",
-    webInterfaces: "no",
+    comparisonApps: "no",
+    individualServices: "no",
   },
   {
     feature: "Any model via one API key",
     arco: "yes",
-    tabSwitching: "no",
-    webInterfaces: "partial",
+    comparisonApps: "no",
+    individualServices: "no",
   },
   {
-    feature: "No subscription",
+    feature: "No monthly subscription",
     arco: "yes",
-    tabSwitching: "yes",
-    webInterfaces: "no",
+    comparisonApps: "no",
+    individualServices: "no",
+  },
+  {
+    feature: "400+ models available",
+    arco: "yes",
+    comparisonApps: "partial",
+    individualServices: "no",
   },
 ];

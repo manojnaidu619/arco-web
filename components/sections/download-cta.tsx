@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function DownloadCTA() {
   return (
@@ -28,7 +28,7 @@ export default function DownloadCTA() {
             Download free for Mac
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
-            Free forever · macOS 13+ · Apple Silicon
+            Free to start · macOS 13+ · Apple Silicon
           </p>
         </div>
       </MaxWidthWrapper>

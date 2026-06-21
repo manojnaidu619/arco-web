@@ -9,7 +9,7 @@ export default function Features() {
           <HeaderSection
             label="Why Arco"
             title="Everything in one place"
-            subtitle="Stop tab-switching. One prompt. Every answer. Instantly."
+            subtitle="Stop juggling separate chat sites. One prompt. Every answer. Instantly."
           />
 
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

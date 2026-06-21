@@ -13,12 +13,12 @@ export default function HeroLanding() {
           variant="outline"
           className="border-primary/30 bg-primary/10 px-3 py-1 text-primary"
         >
-          ✦ macOS app, free to start
+          ✦ Native macOS app
         </Badge>
 
         <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[60px]">
           Ask once, reach every model,{" "}
-          <span className="text-primary">all on your Mac.</span>
+          <span className="text-primary">all staying private.</span>
         </h1>
 
         <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
@@ -52,7 +52,7 @@ export default function HeroLanding() {
         </div>
 
         <p className="text-sm text-muted-foreground">
-          macOS 13 Ventura or later · Apple Silicon · Free forever
+          macOS 13 Ventura or later · Apple Silicon · Free to start
         </p>
       </div>
     </section>
