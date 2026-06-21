@@ -6,8 +6,8 @@
  * our endpoint (POST /api/webhooks/creem). Each event has a top-level
  * `eventType` and an `object` field whose structure depends on that event type.
  *
- * License keys are generated and stored in our database — Creem is used for
- * payments only, not license management.
+ * License keys are issued by Creem on purchase and stored in our database;
+ * we manage activation and access ourselves.
  *
  * Creem reuses the same Stripe-style naming convention (customer, order, product)
  * but is a separate provider. The API key and webhook secret live in the
@@ -67,13 +67,39 @@ export interface CreemWebhookProduct {
   mode: string;
 }
 
+/** A device/installation registered against a license (from Creem License API). */
+export interface CreemWebhookLicenseInstance {
+  id: string;
+  object: "license-instance";
+  name: string;
+  status: string;
+  created_at: string;
+  mode: string;
+}
+
+/**
+ * License object nested in checkout.completed webhook payloads.
+ * Aligns with Creem License API responses; webhook adds product_id.
+ */
+export interface CreemWebhookLicense {
+  object: "license";
+  id: string;
+  product_id: string;
+  status: "inactive" | "active" | string;
+  key: string;
+  activation: number;
+  activation_limit: number;
+  expires_at: string | null;
+  created_at: string;
+  /** null before any activation; array of instances after activation (per Creem API docs). */
+  instance: CreemWebhookLicenseInstance[] | null;
+  mode: string;
+}
+
 /**
  * The checkout session object, sent as `event.object` for checkout.completed.
- * Contains the order, product, and customer details we need to identify the
- * purchase and look up the user in our database.
- *
- * Note: Creem does NOT include a license key in this payload. We generate
- * our own license key on receipt of this event — see lib/creem.ts.
+ * Contains the order, product, customer, and license key details we need to
+ * identify the purchase and record the license in our database.
  */
 export interface CreemWebhookCheckout {
   id: string;
@@ -83,6 +109,7 @@ export interface CreemWebhookCheckout {
   product: CreemWebhookProduct;
   customer: CreemWebhookCustomer;
   custom_fields: unknown[];
+  license_keys?: CreemWebhookLicense[];
   status: "completed" | string;
   mode: string;
 }

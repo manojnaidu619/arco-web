@@ -32,7 +32,7 @@
 import * as crypto from "crypto";
 import { headers } from "next/headers";
 
-import { generateUniqueLicenseKey } from "@/lib/creem";
+// import { generateUniqueLicenseKey } from "@/lib/creem";
 import { prisma } from "@/lib/db";
 import type {
   CreemWebhookCheckout,
@@ -133,7 +133,14 @@ export async function POST(req: Request) {
         // verified to not already exist in our License table before use.
         // Creem does not provide a key in the checkout payload — we create
         // one ourselves and store it in our database.
-        const licenseKey = await generateUniqueLicenseKey();
+        // const licenseKey = await generateUniqueLicenseKey();
+
+        const licenseKey = checkout.license_keys?.[0]?.key;
+        if (!licenseKey) {
+          throw new Error(
+            `[Creem] checkout.completed: missing license key for order ${order.id}`,
+          );
+        }
 
         // Create the License record in our database. productId comes from
         // the checkout payload; activationLimit and expiresAt use schema
@@ -142,7 +149,7 @@ export async function POST(req: Request) {
           data: {
             userId: user.id,
             productId: product.id,
-            key: licenseKey, // The key we generated (ARCO-XXXX-XXXX-XXXX-XXXX)
+            key: licenseKey,
             status: LicenseStatus.INACTIVE, // Activated when first used in the app
           },
         });
