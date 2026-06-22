@@ -37,7 +37,7 @@ const pricingFaqData = [
     id: "item-5",
     question: "What is OpenRouter and why does Arco use it?",
     answer:
-      "OpenRouter is a unified API service that provides access to hundreds of AI models from different providers (OpenAI, Anthropic, Google, Meta, and more) through a single API key. Arco uses OpenRouter so you can access any model without managing separate accounts or API keys for each provider.",
+      "OpenRouter is a unified API service that provides access to hundreds of AI models from different providers (OpenAI, Anthropic, Google, Meta, and more) through a single API key. Arco uses OpenRouter so you can access any model without managing separate accounts or API keys for each provider. Whenever a new model hits the market, you can start using it in Arco right away by copying and pasting its model ID from the OpenRouter website.",
   },
   {
     id: "item-6",
