@@ -16,6 +16,7 @@
     "start": "next start",
     "lint": "next lint",
     "preview": "next build && next start",
+    "prod:start": "prisma migrate deploy && prisma generate && npm run db:generate:mongo && npm run start",
     "postinstall": "prisma generate",
     "email": "email dev --dir emails --port 3333"
   },
