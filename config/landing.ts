@@ -82,18 +82,21 @@ export const howItWorksSteps: HowItWorksStep[] = [
     title: "Get an OpenRouter key",
     description:
       "Sign up at openrouter.ai and grab a free API key. You get access to every model through one account.",
+    image: "/_static/landing/step-1.png",
   },
   {
     num: 2,
     title: "Pick your models",
     description:
       "Choose from GPT-4o, Claude, Gemini, Mistral, and dozens more. Mix and match, change anytime.",
+    image: "/_static/landing/step-2.png",
   },
   {
     num: 3,
     title: "Ask anything",
     description:
       "Type your question once. Every model answers in parallel. Compare, copy, and keep chatting.",
+    image: "/_static/landing/step-3.png",
   },
 ];
 

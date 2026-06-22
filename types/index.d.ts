@@ -95,6 +95,7 @@ export type HowItWorksStep = {
   num: number;
   title: string;
   description: string;
+  image: string;
 };
 
 export type UseCaseExample = {
