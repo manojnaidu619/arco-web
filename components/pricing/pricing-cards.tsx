@@ -113,7 +113,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               )}
             >
               <Icons.unlock className="size-4" />
-              Unlock full access
+              {`Purchase 1-year license for $${offer.annualPrice}`}
             </a>
           )}
         </div>
