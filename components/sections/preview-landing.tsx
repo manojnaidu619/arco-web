@@ -5,19 +5,20 @@ export default function PreviewLanding() {
     <div className="pb-12 md:pb-20">
       <MaxWidthWrapper>
         <div className="rounded-xl md:bg-muted/30 md:p-3.5 md:ring-1 md:ring-inset md:ring-border">
-          <div className="relative aspect-video overflow-hidden rounded-xl border bg-muted/20 md:rounded-lg">
-            <div className="flex size-full flex-col items-center justify-center gap-3 text-muted-foreground">
-              <div className="flex gap-2">
-                <span className="size-3 rounded-full bg-red-500/80" />
-                <span className="size-3 rounded-full bg-yellow-500/80" />
-                <span className="size-3 rounded-full bg-green-500/80" />
-              </div>
-              <p className="text-sm font-medium">App screenshot coming soon</p>
-              <p className="max-w-sm px-6 text-center text-xs text-muted-foreground/80">
-                Replace this placeholder with your Arco app screenshot or demo
-                video.
-              </p>
-            </div>
+          <div style={{ position: "relative", paddingBottom: "56.2500%", height: 0 }} className="overflow-hidden rounded-xl border md:rounded-lg">
+            <iframe
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: 0,
+              }}
+              src="https://www.tella.tv/video/vid_cmqp4uixf00q604icfwcyf8ee/embed?b=0&title=0&a=1&loop=1&t=0&muted=0&wt=0&o=1"
+              allow="autoplay; fullscreen"
+              allowTransparency
+            />
           </div>
         </div>
       </MaxWidthWrapper>
