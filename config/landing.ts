@@ -3,6 +3,7 @@ import {
   FeatureLdg,
   HowItWorksStep,
   InfoLdg,
+  Testimonial,
   UseCaseLdg,
 } from "types";
 
@@ -181,3 +182,5 @@ export const comparisonRows: ComparisonRow[] = [
     individualServices: "no",
   },
 ];
+
+export const testimonials: Testimonial[] = [];

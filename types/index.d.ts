@@ -118,3 +118,10 @@ export type ComparisonRow = {
   comparisonApps: ComparisonValue;
   individualServices: ComparisonValue;
 };
+
+export type Testimonial = {
+  name: string;
+  job: string;
+  review: string;
+  image: string;
+};
