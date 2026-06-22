@@ -12,6 +12,7 @@ import "@/styles/mdx.css";
 
 import { Metadata } from "next";
 
+import { siteConfig } from "@/config/site";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { cn, constructMetadata } from "@/lib/utils";
@@ -35,7 +36,7 @@ export async function generateMetadata({
   const { title, description } = guide;
 
   return constructMetadata({
-    title: `${title} – SaaS Starter`,
+    title: `${title} – ${siteConfig.name}`,
     description: description,
   });
 }

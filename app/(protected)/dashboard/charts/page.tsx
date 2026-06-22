@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { constructMetadata } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AreaChartStacked } from "@/components/charts/area-chart-stacked";
@@ -12,7 +13,7 @@ import { RadialTextChart } from "@/components/charts/radial-text-chart";
 import { DashboardHeader } from "@/components/dashboard/header";
 
 export const metadata = constructMetadata({
-  title: "Charts – SaaS Starter",
+  title: `Charts – ${siteConfig.name}`,
   description: "List of charts by shadcn-ui",
 });
 

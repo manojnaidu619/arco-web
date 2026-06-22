@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import { siteConfig } from "@/config/site";
 import { getCurrentUser } from "@/lib/session";
 import { constructMetadata } from "@/lib/utils";
 import { DashboardHeader } from "@/components/dashboard/header";
@@ -7,7 +8,7 @@ import InfoCard from "@/components/dashboard/info-card";
 import TransactionsList from "@/components/dashboard/transactions-list";
 
 export const metadata = constructMetadata({
-  title: "Admin – SaaS Starter",
+  title: `Admin – ${siteConfig.name}`,
   description: "Admin page for only admin management.",
 });
 

@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import { siteConfig } from "@/config/site";
 import { getCurrentUser } from "@/lib/session";
 import { constructMetadata } from "@/lib/utils";
 import { DeleteAccountSection } from "@/components/dashboard/delete-account";
@@ -8,7 +9,7 @@ import { UserNameForm } from "@/components/forms/user-name-form";
 import { UserRoleForm } from "@/components/forms/user-role-form";
 
 export const metadata = constructMetadata({
-  title: "Settings – SaaS Starter",
+  title: `Settings – ${siteConfig.name}`,
   description: "Configure your account and website settings.",
 });
 

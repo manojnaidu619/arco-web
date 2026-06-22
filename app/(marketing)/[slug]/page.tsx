@@ -7,6 +7,7 @@ import "@/styles/mdx.css";
 
 import { Metadata } from "next";
 
+import { siteConfig } from "@/config/site";
 import { constructMetadata, getBlurDataURL } from "@/lib/utils";
 
 export async function generateStaticParams() {
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const { title, description } = page;
 
   return constructMetadata({
-    title: `${title} – SaaS Starter`,
+    title: `${title} – ${siteConfig.name}`,
     description: description,
   });
 }

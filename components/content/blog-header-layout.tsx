@@ -8,6 +8,7 @@ import { Drawer } from "vaul";
 
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { BLOG_CATEGORIES } from "@/config/blog";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function BlogHeaderLayout() {
@@ -28,7 +29,7 @@ export function BlogHeaderLayout() {
           </h1>
           <p className="mt-3.5 text-base text-muted-foreground md:text-lg">
             {data?.description ||
-              "Latest news and updates from Next SaaS Starter."}
+              `Latest news and updates from ${siteConfig.name}.`}
           </p>
         </div>
 

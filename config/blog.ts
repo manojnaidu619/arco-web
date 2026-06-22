@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export const BLOG_CATEGORIES: {
   title: string;
   slug: "news" | "education";
@@ -6,7 +8,7 @@ export const BLOG_CATEGORIES: {
   {
     title: "News",
     slug: "news",
-    description: "Updates and announcements from Next SaaS Starter.",
+    description: `Updates and announcements from ${siteConfig.name}.`,
   },
   {
     title: "Education",

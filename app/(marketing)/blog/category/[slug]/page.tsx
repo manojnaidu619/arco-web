@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { allPosts } from "contentlayer/generated";
 
 import { BLOG_CATEGORIES } from "@/config/blog";
+import { siteConfig } from "@/config/site";
 import { constructMetadata, getBlurDataURL } from "@/lib/utils";
 import { BlogCard } from "@/components/content/blog-card";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({
   const { title, description } = category;
 
   return constructMetadata({
-    title: `${title} Posts – Next SaaS Starter`,
+    title: `${title} Posts – ${siteConfig.name}`,
     description,
   });
 }

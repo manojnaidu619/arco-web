@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import { siteConfig } from "@/config/site";
 import { getCurrentUser } from "@/lib/session";
 import { constructMetadata } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { DashboardHeader } from "@/components/dashboard/header";
 import { EmptyPlaceholder } from "@/components/shared/empty-placeholder";
 
 export const metadata = constructMetadata({
-  title: "Orders – SaaS Starter",
+  title: `Orders – ${siteConfig.name}`,
   description: "Check and manage your latest orders.",
 });
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icons } from "@/components/shared/icons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export default function HeroLanding() {
@@ -22,7 +23,7 @@ export default function HeroLanding() {
         </h1>
 
         <p className="mt-2 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-          Choose from 400+ AI models and compare them side by side in one window with your own OpenRouter API key, while keeping all data on your device.
+          {siteConfig.description}
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-3 md:gap-4">

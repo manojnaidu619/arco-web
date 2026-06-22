@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { BLOG_CATEGORIES } from "@/config/blog";
+import { siteConfig } from "@/config/site";
 import { getTableOfContents } from "@/lib/toc";
 import {
   cn,
@@ -42,7 +43,7 @@ export async function generateMetadata({
   const { title, description, image } = post;
 
   return constructMetadata({
-    title: `${title} – SaaS Starter`,
+    title: `${title} – ${siteConfig.name}`,
     description: description,
     image,
   });
