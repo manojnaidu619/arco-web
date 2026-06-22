@@ -134,6 +134,43 @@ const config = {
             transform: "translateX(100%)",
           },
         },
+        // Slide animations for chat messages
+        "slide-up-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "10%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+          "90%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+        },
+        "slide-down-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-20px)",
+          },
+          "10%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+          "90%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -149,6 +186,10 @@ const config = {
 
         // Shimmer
         shimmer: "shimmer 2s infinite",
+        
+        // Chat message animations
+        "slide-up-fade": "slide-up-fade 4s ease-in-out infinite",
+        "slide-down-fade": "slide-down-fade 4s ease-in-out infinite",
       },
     },
   },

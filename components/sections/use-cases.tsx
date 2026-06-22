@@ -24,10 +24,10 @@ export default function UseCases() {
                 {useCase.description}
               </p>
               <div className="mt-4 space-y-1.5 rounded-lg border bg-background p-3">
-                <div className="ml-auto max-w-[85%] animate-[fadeSlideIn_4s_ease-in-out_infinite] rounded-md bg-primary px-2.5 py-1.5 text-[11px] leading-snug text-primary-foreground">
+                <div className="ml-auto max-w-[85%] animate-slide-down-fade rounded-md bg-primary px-2.5 py-1.5 text-[11px] leading-snug text-primary-foreground">
                   {useCase.example.user}
                 </div>
-                <div className="animate-[fadeSlideIn_4s_ease-in-out_0.8s_infinite] rounded-md bg-muted px-2.5 py-1.5 text-[11px] leading-snug text-foreground">
+                <div className="animate-slide-up-fade rounded-md bg-muted px-2.5 py-1.5 text-[11px] leading-snug text-foreground [animation-delay:0.6s]">
                   {useCase.example.ai}
                 </div>
               </div>
