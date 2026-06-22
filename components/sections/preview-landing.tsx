@@ -17,7 +17,7 @@ export default function PreviewLanding() {
               }}
               src="https://www.tella.tv/video/vid_cmqp4uixf00q604icfwcyf8ee/embed?b=0&title=0&a=1&loop=1&t=0&muted=0&wt=0&o=1"
               allow="autoplay; fullscreen"
-              allowTransparency
+              title="Arco Preview Video"
             />
           </div>
         </div>
