@@ -12,7 +12,7 @@ export const pricingData: SubscriptionPlan[] = [
     benefits: [
       "Compare from 400+ AI models",
       "Up to 2 saved conversations",
-      "Your data stays on your device (BYOK)",
+      "Your data stays on your device",
     ],
     limitations: [],
     prices: {
@@ -31,7 +31,7 @@ export const pricingData: SubscriptionPlan[] = [
     benefits: [
       "Compare from 400+ AI models",
       "Unlimited saved conversations",
-      "Your data stays on your device (BYOK)",
+      "Your data stays on your device",
       "One payment, no recurring charges",
       "Free updates included",
       "Works on 1 Device",

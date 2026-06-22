@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { siteConfig } from "@/config/site";
 
 import { HeaderSection } from "../shared/header-section";
 
@@ -67,6 +68,16 @@ export function PricingFaq() {
           </AccordionItem>
         ))}
       </Accordion>
+
+      <p className="text-center text-sm text-muted-foreground">
+        Have more questions? Reach out to{" "}
+        <a
+          href={siteConfig.links.email}
+          className="font-medium text-foreground underline-offset-4 hover:underline"
+        >
+          {siteConfig.mailSupport}
+        </a>
+      </p>
     </section>
   );
 }
