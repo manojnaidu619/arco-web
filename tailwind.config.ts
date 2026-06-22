@@ -125,6 +125,15 @@ const config = {
             opacity: "1",
           },
         },
+        // Shimmer
+        shimmer: {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -137,6 +146,9 @@ const config = {
         // Fade in and out
         "fade-in": "fade-in 0.4s",
         "fade-out": "fade-out 0.4s",
+
+        // Shimmer
+        shimmer: "shimmer 2s infinite",
       },
     },
   },

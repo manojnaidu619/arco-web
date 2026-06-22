@@ -57,35 +57,55 @@ export default function InfoLanding({
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 <span className="text-xs text-muted-foreground">Comparing</span>
-                {["GPT-4o", "Claude", "Gemini"].map((model) => (
+                {["GPT-4o", "Claude", "Gemini"].map((model, idx) => (
                   <span
                     key={model}
-                    className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs"
+                    className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs animate-fade-in"
+                    style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    <span className="size-1.5 rounded-full bg-primary" />
+                    <span className="size-1.5 animate-pulse rounded-full bg-primary" />
                     {model}
                   </span>
                 ))}
               </div>
               <div className="mt-3 flex gap-2">
                 <div className="flex flex-1 items-center gap-2 rounded-lg border px-3 py-2 text-xs text-muted-foreground">
-                  <span className="size-1.5 rounded-full bg-primary" />
+                  <span className="size-1.5 animate-pulse rounded-full bg-primary" />
                   GPT-4o mini
                 </div>
-                <div className="rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground">
-                  ✦ Regenerate
+                <div className="group rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground transition-all hover:scale-105">
+                  <span className="inline-flex items-center gap-1">
+                    <span className="animate-pulse">✦</span>
+                    Regenerate
+                  </span>
                 </div>
               </div>
             </div>
             <div className="space-y-4 p-4">
               {["Key Differences", "Best Answer", "Recommendation"].map(
-                (heading) => (
-                  <div key={heading}>
+                (heading, idx) => (
+                  <div 
+                    key={heading}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                  >
                     <p className="mb-2 text-xs font-semibold">## {heading}</p>
                     <div className="space-y-2">
-                      <div className="h-2 animate-pulse rounded bg-muted" />
-                      <div className="h-2 w-[85%] animate-pulse rounded bg-muted [animation-delay:150ms]" />
-                      <div className="h-2 w-[70%] animate-pulse rounded bg-muted [animation-delay:300ms]" />
+                      <div className="relative h-2 overflow-hidden rounded bg-muted">
+                        <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent" />
+                      </div>
+                      <div className="relative h-2 w-[85%] overflow-hidden rounded bg-muted">
+                        <div 
+                          className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent"
+                          style={{ animationDelay: '0.3s' }}
+                        />
+                      </div>
+                      <div className="relative h-2 w-[70%] overflow-hidden rounded bg-muted">
+                        <div 
+                          className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent"
+                          style={{ animationDelay: '0.6s' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ),
