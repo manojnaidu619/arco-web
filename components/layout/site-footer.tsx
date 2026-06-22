@@ -1,36 +1,55 @@
 import Link from "next/link";
+import * as React from "react";
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/layout/mode-toggle";
 import { Icons } from "@/components/shared/icons";
-import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import { footerLinks, siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
-export function SiteFooter({ className }: { className?: string }) {
+export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
     <footer className={cn("border-t", className)}>
-      <MaxWidthWrapper className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
-        <div className="flex items-center gap-2">
-          <Icons.logo className="size-5" />
-          <span className="font-urban text-sm font-semibold">
-            {siteConfig.name}
-          </span>
-        </div>
+      <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-4">
+        {footerLinks.map((section) => (
+          <div key={section.title}>
+            <span className="text-sm font-medium text-foreground">
+              {section.title}
+            </span>
+            <ul className="mt-4 list-inside space-y-3">
+              {section.items?.map((link) => (
+                <li key={link.title}>
+                  <Link
+                    href={link.href}
+                    target={link.external ? "_blank" : "_self"}
+                    className="text-sm text-muted-foreground hover:text-primary"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Arco. Built for Mac.
-        </p>
-
-        <div className="flex items-center gap-4">
+        <div className="col-span-full flex items-center justify-between md:col-span-1 md:flex-col md:items-end md:justify-start md:gap-4 md:pt-1">
           <Link
-            href={siteConfig.links.email}
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            href="/"
+            className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            hello@arco.chat
+            <Icons.logo className="size-8 text-foreground" />
+            <span className="text-lg font-semibold">{siteConfig.name}</span>
           </Link>
           <ModeToggle />
         </div>
-      </MaxWidthWrapper>
+      </div>
+
+      <div className="border-t py-4">
+        <div className="container flex max-w-6xl items-center justify-center">
+          <p className="text-center text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Arco. Built for Mac.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }

@@ -15,4 +15,26 @@ export const siteConfig: SiteConfig = {
   mailSupport: "hello@arco.chat",
 };
 
-export const footerLinks: SidebarNavItem[] = [];
+export const footerLinks: SidebarNavItem[] = [
+  {
+    title: "Product",
+    items: [
+      { title: "FAQ", href: "/#faq" },
+      { title: "Pricing", href: "/#pricing" },
+      { title: "About", href: "/about" },
+    ],
+  },
+  {
+    title: "Legal",
+    items: [
+      { title: "Privacy", href: "/privacy" },
+      { title: "Terms", href: "/terms" },
+    ],
+  },
+  {
+    title: "Contact",
+    items: [
+      { title: "hello@arco.chat", href: "mailto:hello@arco.chat" },
+    ],
+  },
+];
