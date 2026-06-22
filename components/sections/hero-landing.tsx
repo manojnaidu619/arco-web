@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icons } from "@/components/shared/icons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { DownloadButton } from "@/components/shared/download-button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -27,8 +28,7 @@ export default function HeroLanding() {
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-3 md:gap-4">
-          <Link
-            href="#download"
+          <DownloadButton
             className={cn(
               buttonVariants({ size: "lg", rounded: "lg" }),
               "gap-2 px-7",
@@ -36,7 +36,7 @@ export default function HeroLanding() {
           >
             <Icons.apple className="size-4" />
             <span>Download free for Mac</span>
-          </Link>
+          </DownloadButton>
           <Link
             href="#how-it-works"
             className={cn(

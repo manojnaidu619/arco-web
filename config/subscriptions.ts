@@ -3,7 +3,6 @@ import { SubscriptionPlan } from "types";
 export const CREEM_UNLIMITED_CHECKOUT_URL =
   "https://www.creem.io/test/payment/prod_6FOGXk6mKLjdVuAdBDnKrA";
 
-export const FREE_DOWNLOAD_URL = "#download";
 
 export const pricingData: SubscriptionPlan[] = [
   {

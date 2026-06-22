@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 
 import { docsConfig } from "@/config/docs";
 import { marketingConfig } from "@/config/marketing";
+import { DownloadButton } from "@/components/shared/download-button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { DocsSidebarNav } from "@/components/docs/sidebar-nav";
@@ -124,13 +125,9 @@ export function NavMobile() {
             </>
           ) : (
             <li className="py-3">
-              <Link
-                href="#download"
-                onClick={() => setOpen(false)}
-                className="flex w-full font-medium capitalize"
-              >
+              <DownloadButton className="flex w-full font-medium capitalize">
                 Download free for Mac
-              </Link>
+              </DownloadButton>
             </li>
           )}
         </ul>

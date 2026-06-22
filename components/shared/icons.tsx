@@ -40,13 +40,14 @@ export type Icon = LucideIcon;
 
 export const Icons = {
   add: Plus,
-  apple: ({ ...props }: LucideProps) => (
+  apple: ({ className, ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
       focusable="false"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      viewBox="0 1 24 25"
+      className={cn("block shrink-0", className)}
       {...props}
     >
       <path

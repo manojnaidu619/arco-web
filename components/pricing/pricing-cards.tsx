@@ -3,11 +3,12 @@
 import { UserSubscriptionPlan } from "@/types";
 import Link from "next/link";
 
+import { DownloadButton } from "@/components/shared/download-button";
 import { HeaderSection } from "@/components/shared/header-section";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
-import { FREE_DOWNLOAD_URL, pricingData } from "@/config/subscriptions";
+import { pricingData } from "@/config/subscriptions";
 import { cn } from "@/lib/utils";
 import { SubscriptionPlan } from "@/types/index";
 
@@ -76,18 +77,18 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
           </ul>
 
           {!offer.isAnnual ? (
-            <Link
-              href={FREE_DOWNLOAD_URL}
+            <DownloadButton
               className={cn(
                 buttonVariants({
                   variant: "outline",
                   rounded: "lg",
                 }),
-                "w-full",
+                "inline-flex w-full items-center justify-center gap-2",
               )}
             >
-              Download
-            </Link>
+              <Icons.apple className="size-4" />
+              Get Started for Free
+            </DownloadButton>
           ) : userId && subscriptionPlan?.isPaid ? (
             <Link
               href="/dashboard"

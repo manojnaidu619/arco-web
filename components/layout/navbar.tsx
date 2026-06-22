@@ -5,10 +5,11 @@ import { useSelectedLayoutSegment } from "next/navigation";
 
 import { docsConfig } from "@/config/docs";
 import { marketingConfig } from "@/config/marketing";
+import { DownloadButton } from "@/components/shared/download-button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { DocsSearch } from "@/components/docs/search";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
@@ -95,17 +96,15 @@ export function NavBar({ scroll = false }: NavBarProps) {
               ) : null}
             </div>
           ) : (
-            <Link href="#download" className="hidden md:block">
-              <Button
-                className="gap-2 px-5"
-                variant="default"
-                size="sm"
-                rounded="lg"
-              >
-                <Icons.apple className="size-4" />
-                <span>Download free for Mac</span>
-              </Button>
-            </Link>
+            <DownloadButton
+              className={cn(
+                buttonVariants({ variant: "default", size: "sm", rounded: "lg" }),
+                "hidden gap-2 px-5 md:inline-flex",
+              )}
+            >
+              <Icons.apple className="size-4" />
+              <span>Download free for Mac</span>
+            </DownloadButton>
           )}
         </div>
       </MaxWidthWrapper>

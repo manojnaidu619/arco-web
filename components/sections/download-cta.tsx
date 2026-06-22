@@ -1,8 +1,7 @@
-import Link from "next/link";
-
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
+import { DownloadButton } from "@/components/shared/download-button";
 import { cn } from "@/lib/utils";
 
 export default function DownloadCTA() {
@@ -17,8 +16,7 @@ export default function DownloadCTA() {
             Download Arco free. Bring your own OpenRouter key and you&apos;re
             ready in under two minutes.
           </p>
-          <Link
-            href="#download"
+          <DownloadButton
             className={cn(
               buttonVariants({ size: "lg", rounded: "lg" }),
               "mt-9 inline-flex gap-2 px-8 text-base",
@@ -26,7 +24,7 @@ export default function DownloadCTA() {
           >
             <Icons.apple className="size-[18px]" />
             Download free for Mac
-          </Link>
+          </DownloadButton>
           <p className="mt-4 text-sm text-muted-foreground">
             Free to start · macOS 13+ · Apple Silicon
           </p>
