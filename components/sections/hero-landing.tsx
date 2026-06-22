@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export default function HeroLanding() {
   return (
     <section className="space-y-6 py-12 sm:py-20 lg:py-24">
-      <div className="container flex max-w-3xl flex-col items-center gap-5 text-center">
+      <div className="container flex max-w-3xl flex-col items-center gap-6 text-center">
         <Badge
           variant="outline"
           className="border-primary/30 bg-primary/10 px-3 py-1 text-primary"
@@ -21,11 +21,11 @@ export default function HeroLanding() {
           <span className="text-primary">all staying private.</span>
         </h1>
 
-        <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
+        <p className="mt-2 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
           Choose from 400+ AI models and compare them side by side in one window with your own OpenRouter API key, while keeping all data on your device.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+        <div className="mt-4 flex flex-wrap justify-center gap-3 md:gap-4">
           <Link
             href="#download"
             className={cn(
@@ -51,7 +51,7 @@ export default function HeroLanding() {
           </Link>
         </div>
 
-        <p className="text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-muted-foreground">
           macOS 13 Ventura or later · Apple Silicon · Free to start
         </p>
       </div>
