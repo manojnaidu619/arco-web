@@ -25,7 +25,6 @@ import {
   MoreVertical,
   Package,
   Plus,
-  Puzzle,
   Search,
   Settings,
   SunMedium,
@@ -34,6 +33,8 @@ import {
   User,
   X,
 } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 export type Icon = LucideIcon;
 
@@ -121,7 +122,13 @@ export const Icons = {
   home: Home,
   laptop: Laptop,
   lineChart: LineChart,
-  logo: Puzzle,
+  logo: ({ className }: LucideProps) => (
+    <img
+      src="/_static/logos/arco.png"
+      alt="Arco Logo"
+      className={cn("size-6 shrink-0 rounded-md object-contain", className)}
+    />
+  ),
   media: Image,
   messages: MessagesSquare,
   moon: Moon,
