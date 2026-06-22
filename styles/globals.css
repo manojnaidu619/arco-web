@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeSlideIn {
+  0%, 100% { opacity: 0; transform: translateY(4px); }
+  15%, 80% { opacity: 1; transform: translateY(0); }
+}
+
 @layer base {
   :root {
     --background: 220.0000 33.3333% 98.2353%;

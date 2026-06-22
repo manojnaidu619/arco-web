@@ -52,7 +52,7 @@ export default function InfoLanding({
           >
             <div className="border-b p-4">
               <div className="flex items-center gap-2 text-sm font-semibold">
-                <span className="text-amber-500">✦</span>
+                <span className="animate-pulse text-amber-500">✦</span>
                 Summarize latest responses
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -83,9 +83,9 @@ export default function InfoLanding({
                   <div key={heading}>
                     <p className="mb-2 text-xs font-semibold">## {heading}</p>
                     <div className="space-y-2">
-                      <div className="h-2 rounded bg-muted" />
-                      <div className="h-2 w-[85%] rounded bg-muted" />
-                      <div className="h-2 w-[70%] rounded bg-muted" />
+                      <div className="h-2 animate-pulse rounded bg-muted" />
+                      <div className="h-2 w-[85%] animate-pulse rounded bg-muted [animation-delay:150ms]" />
+                      <div className="h-2 w-[70%] animate-pulse rounded bg-muted [animation-delay:300ms]" />
                     </div>
                   </div>
                 ),
