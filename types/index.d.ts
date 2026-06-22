@@ -58,8 +58,8 @@ export type SubscriptionPlan = {
     monthly: string | null;
     yearly: string | null;
   };
-  isLifetime: boolean;
-  lifetimePrice?: number;
+  isAnnual: boolean;
+  annualPrice?: number;
   checkoutUrl?: string;
 };
 

@@ -22,7 +22,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
       <div
         className={cn(
           "relative flex flex-col overflow-hidden rounded-3xl border shadow-sm",
-          offer.isLifetime ? "-m-0.5 border-2 border-purple-400" : "",
+          offer.isAnnual ? "-m-0.5 border-2 border-purple-400" : "",
         )}
         key={offer.title}
       >
@@ -34,22 +34,22 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
           <div className="flex flex-row">
             <div className="flex items-end">
               <div className="flex text-left text-3xl font-semibold leading-6">
-                {offer.isLifetime ? (
-                  `$${offer.lifetimePrice}`
+                {offer.isAnnual ? (
+                  `$${offer.annualPrice}`
                 ) : (
                   "Free"
                 )}
               </div>
-              {offer.isLifetime ? (
+              {offer.isAnnual ? (
                 <div className="-mb-1 ml-2 text-left text-sm font-medium text-muted-foreground">
-                  <div>one-time</div>
+                  <div>One year license</div>
                 </div>
               ) : null}
             </div>
           </div>
-          {offer.isLifetime ? (
+          {offer.isAnnual ? (
             <div className="text-left text-sm text-muted-foreground">
-              Lifetime license - one payment, no subscription
+              Annual license - no subscription
             </div>
           ) : null}
         </div>
@@ -75,7 +75,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               ))}
           </ul>
 
-          {!offer.isLifetime ? (
+          {!offer.isAnnual ? (
             <Link
               href={FREE_DOWNLOAD_URL}
               className={cn(

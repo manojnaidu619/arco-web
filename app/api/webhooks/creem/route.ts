@@ -3,7 +3,7 @@
  * Route: POST /api/webhooks/creem
  *
  * This endpoint receives real-time payment event notifications from Creem,
- * our payment provider for one-time lifetime license purchases.
+ * our payment provider for one-time annual license purchases.
  *
  * SECURITY: Every incoming request is verified using HMAC-SHA256 before any
  * processing happens. Creem signs the raw request body with our webhook secret
@@ -31,6 +31,7 @@
 
 import * as crypto from "crypto";
 import { headers } from "next/headers";
+import moment from "moment";
 
 // import { generateUniqueLicenseKey } from "@/lib/creem";
 import { prisma } from "@/lib/db";
@@ -143,14 +144,15 @@ export async function POST(req: Request) {
         }
 
         // Create the License record in our database. productId comes from
-        // the checkout payload; activationLimit and expiresAt use schema
-        // defaults (1 activation, lifetime / null expiry).
+        // the checkout payload; activationLimit uses schema default (1).
+        // expiresAt is set to end of day, 365 days from purchase.
         await prisma.license.create({
           data: {
             userId: user.id,
             productId: product.id,
             key: licenseKey,
             status: LicenseStatus.INACTIVE, // Activated when first used in the app
+            expiresAt: moment().add(365, "days").endOf("day").toDate(),
           },
         });
 

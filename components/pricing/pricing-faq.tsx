@@ -10,33 +10,39 @@ import { HeaderSection } from "../shared/header-section";
 const pricingFaqData = [
   {
     id: "item-1",
-    question: "What is the cost of the free plan?",
+    question: "What's included in the free version?",
     answer:
-      "Our free plan is completely free, with no monthly or annual charges. It's a great way to get started and explore our basic features.",
+      "Full access to all features, including 400+ models, AI-powered summary, and all layouts. The only limit is 2 saved conversations. Free users do not receive new feature updates.",
   },
   {
     id: "item-2",
-    question: "How much does the Basic Monthly plan cost?",
+    question: "How does the Pro license work?",
     answer:
-      "The Basic Monthly plan is priced at $15 per month. It provides access to our core features and is billed on a monthly basis.",
+      "Pay $39 once and get unlimited saved conversations for one year. No credit card lock-in, no automatic charges.",
   },
   {
     id: "item-3",
-    question: "What is the price of the Pro Monthly plan?",
+    question: "Why are there no refunds?",
     answer:
-      "The Pro Monthly plan is available for $25 per month. It offers advanced features and is billed on a monthly basis for added flexibility.",
+      "We offer a generous free version that gives you complete access to every feature in the app - all 400+ AI models, the summary tool, every layout option, and full functionality. The only difference with Pro is the number of saved conversations (2 vs unlimited). This means you can thoroughly test the entire app before deciding to upgrade. Since there are no hidden features or surprises after purchase, all license sales are final. We encourage you to use the free version extensively and only upgrade when you're confident it meets your needs.",
   },
   {
     id: "item-4",
-    question: "Do you offer any annual subscription plans?",
+    question: "What happens after one year?",
     answer:
-      "Yes, we offer annual subscription plans for even more savings. The Basic Annual plan is $144 per year, and the Pro Annual plan is $300 per year.",
+      "Your existing conversations stay accessible and you can continue using all features. However, saving new conversations beyond 2 will be limited, and you won't receive new feature updates. We'll email you before your license expires so you can take action manually — no automatic charges.",
   },
   {
     id: "item-5",
-    question: "Is there a trial period for the paid plans?",
+    question: "Can I use my license on multiple devices?",
     answer:
-      "We offer a 14-day free trial for both the Pro Monthly and Pro Annual plans. It's a great way to experience all the features before committing to a paid subscription.",
+      "Each license works on 1 device. For multiple devices, reach out to support for bulk deals.",
+  },
+  {
+    id: "item-6",
+    question: "Do I get updates?",
+    answer:
+      "Yes, all updates during your license period are included.",
   },
 ];
 
