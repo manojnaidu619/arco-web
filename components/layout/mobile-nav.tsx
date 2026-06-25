@@ -125,7 +125,7 @@ export function NavMobile() {
             </>
           ) : (
             <li className="py-3">
-              <DownloadButton className="flex w-full font-medium capitalize">
+              <DownloadButton className="flex w-full items-center gap-2 font-medium capitalize">
                 Download free for Mac
               </DownloadButton>
             </li>

@@ -102,7 +102,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
                 "hidden gap-2 px-5 md:inline-flex",
               )}
             >
-              <Icons.apple className="size-4" />
               <span>Download free for Mac</span>
             </DownloadButton>
           )}

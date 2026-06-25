@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { Icons } from "@/components/shared/icons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { DownloadButton } from "@/components/shared/download-button";
@@ -34,7 +33,6 @@ export default function HeroLanding() {
               "gap-2 px-7",
             )}
           >
-            <Icons.apple className="size-4" />
             <span>Download free for Mac</span>
           </DownloadButton>
           <Link

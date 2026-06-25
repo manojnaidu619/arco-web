@@ -86,7 +86,6 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
                 "inline-flex w-full items-center justify-center gap-2",
               )}
             >
-              <Icons.apple className="size-4" />
               Get Started for Free
             </DownloadButton>
           ) : userId && subscriptionPlan?.isPaid ? (

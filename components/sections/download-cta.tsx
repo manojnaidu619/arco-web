@@ -1,4 +1,3 @@
-import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { DownloadButton } from "@/components/shared/download-button";
@@ -22,7 +21,6 @@ export default function DownloadCTA() {
               "mt-9 inline-flex gap-2 px-8 text-base",
             )}
           >
-            <Icons.apple className="size-[18px]" />
             Download free for Mac
           </DownloadButton>
           <p className="mt-4 text-sm text-muted-foreground">
