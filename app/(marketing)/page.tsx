@@ -9,8 +9,15 @@ import InfoLanding from "@/components/sections/info-landing";
 import PreviewLanding from "@/components/sections/preview-landing";
 import UseCases from "@/components/sections/use-cases";
 import { infos } from "@/config/landing";
+import { siteConfig } from "@/config/site";
 import { getCurrentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
+import { constructMetadata } from "@/lib/utils";
+
+export const metadata = constructMetadata({
+  title: siteConfig.seoTitle,
+  description: siteConfig.seoDescription,
+});
 
 export default async function IndexPage() {
   const user = await getCurrentUser();

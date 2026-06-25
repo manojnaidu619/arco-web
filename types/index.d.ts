@@ -1,5 +1,4 @@
 import { User } from "@prisma/client";
-import type { Icon } from "lucide-react";
 
 import { Icons } from "@/components/shared/icons";
 
@@ -8,6 +7,8 @@ export type SiteConfig = {
   description: string;
   url: string;
   ogImage: string;
+  seoTitle: string;
+  seoDescription: string;
   mailSupport: string;
   links: {
     email: string;
