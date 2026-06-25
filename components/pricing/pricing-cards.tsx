@@ -127,7 +127,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
         id="pricing"
         className="flex scroll-mt-20 flex-col items-center py-20 text-center md:py-24"
       >
-        <HeaderSection label="Pricing" title="Start at full speed !" />
+        <HeaderSection label="Pricing" title="Full power. One simple price." />
 
         <div className="mx-auto grid w-full max-w-4xl gap-5 bg-inherit py-10 lg:grid-cols-2">
           {pricingData.map((offer) => (
