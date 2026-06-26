@@ -46,8 +46,8 @@ export default function ComparisonTable() {
           subtitle="See how Arco stacks up against other multi-model apps and against using ChatGPT or Claude on their own."
         />
 
-        <div className="mt-10 overflow-hidden rounded-2xl border">
-          <div className="hidden md:block">
+        <div className="mt-10 overflow-x-auto rounded-2xl border">
+          <div className="min-w-[640px]">
             <div className="grid grid-cols-4 border-b bg-muted/40">
               <div className="p-4" />
               <div className="border-l p-4 text-center text-sm font-bold text-primary">
@@ -89,44 +89,6 @@ export default function ComparisonTable() {
                   ) : (
                     <ComparisonCell value={row.individualServices} />
                   )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="divide-y md:hidden">
-            {comparisonRows.map((row) => (
-              <div key={row.feature} className="p-4">
-                <p className="mb-3 text-sm font-medium">{row.feature}</p>
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="rounded-lg bg-primary/5 p-2">
-                    <p className="mb-1 font-semibold text-primary">Arco</p>
-                    <ComparisonCell value={row.arco} />
-                  </div>
-                  <div className="rounded-lg bg-muted/40 p-2">
-                    <p className="mb-1 font-medium text-muted-foreground">
-                      Comparison apps
-                    </p>
-                    {row.comparisonApps === "partial" ? (
-                      <span className="text-amber-500">
-                        {getPartialLabel(row.feature, "comparisonApps")}
-                      </span>
-                    ) : (
-                      <ComparisonCell value={row.comparisonApps} />
-                    )}
-                  </div>
-                  <div className="rounded-lg bg-muted/40 p-2">
-                    <p className="mb-1 font-medium text-muted-foreground">
-                      Chat services
-                    </p>
-                    {row.individualServices === "partial" ? (
-                      <span className="text-amber-500">
-                        {getPartialLabel(row.feature, "individualServices")}
-                      </span>
-                    ) : (
-                      <ComparisonCell value={row.individualServices} />
-                    )}
-                  </div>
                 </div>
               </div>
             ))}

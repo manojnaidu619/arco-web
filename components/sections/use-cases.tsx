@@ -16,18 +16,20 @@ export default function UseCases() {
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="rounded-2xl border bg-card p-6 transition-colors hover:border-primary/40"
+              className="flex h-full flex-col rounded-2xl border bg-card p-6 transition-colors hover:border-primary/40"
             >
-              <div className="mb-3 text-3xl">{useCase.emoji}</div>
+              <div className="mb-3 flex h-9 items-center text-3xl leading-none">
+                {useCase.emoji}
+              </div>
               <h3 className="text-base font-semibold">{useCase.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {useCase.description}
               </p>
-              <div className="mt-4 space-y-1.5 rounded-lg border bg-background p-3">
-                <div className="ml-auto max-w-[85%] animate-slide-down-fade rounded-md bg-primary px-2.5 py-1.5 text-[11px] leading-snug text-primary-foreground">
+              <div className="mt-4 min-h-[7.5rem] space-y-2.5 rounded-xl border bg-background p-4">
+                <div className="ml-auto w-fit max-w-[85%] animate-slide-down-fade rounded-2xl rounded-br-sm bg-primary px-3 py-2 text-xs leading-relaxed text-primary-foreground">
                   {useCase.example.user}
                 </div>
-                <div className="animate-slide-up-fade rounded-md bg-muted px-2.5 py-1.5 text-[11px] leading-snug text-foreground [animation-delay:0.6s]">
+                <div className="w-fit max-w-[85%] animate-slide-up-fade rounded-2xl rounded-bl-sm bg-muted px-3 py-2 text-xs leading-relaxed text-foreground [animation-delay:0.6s]">
                   {useCase.example.ai}
                 </div>
               </div>
