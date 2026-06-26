@@ -1,0 +1,56 @@
+# Arco (arco.chat) - Chat & compare from 400+ AI models side by side on your Mac
+
+## Overview
+Arco is a native Mac app that lets you chat with and compare from 400+ AI models side by side in one window. Bring your own OpenRouter API key and keep all your conversations private on your device — Arco never stores or proxies your chats.
+
+## Primary Product
+**Side-by-Side AI Model Comparison App for Mac**
+- Chat with multiple AI models in parallel, in one window
+- Bring your own OpenRouter API key — pay providers directly for tokens used, no markup from Arco
+- All conversations and data stay local on your device
+- Native Mac app, built for speed and simplicity
+
+## Core Problem We Solve
+Comparing answers across different AI models normally means juggling separate chat sites and tabs. Arco solves this by letting you:
+- Ask one prompt and see every model's answer at once
+- Avoid switching between ChatGPT, Claude, Gemini, and other provider websites
+- Keep full control of cost and privacy by using your own OpenRouter key
+- Get set up and comparing answers within minutes
+
+## Key Features & Capabilities
+- **Everything in One Place**: Stop juggling separate chat sites — one prompt, every answer, instantly
+- **400+ AI Models**: Access the full range of models available through OpenRouter
+- **Summarize**: When multiple models reply, Summarize sends all their responses to a judge model of your choice and returns a structured breakdown of what each model said, where they agree, where they differ, and which response is strongest — so you get the best answer in one click without reading every response in detail
+- **Bring Your Own Key**: Use your own OpenRouter API key, pay providers directly, no Arco markup
+- **On-Device Privacy**: Conversations are kept on your device, not stored on Arco's servers
+- **Fast Setup**: Up and running in minutes — add your key, pick your models, start comparing
+- **Native Mac Experience**: Built for macOS 13 (Ventura) and later, on Apple Silicon Macs (Windows and Linux are not supported)
+- **Flexible Layouts**: Compare up to 6 models at once with multiple side-by-side layout options
+
+## Target Audience & Use Cases
+- **Developers & Power Users**: Comparing model quality and behavior for coding, debugging, and technical Q&A
+- **Researchers & Writers**: Comparing tone, accuracy, and style across models for content and research
+- **Prompt Engineers**: Testing the same prompt across many models to find the best fit
+- **Privacy-Conscious Users**: Anyone who wants to use multiple AI models without sending data through a third-party intermediary
+- **Anyone Frustrated by Tab-Switching**: Users who want faster, better answers without juggling multiple chat sites
+
+## Pricing & Business Model
+- **Free**: Full access to all features — 400+ models, Summarize, and all layouts. The only limit is 2 saved conversations, and free users do not receive new feature updates
+- **Pro**: One-time payment of $39 for unlimited saved conversations and feature updates for one year, on one device. No subscription, no automatic renewal charges
+- Bring your own OpenRouter API key — you pay model providers directly for tokens used, with no markup from Arco
+- See https://arco.chat/#pricing for current pricing details
+
+## Data Privacy & Security
+- **Bring Your Own Key**: API calls go directly from your device to OpenRouter using your key
+- **On-Device Data**: Conversations and data are kept on your device
+- **No Chat Storage**: Arco does not store your conversation content on its servers
+- See https://arco.chat/privacy for the full privacy policy
+
+## Links
+- [Homepage](https://arco.chat): Product overview, features, and pricing
+- [Pricing](https://arco.chat/#pricing): Plan details
+- [FAQ](https://arco.chat/#faq): Frequently asked questions
+- [About](https://arco.chat/about): About Arco
+- [Privacy](https://arco.chat/privacy): Privacy policy
+- [Terms](https://arco.chat/terms): Terms of service
+- [Contact](mailto:hello@arco.chat): Support and contact email

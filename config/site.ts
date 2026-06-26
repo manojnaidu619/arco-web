@@ -25,6 +25,7 @@ export const footerLinks: SidebarNavItem[] = [
       { title: "FAQ", href: "/#faq" },
       { title: "Pricing", href: "/#pricing" },
       { title: "About", href: "/about" },
+      { title: "Are you an AI? LLM.txt", href: "/llms.txt" },
     ],
   },
   {
