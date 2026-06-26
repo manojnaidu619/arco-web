@@ -7,7 +7,9 @@ import { ThemeProvider } from "next-themes";
 import { cn, constructMetadata } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@/components/analytics";
+import GoogleAnalytics from "@/components/google-analytics";
 import ModalProvider from "@/components/modals/providers";
+import PiqoAnalytics from "@/components/piqo-analytics";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 interface RootLayoutProps {
@@ -19,7 +21,10 @@ export const metadata = constructMetadata();
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <GoogleAnalytics />
+        <PiqoAnalytics />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
