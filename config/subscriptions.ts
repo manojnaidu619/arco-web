@@ -1,8 +1,8 @@
+import { isDevelopment } from "@/lib/env";
 import { SubscriptionPlan } from "types";
 
 export const CREEM_UNLIMITED_CHECKOUT_URL =
-  "https://www.creem.io/test/payment/prod_6FOGXk6mKLjdVuAdBDnKrA";
-
+  isDevelopment ? "https://www.creem.io/test/payment/prod_6FOGXk6mKLjdVuAdBDnKrA" : "https://www.creem.io/payment/prod_3CinqIf7UiBviTQwDuol9P";
 
 export const pricingData: SubscriptionPlan[] = [
   {

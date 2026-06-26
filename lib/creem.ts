@@ -8,9 +8,10 @@
 
 import { prisma } from "@/lib/db";
 import * as crypto from "crypto";
+import { isDevelopment } from "./env";
 
 const CREEM_BASE_URL =
-  process.env.NODE_ENV === "development"
+  isDevelopment
     ? "https://test-api.creem.io"
     : "https://api.creem.io";
 
