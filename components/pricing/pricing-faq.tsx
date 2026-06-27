@@ -79,7 +79,7 @@ const pricingFaqData = [
     id: "item-12",
     question: "What's included in the free version?",
     answer:
-      "Full access to all features, including 400+ models, AI-powered summary, and all layouts. The only limit is 2 saved conversations. Free users do not receive new feature updates.",
+      "Full access to all features, including 400+ models, AI-powered summary, and all layouts. The only limit is 3 saved conversations. Free users do not receive new feature updates.",
   },
   {
     id: "item-13",
