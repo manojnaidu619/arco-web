@@ -10,7 +10,7 @@ export const pricingData: SubscriptionPlan[] = [
     description: "Get started with Arco",
     benefits: [
       "Compare from 400+ AI models",
-      "Up to 2 saved conversations",
+      "Up to 3 saved conversations",
       "Your data stays on your device",
     ],
     limitations: [],
