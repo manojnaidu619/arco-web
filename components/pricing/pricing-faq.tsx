@@ -85,17 +85,23 @@ const pricingFaqData = [
     id: "item-13",
     question: "How does the Pro license work?",
     answer:
-      "Pay $39 once and get unlimited saved conversations for one year. No credit card lock-in, no automatic charges.",
+      "Get unlimited saved conversations for one year. No credit card lock-in, no automatic charges.",
+  },
+  {
+    id: "item-13b",
+    question: "How does the Unlimited license work?",
+    answer:
+      "Pay once and get unlimited saved conversations forever - no renewal, no recurring charges, no expiration.",
   },
   {
     id: "item-14",
     question: "Why are there no refunds?",
     answer:
-      "We offer a generous free version that gives you complete access to every feature in the app - all 400+ AI models, the summary tool, every layout option, and full functionality. The only difference with Pro is the number of saved conversations (2 vs unlimited). This means you can thoroughly test the entire app before deciding to upgrade. Since there are no hidden features or surprises after purchase, all license sales are final. We encourage you to use the free version extensively and only upgrade when you're confident it meets your needs.",
+      "We offer a generous free version that gives you complete access to every feature in the app - all 400+ AI models, the summary tool, every layout option, and full functionality. The only difference with Pro and Unlimited is the number of saved conversations (2 vs unlimited) and, for Unlimited, that the license never expires. This means you can thoroughly test the entire app before deciding to upgrade. Since there are no hidden features or surprises after purchase, all license sales are final. We encourage you to use the free version extensively and only upgrade when you're confident it meets your needs.",
   },
   {
     id: "item-15",
-    question: "What happens after one year?",
+    question: "What happens after my Pro license's first year?",
     answer:
       "Your existing conversations stay accessible and you can continue using all features. However, saving new conversations beyond 2 will be limited, and you won't receive new feature updates. We'll email you before your license expires so you can take action manually, with no automatic charges.",
   },

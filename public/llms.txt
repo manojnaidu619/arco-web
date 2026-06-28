@@ -34,12 +34,6 @@ Comparing answers across different AI models normally means juggling separate ch
 - **Privacy-Conscious Users**: Anyone who wants to use multiple AI models without sending data through a third-party intermediary
 - **Anyone Frustrated by Tab-Switching**: Users who want faster, better answers without juggling multiple chat sites
 
-## Pricing & Business Model
-- **Free**: Full access to all features — 400+ models, Summarize, and all layouts. The only limit is 3 saved conversations
-- **Pro**: One-time payment of $39 for unlimited saved conversations and feature updates for one year, on one device. No subscription, no automatic renewal charges
-- Bring your own OpenRouter API key — you pay model providers directly for tokens used, with no markup from Arco
-- See https://arco.chat/#pricing for current pricing details
-
 ## Data Privacy & Security
 - **Bring Your Own Key**: API calls go directly from your device to OpenRouter using your key
 - **On-Device Data**: Conversations and data are kept on your device

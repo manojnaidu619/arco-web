@@ -10,8 +10,8 @@
  *   { "key": "ARCO-XXXX-XXXX-XXXX-XXXX", "deviceId": "<stable-device-id>" }
  *
  * Response (always 200, same shape for success and failure):
- *   { "isActivated": true,  "expiresAt": "2026-01-01T00:00:00.000Z" | null, "message": null }
- *   { "isActivated": false, "expiresAt": null, "message": "<user-facing message>" }
+ *   { "isActivated": true,  "expiresAt": "2026-01-01T00:00:00.000Z" | null, "type": "pro" | "unlimited", "message": null }
+ *   { "isActivated": false, "expiresAt": null, "type": null, "message": "<user-facing message>" }
  *
  * SECURITY: Client responses are intentionally generic so callers cannot infer
  * whether a key exists, is already used, disabled, or expired. Detailed failure
@@ -32,15 +32,19 @@ const ERROR_INVALID_INPUT =
 const ERROR_ACTIVATION_FAILED = `Unable to activate license. If you need help, please contact support at ${siteConfig.mailSupport}.`;
 const ERROR_SERVER = `Something went wrong. Please try again later or contact support at ${siteConfig.mailSupport}.`;
 
+type LicenseType = "pro" | "unlimited";
+
 /** Builds the unified activation response consumed by desktop clients. */
 function activationResponse(
   isActivated: boolean,
   expiresAt: Date | null,
+  type: LicenseType | null,
   message: string | null,
 ) {
   return Response.json({
     isActivated,
     expiresAt: expiresAt?.toISOString() ?? null,
+    type,
     message,
   });
 }
@@ -63,7 +67,7 @@ export async function POST(req: Request) {
       reason: "VALIDATION_ERROR",
       detail: "Request body is not valid JSON",
     });
-    return activationResponse(false, null, ERROR_INVALID_INPUT);
+    return activationResponse(false, null, null, ERROR_INVALID_INPUT);
   }
 
   // --- Validate and normalize input ---
@@ -97,7 +101,7 @@ export async function POST(req: Request) {
       keyLength: normalizedKey.length,
       deviceIdValid,
     });
-    return activationResponse(false, null, ERROR_INVALID_INPUT);
+    return activationResponse(false, null, null, ERROR_INVALID_INPUT);
   }
 
   // --- Activate license inside a transaction ---
@@ -174,14 +178,15 @@ export async function POST(req: Request) {
     });
 
     if (!license) {
-      return activationResponse(false, null, ERROR_ACTIVATION_FAILED);
+      return activationResponse(false, null, null, ERROR_ACTIVATION_FAILED);
     }
 
     console.log(
       `[License] Activated licenseId=${license.id} keySuffix=${getKeySuffix(normalizedKey)} deviceId=${deviceId}`,
     );
 
-    return activationResponse(true, license.expiresAt, null);
+    const type: LicenseType = !license.expiresAt ? "unlimited" : "pro";
+    return activationResponse(true, license.expiresAt, type, null);
   } catch (error) {
     console.error("[License] Activation failed", {
       reason: "UNEXPECTED_ERROR",
@@ -192,6 +197,6 @@ export async function POST(req: Request) {
           ? { message: error.message, stack: error.stack }
           : error,
     });
-    return activationResponse(false, null, ERROR_SERVER);
+    return activationResponse(false, null, null, ERROR_SERVER);
   }
 }

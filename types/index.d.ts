@@ -62,6 +62,7 @@ export type SubscriptionPlan = {
   isAnnual: boolean;
   annualPrice?: number;
   checkoutUrl?: string;
+  licenseTerm?: "annual" | "lifetime";
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &
