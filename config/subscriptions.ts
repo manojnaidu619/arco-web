@@ -20,7 +20,7 @@ export const UNLIMITED_BATCH_START_DATE = new Date("2026-06-25T00:00:00Z");
 
 export const pricingData: SubscriptionPlan[] = [
   {
-    title: "Free",
+    title: "Forever",
     description: "Get started with Arco",
     benefits: [
       "Compare from 400+ AI models",
