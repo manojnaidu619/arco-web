@@ -149,10 +149,11 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               href={offer.checkoutUrl}
               className={cn(
                 buttonVariants({
-                  variant: "default",
+                  variant: isLifetime ? "default" : "secondary",
                   rounded: "lg",
                 }),
                 "inline-flex w-full items-center justify-center gap-2",
+                !isLifetime && "border border-input",
               )}
             >
               <Icons.unlock className="size-4" />
