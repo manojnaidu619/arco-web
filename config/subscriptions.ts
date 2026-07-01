@@ -38,40 +38,50 @@ export const pricingData: SubscriptionPlan[] = [
     },
     isAnnual: false,
   },
-  {
-    title: "Pro",
-    description: "Full access to Arco",
-    benefits: [
-      "Compare from 400+ AI models",
-      "Unlimited saved conversations",
-      "Your data stays on your device",
-      "One payment, no recurring charges",
-      "Free updates included",
-      "Works on 1 Device",
-    ],
-    limitations: [],
-    prices: {
-      monthly: 0,
-      yearly: 0,
-    },
-    stripeIds: {
-      monthly: null,
-      yearly: null,
-    },
-    isAnnual: true,
-    annualPrice: 29,
-    checkoutUrl: CREEM_PRO_CHECKOUT_URL,
-  },
+  // Pro subscription tier — hidden until subscription model launches
+  // {
+  //   title: "Pro",
+  //   description: "Full access to Arco",
+  //   benefits: [
+  //     "Compare from 400+ AI models",
+  //     "Unlimited saved conversations",
+  //     "Your data stays on your device",
+  //     "One payment, no recurring charges",
+  //     "Free updates included",
+  //     "Works on 1 Device",
+  //   ],
+  //   limitations: [],
+  //   prices: {
+  //     monthly: 0,
+  //     yearly: 0,
+  //   },
+  //   stripeIds: {
+  //     monthly: null,
+  //     yearly: null,
+  //   },
+  //   isAnnual: true,
+  //   annualPrice: 29,
+  //   checkoutUrl: CREEM_PRO_CHECKOUT_URL,
+  // },
   {
     title: "Unlimited",
-    description: "Lifetime access to Arco",
+    description: "Own Arco forever",
     benefits: [
       "Compare from 400+ AI models",
       "Unlimited saved conversations",
       "Your data stays on your device",
-      "One payment, lifetime access",
-      "Free updates, forever",
-      "Works on 1 Device",
+      "One payment, perpetual license",
+      {
+        text: "1 year of updates & support included",
+        tooltip:
+          "All new features, bug fixes, and priority support are included for 1 year from purchase. After that, your app keeps working on the last version you have.",
+      },
+      {
+        text: "Optional renewal at a discount",
+        tooltip:
+          "After your first year, renew at 40% off your original price to get another year of updates, support, and new features. No obligation.",
+      },
+      "Works on 1 macOS Device",
     ],
     limitations: [],
     prices: {
@@ -83,7 +93,7 @@ export const pricingData: SubscriptionPlan[] = [
       yearly: null,
     },
     isAnnual: true,
-    licenseTerm: "lifetime",
+    licenseTerm: "perpetual",
     annualPrice: UNLIMITED_CURRENT_BATCH_PRICE,
     checkoutUrl: CREEM_LIFETIME_CHECKOUT_URL,
   },

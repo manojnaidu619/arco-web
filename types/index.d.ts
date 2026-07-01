@@ -46,10 +46,12 @@ export type DocsConfig = {
 };
 
 // subcriptions
+export type BenefitItem = string | { text: string; tooltip: string };
+
 export type SubscriptionPlan = {
   title: string;
   description: string;
-  benefits: string[];
+  benefits: BenefitItem[];
   limitations: string[];
   prices: {
     monthly: number;
@@ -62,7 +64,7 @@ export type SubscriptionPlan = {
   isAnnual: boolean;
   annualPrice?: number;
   checkoutUrl?: string;
-  licenseTerm?: "annual" | "lifetime";
+  licenseTerm?: "annual" | "perpetual";
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &

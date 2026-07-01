@@ -81,29 +81,30 @@ const pricingFaqData = [
     answer:
       "Full access to all features, including 400+ models, AI-powered summary, and all layouts. The only limit is 3 saved conversations. Free users do not receive new feature updates.",
   },
-  {
-    id: "item-13",
-    question: "How does the Pro license work?",
-    answer:
-      "Get unlimited saved conversations for one year. No credit card lock-in, no automatic charges.",
-  },
+  // Pro license FAQ — hidden until subscription model launches
+  // {
+  //   id: "item-13",
+  //   question: "How does the Pro license work?",
+  //   answer:
+  //     "Get unlimited saved conversations for one year. No credit card lock-in, no automatic charges.",
+  // },
   {
     id: "item-13b",
     question: "How does the Unlimited license work?",
     answer:
-      "Pay once and get unlimited saved conversations forever - no renewal, no recurring charges, no expiration.",
+      "Pay once and own Arco forever. Your purchase includes 1 year of updates, support, and new features. After that, you can keep using the last version you have, or optionally renew at a discount to continue receiving updates and support.",
   },
   {
     id: "item-14",
     question: "Why are there no refunds?",
     answer:
-      "We offer a generous free version that gives you complete access to every feature in the app - all 400+ AI models, the summary tool, every layout option, and full functionality. The only difference with Pro and Unlimited is the number of saved conversations (2 vs unlimited) and, for Unlimited, that the license never expires. This means you can thoroughly test the entire app before deciding to upgrade. Since there are no hidden features or surprises after purchase, all license sales are final. We encourage you to use the free version extensively and only upgrade when you're confident it meets your needs.",
+      "We offer a generous free version that gives you complete access to every feature in the app - all 400+ AI models, the summary tool, every layout option, and full functionality. The only difference with Unlimited is the number of saved conversations (3 vs unlimited) and that the app is yours to keep forever. This means you can thoroughly test the entire app before deciding to upgrade. Since there are no hidden features or surprises after purchase, all license sales are final. We encourage you to use the free version extensively and only upgrade when you're confident it meets your needs.",
   },
   {
     id: "item-15",
-    question: "What happens after my Pro license's first year?",
+    question: "What happens after my 1 year of updates expires?",
     answer:
-      "Your existing conversations stay accessible and you can continue using all features. However, saving new conversations beyond 2 will be limited, and you won't receive new feature updates. We'll email you before your license expires so you can take action manually, with no automatic charges.",
+      "Your app keeps working with the last version you updated to. No features are removed. You just won't receive new feature updates or support. You can optionally renew at a discount to get another year of updates and support.",
   },
   {
     id: "item-16",
@@ -115,7 +116,7 @@ const pricingFaqData = [
     id: "item-17",
     question: "Do I get updates?",
     answer:
-      "Yes, all updates during your license period are included.",
+      "Yes. All updates, new features, and support for the first year are included with your Unlimited license. After that, the app continues working. You just won't receive new updates or support unless you choose to renew.",
   },
 ];
 

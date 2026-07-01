@@ -13,6 +13,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   pricingData,
   UNLIMITED_BATCH_LIMIT,
   UNLIMITED_NEXT_BATCH_PRICE,
@@ -25,21 +31,40 @@ interface PricingCardsProps {
   subscriptionPlan?: UserSubscriptionPlan;
 }
 
+function BenefitWithTooltip({ text, tooltip }: { text: string; tooltip: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <Tooltip open={open} onOpenChange={setOpen}>
+      <TooltipTrigger asChild>
+        <p
+          className="cursor-pointer underline decoration-dotted underline-offset-2"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {text}
+        </p>
+      </TooltipTrigger>
+      <TooltipContent className="max-w-64 text-xs leading-relaxed">
+        {tooltip}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
 export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
   const PricingCard = ({ offer }: { offer: SubscriptionPlan }) => {
-    const isLifetime = offer.licenseTerm === "lifetime";
+    const isPerpetual = offer.licenseTerm === "perpetual";
     const [sold, setSold] = useState<number | null>(null);
 
     useEffect(() => {
-      if (!isLifetime) return;
+      if (!isPerpetual) return;
       getUnlimitedSoldCount().then(setSold);
-    }, [isLifetime]);
+    }, [isPerpetual]);
 
     return (
       <div
         className={cn(
           "relative flex flex-col overflow-hidden rounded-3xl border shadow-sm",
-          isLifetime ? "-m-0.5 border-2 border-purple-400" : "",
+          isPerpetual ? "-m-0.5 border-2 border-purple-400" : "",
         )}
         key={offer.title}
       >
@@ -59,20 +84,20 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               </div>
               {offer.isAnnual ? (
                 <div className="-mb-1 ml-2 text-left text-sm font-medium text-muted-foreground">
-                  <div>{isLifetime ? "Lifetime license" : "One year license"}</div>
+                  <div>{isPerpetual ? "Perpetual license" : "One year license"}</div>
                 </div>
               ) : null}
             </div>
           </div>
           {offer.isAnnual ? (
             <div className="text-left text-sm text-muted-foreground">
-              {isLifetime
-                ? "One-time payment - yours forever"
+              {isPerpetual
+                ? "One-time payment · use forever"
                 : "Annual license - no subscription"}
             </div>
           ) : null}
 
-          {isLifetime ? (
+          {isPerpetual ? (
             <div className="space-y-1.5 pb-2 pt-2">
               {sold === null ? (
                 <Skeleton className="h-2 w-full rounded-full" />
@@ -100,12 +125,21 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
 
         <div className="flex h-full flex-col justify-between gap-16 p-6">
           <ul className="space-y-2 text-left text-sm font-medium leading-normal">
-            {offer.benefits.map((feature) => (
-              <li className="flex items-start gap-x-3" key={feature}>
-                <Icons.check className="size-5 shrink-0 text-purple-500" />
-                <p>{feature}</p>
-              </li>
-            ))}
+            {offer.benefits.map((feature) => {
+              const text = typeof feature === "string" ? feature : feature.text;
+              const tooltip =
+                typeof feature === "string" ? undefined : feature.tooltip;
+              return (
+                <li className="flex items-start gap-x-3" key={text}>
+                  <Icons.check className="size-5 shrink-0 text-purple-500" />
+                  {tooltip ? (
+                    <BenefitWithTooltip text={text} tooltip={tooltip} />
+                  ) : (
+                    <p>{text}</p>
+                  )}
+                </li>
+              );
+            })}
 
             {offer.limitations.length > 0 &&
               offer.limitations.map((feature) => (
@@ -149,16 +183,16 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               href={offer.checkoutUrl}
               className={cn(
                 buttonVariants({
-                  variant: isLifetime ? "default" : "secondary",
+                  variant: isPerpetual ? "default" : "secondary",
                   rounded: "lg",
                 }),
                 "inline-flex w-full items-center justify-center gap-2",
-                !isLifetime && "border border-input",
+                !isPerpetual && "border border-input",
               )}
             >
               <Icons.unlock className="size-4" />
-              {isLifetime
-                ? `Get lifetime access for $${offer.annualPrice}`
+              {isPerpetual
+                ? `Get perpetual license for $${offer.annualPrice}`
                 : `Purchase 1-year license for $${offer.annualPrice}`}
             </a>
           )}
@@ -168,19 +202,21 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
   };
 
   return (
-    <MaxWidthWrapper>
-      <section
-        id="pricing"
-        className="flex scroll-mt-20 flex-col items-center py-20 text-center md:py-24"
-      >
-        <HeaderSection label="Pricing" title="Full power. Pick your price." />
+    <TooltipProvider>
+      <MaxWidthWrapper>
+        <section
+          id="pricing"
+          className="flex scroll-mt-20 flex-col items-center py-20 text-center md:py-24"
+        >
+          <HeaderSection label="Pricing" title="Full power. Simple pricing." />
 
-        <div className="mx-auto grid w-full max-w-5xl gap-5 bg-inherit py-10 lg:grid-cols-3">
-          {pricingData.map((offer) => (
-            <PricingCard offer={offer} key={offer.title} />
-          ))}
-        </div>
-      </section>
-    </MaxWidthWrapper>
+          <div className="mx-auto grid w-full max-w-3xl gap-5 bg-inherit py-10 sm:grid-cols-2">
+            {pricingData.map((offer) => (
+              <PricingCard offer={offer} key={offer.title} />
+            ))}
+          </div>
+        </section>
+      </MaxWidthWrapper>
+    </TooltipProvider>
   );
 }
