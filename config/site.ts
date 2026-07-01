@@ -32,6 +32,7 @@ export const footerLinks: SidebarNavItem[] = [
     title: "Alternatives",
     items: [
       { title: "vs ChatHub", href: "/alternatives/chathub" },
+      { title: "vs ChatPlayground", href: "/alternatives/chatplayground" },
       { title: "vs MultiLLM", href: "/alternatives/multillm" },
     ],
   },
