@@ -62,6 +62,7 @@ Head-to-head comparison pages between Arco and other multi-model AI chat tools. 
 - **Arco vs MultiLLM** (https://arco.chat/alternatives/multillm): Highlights Arco's 400+ BYOK model access, local-first privacy, and pay-per-use cost model as the main differentiators.
 - **Arco vs Poe** (https://arco.chat/alternatives/poe): Contrasts Arco's purpose-built comparison workflow, BYOK model access, and local-first storage against Poe's aggregator model, compute-points metering (chat history included), and cloud-hosted chats.
 - **Arco vs AI Fiesta** (https://arco.chat/alternatives/aifiesta): Contrasts Arco's BYOK model access and local-first storage against AI Fiesta's credit-metered cloud subscription, where multi-model comparison burns the monthly token pool quickly and premium models count at 4x.
+- **Arco vs TypingMind** (https://arco.chat/alternatives/typingmind): Contrasts Arco's purpose-built comparison workflow and free multi-model access against TypingMind's feature-rich AI workspace where multi-model comparison is locked behind the $99 Premium tier, chats live in browser localStorage, and cross-device sync relies on a separate TypingMind Cloud opt-in with 50MB free storage and paid upgrades beyond that.
 
 ## Data Privacy & Security
 - **Bring Your Own Key**: API calls go directly from your device to OpenRouter using your key
@@ -80,6 +81,7 @@ Head-to-head comparison pages between Arco and other multi-model AI chat tools. 
 - [Arco vs MultiLLM](https://arco.chat/alternatives/multillm): Head-to-head comparison with MultiLLM
 - [Arco vs Poe](https://arco.chat/alternatives/poe): Head-to-head comparison with Poe
 - [Arco vs AI Fiesta](https://arco.chat/alternatives/aifiesta): Head-to-head comparison with AI Fiesta
+- [Arco vs TypingMind](https://arco.chat/alternatives/typingmind): Head-to-head comparison with TypingMind
 - [Privacy](https://arco.chat/privacy): Privacy policy
 - [Terms](https://arco.chat/terms): Terms of service
 - [Contact](mailto:hello@arco.chat): Support and contact email
