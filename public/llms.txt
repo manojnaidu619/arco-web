@@ -34,6 +34,24 @@ Comparing answers across different AI models normally means juggling separate ch
 - **Privacy-Conscious Users**: Anyone who wants to use multiple AI models without sending data through a third-party intermediary
 - **Anyone Frustrated by Tab-Switching**: Users who want faster, better answers without juggling multiple chat sites
 
+## Pricing & Licensing
+
+Arco offers two tiers:
+
+**Forever (Free)**
+- Full access to all features, including 400+ models, AI-powered summary, and all layouts
+- Limited to 3 saved conversations
+- No updates or new features included
+
+**Unlimited — $49 one-time (early adopter pricing, then $89)**
+- Unlimited saved conversations
+- Perpetual license: one payment, use Arco forever
+- 1 year of updates and support included from date of purchase
+- After the first year, the app continues working on the last version you have
+- Optional renewal at a discount to receive another year of updates and support
+- Works on 1 macOS device
+- No subscription, no recurring charges, no credit card lock-in
+
 ## Data Privacy & Security
 - **Bring Your Own Key**: API calls go directly from your device to OpenRouter using your key
 - **On-Device Data**: Conversations and data are kept on your device
