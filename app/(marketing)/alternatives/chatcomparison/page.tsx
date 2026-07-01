@@ -1,4 +1,4 @@
-import { ArrowRight, Ban, Check, Cpu, Shield, X } from "lucide-react";
+import { ArrowRight, Check, Cpu, EyeOff, Shield, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,9 +14,9 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "ChatPlayground Alternatives: Why Teams Switch to Arco | Arco",
+  title: "ChatComparison Alternatives: Why Teams Switch to Arco | Arco",
   description:
-    "Looking for a chatplayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
+    "Looking for a chatcomparison.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -27,34 +27,34 @@ function ValueCell({ value }: { value: Cell }) {
   return <span className="text-sm font-medium text-amber-500">{value}</span>;
 }
 
-const featureRows: Array<{ feature: string; arco: Cell; cp: Cell }> = [
-  { feature: "Send one prompt to every selected model", arco: "yes", cp: "yes" },
-  { feature: "400+ models available", arco: "yes", cp: "~30 curated" },
-  { feature: "Bring your own model key", arco: "yes", cp: "no" },
-  { feature: "Add any new model the day it drops", arco: "yes", cp: "no" },
-  { feature: "Chats stored locally on your device", arco: "yes", cp: "no" },
-  { feature: "No monthly subscription", arco: "yes", cp: "no" },
-  { feature: "Structured AI summary of replies", arco: "yes", cp: "partial" },
-  { feature: "Native macOS app (Apple Silicon)", arco: "yes", cp: "no" },
-  { feature: "Works in the browser (any OS)", arco: "no", cp: "yes" },
-  { feature: "Prompt template library built in", arco: "no", cp: "yes" },
+const featureRows: Array<{ feature: string; arco: Cell; cc: Cell }> = [
+  { feature: "Send one prompt to every selected model", arco: "yes", cc: "yes" },
+  { feature: "400+ models available", arco: "yes", cc: "~40 curated" },
+  { feature: "Bring your own model key", arco: "yes", cc: "no" },
+  { feature: "Add any new model the day it drops", arco: "yes", cc: "no" },
+  { feature: "Chats stored locally on your device", arco: "yes", cc: "no" },
+  { feature: "No monthly subscription", arco: "yes", cc: "no" },
+  { feature: "Pricing shown before signup", arco: "yes", cc: "no" },
+  { feature: "Structured AI summary of replies", arco: "yes", cc: "yes" },
+  { feature: "Native macOS app (Apple Silicon)", arco: "yes", cc: "no" },
+  { feature: "Works in the browser (any OS)", arco: "no", cc: "yes" },
 ];
 
 const differentiators = [
   {
     icon: Cpu,
-    title: "400+ models on your key, not 30 they picked for you.",
-    body: "ChatPlayground gives you a curated shortlist of around 30 models. Whatever they integrated is what you get. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID. No waiting for their roadmap.",
+    title: "400+ models on your key, not 40 they picked for you.",
+    body: "ChatComparison gives you around 40 models in a curated catalog. Whatever they integrated is what you get, and when a new frontier model ships you wait for them to add it. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID.",
   },
   {
     icon: Shield,
     title: "Your chats stay on your Mac. Not in a browser tab that talks to their servers.",
-    body: "ChatPlayground says they don't store your conversations, but every prompt still transits their infrastructure. You are trusting their claim. Arco stores everything locally. There is no Arco server your prompt has to pass through, because we don't run one.",
+    body: "ChatComparison runs in the browser and every prompt transits their infrastructure. Their privacy posture isn't published on the landing page. Arco stores everything locally on your Mac. There is no Arco server your prompt has to pass through, because we don't run one.",
   },
   {
-    icon: Ban,
-    title: "One payment, then it's yours. No renewal notices.",
-    body: "ChatPlayground charges $20 a month, or $180 a year on the annual plan. Skip a month and you still pay for that month. Arco is a one-time thing. Buy it once, keep it. Your only ongoing cost is the OpenRouter tokens you actually use.",
+    icon: EyeOff,
+    title: "Pricing you can see before you hand over an email.",
+    body: "ChatComparison doesn't publish pricing on its landing page. You have to create an account and dig into the dashboard to find out what a plan costs. Arco's pricing is on the homepage, one click away. What you see is what you pay: one time.",
   },
 ];
 
@@ -79,39 +79,39 @@ const steps = [
 const faqs = [
   {
     q: "Is my data safe?",
-    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatPlayground says they don't store conversations either, but your prompts still travel through their servers. That is a different privacy posture than Arco's local-first model.",
+    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatComparison runs in the browser and routes every prompt through their infrastructure. Their public site doesn't publish a data-retention policy, so you're trusting whatever their internal defaults are.",
   },
   {
     q: "What if I'm on Windows or mobile?",
-    a: "ChatPlayground is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatPlayground runs in the browser (Chrome is required, with their extension), which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatPlayground is a fair choice.",
+    a: "ChatComparison is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatComparison runs in the browser, which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatComparison is a fair choice.",
   },
   {
-    q: "What does ChatPlayground do better than Arco?",
-    a: "Three things. It runs in a browser, so it works on any OS (Arco is Mac only). It's turnkey. The models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). And it ships with a prompt template library built in (Arco doesn't have one yet). If any of those matter more than pricing, privacy, or model breadth, ChatPlayground is a fair choice.",
+    q: "What does ChatComparison do better than Arco?",
+    a: "Two things. It runs in a browser, so it works on any OS (Arco is Mac only). And its models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). If either of those matters more than pricing transparency, privacy, or model breadth, ChatComparison is a fair choice.",
   },
   {
     q: "Do I need an OpenRouter account?",
     a: "Yes. Sign up at openrouter.ai (free to create). You add credit and pay providers directly for the tokens you use. Arco does not touch the billing or take a cut. This is the trade you make for 400+ models, BYOK, and no subscription.",
   },
   {
-    q: "How many models can I compare at once?",
-    a: "Enough to cover the workflow. ChatPlayground lets you compare up to 4 models side by side. Arco handles the same use case comfortably, and you're picking from 400+ options instead of 30.",
+    q: "Why isn't ChatComparison's pricing on their landing page?",
+    a: "We don't know. We could only find the current numbers by creating an account and opening the dashboard, where the plan selector is shown. The pricing on this page reflects what we saw there: $20 a month, $15 a month on the annual plan ($180 a year), or a $575 lifetime deal marked down from $875. Third-party listings show older numbers, so those may not be current.",
   },
   {
     q: "Can I switch back?",
-    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatPlayground subscription is still active. If Arco does not fit your workflow, keep using ChatPlayground. There is nothing to cancel on Arco's side because there is no subscription.",
+    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatComparison subscription is still active. If Arco does not fit your workflow, keep using ChatComparison. There is nothing to cancel on Arco's side because there is no subscription.",
   },
 ];
 
-const cpMonthlyYear = 240;
-const cpYearlyYear = 180;
+const ccMonthlyYear = 240;
+const ccYearlyYear = 180;
 
-export default function ArcoVsChatPlaygroundPage() {
+export default function ArcoVsChatComparisonPage() {
   const arcoPrice = UNLIMITED_CURRENT_BATCH_PRICE;
   const pricingRows = [
-    { label: "Year 1", arco: `$${arcoPrice} one-time`, m: `$${cpMonthlyYear}`, y: `$${cpYearlyYear}` },
-    { label: "Year 2", arco: "$0", m: `$${cpMonthlyYear}`, y: `$${cpYearlyYear}` },
-    { label: "Year 3", arco: "$0", m: `$${cpMonthlyYear}`, y: `$${cpYearlyYear}` },
+    { label: "Year 1", arco: `$${arcoPrice} one-time`, m: `$${ccMonthlyYear}`, y: `$${ccYearlyYear}` },
+    { label: "Year 2", arco: "$0", m: `$${ccMonthlyYear}`, y: `$${ccYearlyYear}` },
+    { label: "Year 3", arco: "$0", m: `$${ccMonthlyYear}`, y: `$${ccYearlyYear}` },
   ];
 
   return (
@@ -120,21 +120,21 @@ export default function ArcoVsChatPlaygroundPage() {
       <section className="space-y-6 py-12 sm:py-16 lg:py-20">
         <MaxWidthWrapper className="flex max-w-4xl flex-col items-center gap-6 text-center">
           <Badge variant="outline" className="px-3 py-1">
-            ChatPlayground alternative
+            ChatComparison alternative
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs ChatPlayground:{" "}
+            Arco vs ChatComparison:{" "}
             <span className="text-primary">
-              400+ models, on your key, on your Mac.
+              400+ models on your key, not 40 on theirs.
             </span>
           </h1>
 
           <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            ChatPlayground gives you around 30 models they picked, in a browser
-            tab, for $180 a year. Arco lets you pick from 400+ models on your
-            own OpenRouter key, pay only for the tokens you actually use, and
-            keeps every chat on your Mac.
+            ChatComparison bundles around 40 models into a browser tab and
+            charges $180 a year for it. Arco lets you pick from 400+ models on
+            your own OpenRouter key, pay only for the tokens you actually use,
+            and keeps every chat on your Mac.
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center gap-3 md:gap-4">
@@ -159,8 +159,8 @@ export default function ArcoVsChatPlaygroundPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-chatplayground.png"
-              alt="Arco vs ChatPlayground"
+              src="/_static/competitors/arco-vs-chatcomparison.png"
+              alt="Arco vs ChatComparison"
               width={1600}
               height={900}
               className="h-auto w-full object-cover"
@@ -197,18 +197,22 @@ export default function ArcoVsChatPlaygroundPage() {
                     <Check className="mt-0.5 size-4 shrink-0 text-green-500" />
                     Pay only when you use it. No monthly bill
                   </li>
+                  <li className="flex gap-2">
+                    <Check className="mt-0.5 size-4 shrink-0 text-green-500" />
+                    Pricing on the homepage, not behind signup
+                  </li>
                 </ul>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Where ChatPlayground falls short</CardTitle>
+                <CardTitle>Where ChatComparison falls short</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex gap-2">
                     <X className="mt-0.5 size-4 shrink-0 text-red-400" />
-                    Only ~30 curated models, no BYOK
+                    Only ~40 curated models, no BYOK
                   </li>
                   <li className="flex gap-2">
                     <X className="mt-0.5 size-4 shrink-0 text-red-400" />
@@ -216,7 +220,11 @@ export default function ArcoVsChatPlaygroundPage() {
                   </li>
                   <li className="flex gap-2">
                     <X className="mt-0.5 size-4 shrink-0 text-red-400" />
-                    $20 a month even when you barely use it
+                    $180 a year even when you barely use it
+                  </li>
+                  <li className="flex gap-2">
+                    <X className="mt-0.5 size-4 shrink-0 text-red-400" />
+                    Pricing hidden behind account signup
                   </li>
                 </ul>
               </CardContent>
@@ -229,11 +237,11 @@ export default function ArcoVsChatPlaygroundPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Pick ChatPlayground if you&apos;re on Windows or Linux, or if
+                  Pick ChatComparison if you&apos;re on Windows or Linux, or if
                   you want a browser tab you never have to configure. Pick Arco
                   if you&apos;re on a Mac, want access to every model on
-                  OpenRouter, care where your chats live, and don&apos;t want
-                  another monthly subscription.
+                  OpenRouter, care where your chats live, and want to know what
+                  something costs before you sign up.
                 </p>
               </CardContent>
             </Card>
@@ -246,7 +254,7 @@ export default function ArcoVsChatPlaygroundPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Side by side"
-            title="Arco vs ChatPlayground, feature by feature"
+            title="Arco vs ChatComparison, feature by feature"
             subtitle="Where each tool wins and where it falls short."
           />
           <Card className="mt-10 overflow-x-auto">
@@ -257,7 +265,7 @@ export default function ArcoVsChatPlaygroundPage() {
                   Arco
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatComparison
                 </div>
               </div>
               {featureRows.map((row) => (
@@ -272,7 +280,7 @@ export default function ArcoVsChatPlaygroundPage() {
                     <ValueCell value={row.arco} />
                   </div>
                   <div className="flex items-center justify-center border-l p-4">
-                    <ValueCell value={row.cp} />
+                    <ValueCell value={row.cc} />
                   </div>
                 </div>
               ))}
@@ -287,7 +295,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="Why Arco"
             title="Three reasons people switch"
-            subtitle="The specific things ChatPlayground can't match."
+            subtitle="The specific things ChatComparison can't match."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {differentiators.map(({ icon: Icon, title, body }) => (
@@ -313,7 +321,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="Pricing math"
             title="What you actually pay over 3 years"
-            subtitle="ChatPlayground bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
+            subtitle="ChatComparison bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
           />
           <Card className="mt-10 overflow-x-auto">
             <div className="min-w-[640px]">
@@ -325,12 +333,12 @@ export default function ArcoVsChatPlaygroundPage() {
                   Arco Unlimited
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatComparison
                   <br />
                   <span className="text-xs font-normal">(monthly)</span>
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatComparison
                   <br />
                   <span className="text-xs font-normal">(yearly)</span>
                 </div>
@@ -357,10 +365,10 @@ export default function ArcoVsChatPlaygroundPage() {
                   ${arcoPrice}
                 </div>
                 <div className="border-l p-4 text-center">
-                  ${cpMonthlyYear * 3}
+                  ${ccMonthlyYear * 3}
                 </div>
                 <div className="border-l p-4 text-center">
-                  ${cpYearlyYear * 3}
+                  ${ccYearlyYear * 3}
                 </div>
               </div>
               <div className="grid grid-cols-4">
@@ -371,10 +379,10 @@ export default function ArcoVsChatPlaygroundPage() {
                   Pay OpenRouter directly, no markup
                 </div>
                 <div className="border-l p-4 text-center text-sm">
-                  Included, ~30 models
+                  Included, ~40 models
                 </div>
                 <div className="border-l p-4 text-center text-sm">
-                  Included, ~30 models
+                  Included, ~40 models
                 </div>
               </div>
             </div>
@@ -390,32 +398,24 @@ export default function ArcoVsChatPlaygroundPage() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li>
                   <strong className="text-foreground">
-                    The Lifetime Deal isn&apos;t shown on their homepage.
+                    ChatComparison does not publish pricing on their landing page.
                   </strong>{" "}
-                  ChatPlayground offers a $575 lifetime tier (marked down from
-                  $875), but you only see it after creating an account and
-                  digging into the billing page. The public landing page shows
-                  the $20/month and $15/month options only. Arco&apos;s pricing
-                  is on the homepage.
+                  We could only find the current numbers by creating an account
+                  and opening the dashboard. The prices above are what we saw
+                  there.
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Every ChatPlayground user needs their own subscription.
+                    A $575 lifetime deal is also on offer.
                   </strong>{" "}
-                  No team-seat discount surfaced on their public pricing.
-                </li>
-                <li>
-                  <strong className="text-foreground">
-                    ChatPlayground requires Chrome and their browser extension.
-                  </strong>{" "}
-                  Firefox and Safari users can&apos;t use it as their default
-                  browser.
+                  Marked down from $875. That is a one-time payment, but you are
+                  still locked into the ~40 curated models they maintain.
                 </li>
                 <li>
                   <strong className="text-foreground">
                     Arco&apos;s ongoing cost is your OpenRouter usage.
                   </strong>{" "}
-                  It can be $0 in a light month. ChatPlayground bills the flat
+                  It can be $0 in a light month. ChatComparison bills the flat
                   rate whether you used it or not.
                 </li>
               </ul>
@@ -429,7 +429,7 @@ export default function ArcoVsChatPlaygroundPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Switching"
-            title="Switching from ChatPlayground? Here's how you start."
+            title="Switching from ChatComparison? Here's how you start."
             subtitle="Three steps, about five minutes total."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -450,10 +450,10 @@ export default function ArcoVsChatPlaygroundPage() {
             ))}
           </div>
           <Alert className="mt-8">
-            <AlertTitle>What about my ChatPlayground history?</AlertTitle>
+            <AlertTitle>What about my ChatComparison history?</AlertTitle>
             <AlertDescription>
               Chat history isn&apos;t portable between the two apps. Most people
-              keep their ChatPlayground subscription running for a week or two
+              keep their ChatComparison subscription running for a week or two
               while they move over, then cancel once they&apos;re comfortable.
             </AlertDescription>
           </Alert>
@@ -466,7 +466,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="FAQ"
             title="Questions people ask before switching"
-            subtitle="Straight answers, including where ChatPlayground still wins."
+            subtitle="Straight answers, including where ChatComparison still wins."
           />
           <Accordion type="single" collapsible className="mt-10">
             {faqs.map((item, i) => (

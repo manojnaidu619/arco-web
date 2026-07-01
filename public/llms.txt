@@ -57,6 +57,7 @@ Arco offers two tiers:
 Head-to-head comparison pages between Arco and other multi-model AI chat tools. Visit each page for the full breakdown.
 
 - **Arco vs ChatHub** (https://arco.chat/alternatives/chathub): Contrasts Arco's BYOK model, local-first privacy, and 400+ model access against ChatHub's subscription-based, cloud-hosted approach with a curated model catalog.
+- **Arco vs ChatComparison** (https://arco.chat/alternatives/chatcomparison): Contrasts Arco's 400+ BYOK models, local Mac storage, and upfront pricing against ChatComparison's ~40 curated models, browser-only access, and subscription pricing that isn't published on their landing page.
 - **Arco vs ChatPlayground** (https://arco.chat/alternatives/chatplayground): Contrasts Arco's 400+ BYOK models and local-first storage against ChatPlayground's ~30 curated models, browser-only access (Chrome required), and monthly subscription.
 - **Arco vs MultiLLM** (https://arco.chat/alternatives/multillm): Highlights Arco's 400+ BYOK model access, local-first privacy, and pay-per-use cost model as the main differentiators.
 
@@ -72,6 +73,7 @@ Head-to-head comparison pages between Arco and other multi-model AI chat tools. 
 - [FAQ](https://arco.chat/#faq): Frequently asked questions
 - [About](https://arco.chat/about): About Arco
 - [Arco vs ChatHub](https://arco.chat/alternatives/chathub): Head-to-head comparison with ChatHub
+- [Arco vs ChatComparison](https://arco.chat/alternatives/chatcomparison): Head-to-head comparison with ChatComparison
 - [Arco vs ChatPlayground](https://arco.chat/alternatives/chatplayground): Head-to-head comparison with ChatPlayground
 - [Arco vs MultiLLM](https://arco.chat/alternatives/multillm): Head-to-head comparison with MultiLLM
 - [Privacy](https://arco.chat/privacy): Privacy policy
