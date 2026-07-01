@@ -35,6 +35,7 @@ export const footerLinks: SidebarNavItem[] = [
       { title: "vs ChatComparison", href: "/alternatives/chatcomparison" },
       { title: "vs ChatPlayground", href: "/alternatives/chatplayground" },
       { title: "vs MultiLLM", href: "/alternatives/multillm" },
+      { title: "vs Poe", href: "/alternatives/poe" },
     ],
   },
   {
