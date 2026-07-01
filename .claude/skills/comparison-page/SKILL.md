@@ -43,7 +43,7 @@ For components, compose from what already exists — do not create new component
 
 Route destination: `app/(marketing)/alternatives/{slug}/page.tsx`
 Assets root: `public/_static/`
-Competitor banner convention: `public/_static/competitors/arco-vs-{slug}.png` (banner) or `{slug}.png` (bare logo)
+Competitor banner convention: `public/_static/competitors/arco-vs-{slug}.webp` is the final path served by the page. The user uploads a PNG at `arco-vs-{slug}.png`; the skill converts it to WebP and removes the PNG (see "Banner image workflow"). `{slug}.png` for bare logos.
 Placeholder image pool (for pre-banner state): `public/_static/illustrations/`, `public/_static/landing/`
 
 ## Workflow (collaborative)
@@ -65,7 +65,7 @@ Never dump a finished page. Work with the user step by step.
 6. **Draft in checkpoints** — work section by section, running each past the user before moving on. No monolithic dumps.
 7. **Emit the TSX** at `app/(marketing)/alternatives/{slug}/page.tsx` with a placeholder banner image from `public/_static/illustrations/` or `public/_static/landing/`.
 8. **Hand off the banner prompt** — print the canonical prompt (below) with `{competitor-name}` filled in, plus instructions for the user to generate the image externally.
-9. **Install the returned banner** — the user saves the image at the exact path the TSX already references (`public/_static/competitors/arco-vs-{slug}.png`). When they reply "added", verify the file exists at that path. No TSX edit needed.
+9. **Install the returned banner** — the user saves the generated image as a PNG at `public/_static/competitors/arco-vs-{slug}.png`. When they reply "added": (a) verify the PNG exists at that path, (b) convert it to WebP at quality 95 (`cwebp -q 95 -m 6 arco-vs-{slug}.png -o arco-vs-{slug}.webp`), (c) delete the PNG. The TSX already references the `.webp` path, so no TSX edit is needed. Tell the user to reload `/alternatives/{slug}`.
 10. **Append the page to the site footer** — see the "Footer registration" section below. This step is required, not optional. Confirm the addition to the user in the emit summary.
 11. **Register the page in `public/llms.txt`** — see the "llms.txt registration" section below. This step is required, not optional. Confirm in the emit summary.
 
@@ -183,7 +183,7 @@ Read the current file before editing to preserve existing entries. Do not duplic
 
 ## Banner image workflow
 
-1. On first page emit, reference the **final banner path** in the TSX hero directly: `/_static/competitors/arco-vs-{slug}.png`. The image will 404 until the user saves it, but this means no TSX edit is needed later — the moment the file lands at that path, the hero renders.
+1. On first page emit, reference the **final WebP banner path** in the TSX hero directly: `/_static/competitors/arco-vs-{slug}.webp`. The image will 404 until the user saves a PNG and the skill converts it, but this means no TSX edit is needed later. Image models output PNG, so the handoff asks the user to save PNG; the skill converts to WebP on "added" so the reference resolves without any further code change.
 
 2. After the page is emitted, print the canonical banner prompt (below) with `{competitor-name}` filled in, plus explicit handoff instructions that include the **exact filename and folder** the user should save the generated image as. Never leave the user guessing what to name the file.
 
@@ -193,9 +193,15 @@ Read the current file before editing to preserve existing entries. Do not duplic
    > **When the image is ready, save it as exactly this file:**
    > `public/_static/competitors/arco-vs-{slug}.png`
    >
-   > Then reply with 'added' and I'll verify it's in place."
+   > Then reply with 'added' and I'll convert it to WebP and wire it in."
 
-4. When the user replies "added", verify the file exists at that path, confirm the page is referencing it, and tell the user to reload `/alternatives/{slug}`. No TSX edit needed because the reference was already the final path.
+4. When the user replies "added":
+   1. Verify the PNG exists at `public/_static/competitors/arco-vs-{slug}.png`.
+   2. Convert it to WebP at quality 95: `cwebp -q 95 -m 6 public/_static/competitors/arco-vs-{slug}.png -o public/_static/competitors/arco-vs-{slug}.webp`. Quality 95 is visually indistinguishable from the source and yields ~95% file-size reduction on typical logo-and-text banners (~1MB → ~60KB).
+   3. Delete the source PNG: `rm public/_static/competitors/arco-vs-{slug}.png`.
+   4. Confirm the WebP is in place and tell the user to reload `/alternatives/{slug}`. No TSX edit needed because the hero already references the `.webp` path.
+
+   If `cwebp` is missing on the machine, install it (`brew install webp` on macOS) rather than falling back to PNG. WebP is the standard for these banners.
 
 ### Canonical banner-image prompt (verbatim, do not rewrite)
 
@@ -228,7 +234,7 @@ This section is where the user drops very specific do/don't rules. The agent mus
 - **Always include both product names in the H1.** For SEO. The headline must name Arco and the competitor before the value line, e.g. `Arco vs {Competitor}: {value line}` or `Arco: the {Competitor} alternative that {benefit}`. Never ship a headline that leaves either name out.
 - **Always use existing shadcn/ui components (`Card`, `Alert`, `Badge`, `Accordion`, etc.) as-is.** Do not hand-craft "card-like" divs with custom `rounded-*`, `border-*`, `border-l-*`, or tinted `bg-*` styling. Those custom flourishes are a giveaway that the page was AI-generated. Let the components' defaults do the work.
 - **TL;DR layout is two rows.** Row 1: two equal columns for the Arco-wins card and the competitor-falls-short card. Row 2: a full-width verdict card. Never put all three side by side.
-- **Competitor banners live at `public/_static/competitors/arco-vs-{slug}.png`** (not under a `logos/` subfolder). Reference this path exactly when swapping the placeholder.
+- **Competitor banners live at `public/_static/competitors/arco-vs-{slug}.webp`** (not under a `logos/` subfolder). The user delivers a PNG at `arco-vs-{slug}.png`; the skill converts it to WebP and removes the PNG in step 9. The TSX always references the `.webp` path from first emit.
 - **Do not start the dev server or run automated verification.** The user runs their own dev server externally and tests the page manually. After emitting the TSX and updating the footer, do not call `preview_start`, do not run `pnpm dev`, do not launch browser-testing tools, do not screenshot the rendered page. Just tell the user the URL to check (e.g. `http://localhost:3000/alternatives/{slug}`) and wait for their feedback.
 - Read `MARKETING.md` for the canonical brand and voice rules. They are not duplicated in this skill.
 
@@ -245,4 +251,4 @@ This section is where the user drops very specific do/don't rules. The agent mus
 - `components/pricing/` — pricing cards, FAQ, billing helpers
 - `app/(marketing)/alternatives/` — destination directory for generated pages
 - `public/_static/logos/arco.png` — Arco logo for banner generation
-- `public/_static/competitors/arco-vs-{slug}.png` — generated hero banner path for each competitor page
+- `public/_static/competitors/arco-vs-{slug}.webp` — final hero banner path served by each competitor page (converted from the PNG the user uploads)
