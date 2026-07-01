@@ -36,6 +36,7 @@ export const footerLinks: SidebarNavItem[] = [
       { title: "vs ChatPlayground", href: "/alternatives/chatplayground" },
       { title: "vs MultiLLM", href: "/alternatives/multillm" },
       { title: "vs Poe", href: "/alternatives/poe" },
+      { title: "vs AI Fiesta", href: "/alternatives/aifiesta" },
     ],
   },
   {
