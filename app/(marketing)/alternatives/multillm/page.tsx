@@ -161,7 +161,7 @@ export default function ArcoVsMultiLLMPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-multillm.png"
+              src="/_static/competitors/arco-vs-multillm.webp"
               alt="Arco vs MultiLLM"
               width={1600}
               height={900}

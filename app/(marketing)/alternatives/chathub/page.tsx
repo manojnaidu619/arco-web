@@ -155,7 +155,7 @@ export default function ArcoVsChatHubPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-chathub.png"
+              src="/_static/competitors/arco-vs-chathub.webp"
               alt="Arco vs ChatHub"
               width={1600}
               height={900}

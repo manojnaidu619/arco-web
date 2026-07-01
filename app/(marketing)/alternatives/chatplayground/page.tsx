@@ -159,7 +159,7 @@ export default function ArcoVsChatPlaygroundPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-chatplayground.png"
+              src="/_static/competitors/arco-vs-chatplayground.webp"
               alt="Arco vs ChatPlayground"
               width={1600}
               height={900}
