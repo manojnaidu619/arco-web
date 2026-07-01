@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
     <footer className={cn("border-t", className)}>
-      <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-4">
+      <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-5">
         {footerLinks.map((section) => (
           <div key={section.title}>
             <span className="text-sm font-medium text-foreground">
