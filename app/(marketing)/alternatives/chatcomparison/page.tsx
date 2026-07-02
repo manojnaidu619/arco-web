@@ -124,9 +124,9 @@ export default function ArcoVsChatComparisonPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs ChatComparison:{" "}
+            Arco: the ChatComparison alternative{" "}
             <span className="text-primary">
-              400+ models on your key, not 40 on theirs.
+              with 400+ models on your own key, not 40 on theirs.
             </span>
           </h1>
 

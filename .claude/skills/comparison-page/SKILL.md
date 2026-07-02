@@ -97,8 +97,68 @@ Each section documents purpose, structure, and rules. Copy is authored during th
 ### 1. Hero
 - Purpose: land the positioning in one screen. Kill the "why should I read further?" doubt.
 - Structure: opinionated headline, 1–2 sentence subhead, primary CTA ("Download Arco free"), secondary CTA ("See how it compares", anchor to the comparison table), banner image slot.
-- **Headline rule (SEO): the H1 must contain both product names ("Arco" and the competitor), then the value line.** Ranks for `arco vs {competitor}` and reinforces `{competitor} alternative` intent. Recommended shapes: `Arco vs {Competitor}: {value line}` or `Arco: the {Competitor} alternative {for X / without Y / that Z}`. Never ship a headline without both names.
+- **Headline rule (SEO): the H1 must contain both product names ("Arco" and the competitor), then the value line.** Ranks for `arco vs {competitor}` and reinforces `{competitor} alternative` intent. Never ship a headline without both names.
+- **Default headline shape: Shape 2** (see Headline Shapes below). Always draft the hero headline in Shape 2. Then present all shapes to the user for review before writing the page — see "Headline shape picker" workflow below.
 - Banner: placeholder from `public/_static/` on first emit. The real banner arrives via the banner-image workflow.
+
+#### Headline shapes
+
+Seven shapes are available. **Shape 2 is the default.** Each shape must include both product names in the H1 to satisfy the SEO rule above.
+
+**Shape 1 — Head-to-head**
+`Arco vs {Competitor}: {value line}`
+> Arco vs ChatHub: multi-model AI without the monthly bill.
+Adversarial framing. Good for highly competitive, well-known rivals where buyers are already comparison-shopping.
+
+**Shape 2 — Alternative positioning (default)**
+`Arco: the {Competitor} alternative {for X / without Y / that Z}`
+> Arco: the ChatHub alternative without the monthly bill.
+Frames Arco as the answer to a search the buyer is already doing. Conversion-oriented, less adversarial. **Use this unless the user picks something else.**
+
+**Shape 3 — Honest contrast**
+`{Competitor} and Arco both {shared thing}. Here's where they split.`
+> Poe and Arco both give you access to multiple AI models. Here's where they split.
+Feels fair and builds trust. Best when the competitor has real strengths worth acknowledging before the pitch lands.
+
+**Shape 4 — For X, there's Arco pivot**
+`{Competitor} is good for {thing it does well}. For {Arco's thing}, there's Arco.`
+> ChatHub is good for quick multi-model chats. For comparing answers side by side, there's Arco.
+Honest framing that earns credibility. Works when there is a clear, genuine gap between what the competitor does and what Arco does.
+
+**Shape 5 — Why-switch**
+`Why {Competitor} users switch to Arco`
+> Why MultiLLM users switch to Arco
+Dead simple. Captures active switcher intent. Trusts the page content to carry the headline. Works best when the page is strong.
+
+**Shape 6 — Pain stated, solution named**
+`{Pain felt using Competitor}. Arco fixes that.`
+> Paid for a month, ran out of credits in a week. Arco fixes that.
+Very punchy. Best for competitors with a specific, widely-felt pain point (e.g. AI Fiesta credit drain). Risks feeling dismissive for competitors with diffuse pain.
+
+**Shape 7 — Feature swap**
+`{Competitor} gives you {what they offer}. Arco gives you {what Arco does instead}.`
+> Poe gives you AI access. Arco gives you model comparison.
+Forces a clear stance. Works when the two products have genuinely different jobs. Gets flat if the distinction is too subtle.
+
+#### Headline shape picker (required before drafting the hero)
+
+After you have researched the competitor but before you write the hero section, present the user with all seven shapes. Show the Shape 2 example first and mark it as the default. Show one tailored example per shape using the actual competitor name and a value line derived from your research. Then ask the user which shape they want to go with.
+
+Format the picker like this (fill in the competitor name and tailor the value lines to your research findings):
+
+---
+Here are the seven headline shapes for the **{Competitor}** page. **Shape 2 is the default** — it's been validated across the existing pages. Let me know which one you want, or say "default" to go with Shape 2.
+
+**Shape 2 (default):** `Arco: the {Competitor} alternative {value tail}`
+**Shape 1:** `Arco vs {Competitor}: {value tail}`
+**Shape 3:** `{Competitor} and Arco both {X}. Here's where they split.`
+**Shape 4:** `{Competitor} is good for {X}. For {Y}, there's Arco.`
+**Shape 5:** `Why {Competitor} users switch to Arco`
+**Shape 6:** `{Pain}. Arco fixes that.`
+**Shape 7:** `{Competitor} gives you {X}. Arco gives you {Y}.`
+---
+
+If the user says "default" or doesn't engage, proceed with Shape 2. If they pick a different shape, use that and note the choice in your drafting.
 
 ### 2. TL;DR quick comparison
 - Purpose: give scanners the verdict without scrolling further.
@@ -231,7 +291,8 @@ Use this exact prompt every time so every comparison banner shares a consistent 
 This section is where the user drops very specific do/don't rules. The agent must apply everything here, in addition to the canonical rules in `MARKETING.md`.
 
 - **No em dashes anywhere.** Em dashes read as AI-generated. Use commas, semicolons, or two sentences instead.
-- **Always include both product names in the H1.** For SEO. The headline must name Arco and the competitor before the value line, e.g. `Arco vs {Competitor}: {value line}` or `Arco: the {Competitor} alternative that {benefit}`. Never ship a headline that leaves either name out.
+- **Always include both product names in the H1.** For SEO. The headline must name Arco and the competitor. Never ship a headline that leaves either name out.
+- **Default headline shape is Shape 2.** Always draft the hero in Shape 2 (`Arco: the {Competitor} alternative {for X / without Y / that Z}`). Before writing the page, present all seven shapes to the user with tailored examples and ask them to pick. If they say "default" or don't engage, proceed with Shape 2. See "Headline shape picker" in the Hero section.
 - **Always use existing shadcn/ui components (`Card`, `Alert`, `Badge`, `Accordion`, etc.) as-is.** Do not hand-craft "card-like" divs with custom `rounded-*`, `border-*`, `border-l-*`, or tinted `bg-*` styling. Those custom flourishes are a giveaway that the page was AI-generated. Let the components' defaults do the work.
 - **TL;DR layout is two rows.** Row 1: two equal columns for the Arco-wins card and the competitor-falls-short card. Row 2: a full-width verdict card. Never put all three side by side.
 - **Competitor banners live at `public/_static/competitors/arco-vs-{slug}.webp`** (not under a `logos/` subfolder). The user delivers a PNG at `arco-vs-{slug}.png`; the skill converts it to WebP and removes the PNG in step 9. The TSX always references the `.webp` path from first emit.

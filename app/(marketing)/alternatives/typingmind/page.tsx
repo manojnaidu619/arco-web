@@ -180,9 +180,9 @@ export default function ArcoVsTypingMindPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs TypingMind:{" "}
+            Arco: the TypingMind alternative{" "}
             <span className="text-primary">
-              built for comparison, not buried in it.
+              where model comparison is the whole point.
             </span>
           </h1>
 

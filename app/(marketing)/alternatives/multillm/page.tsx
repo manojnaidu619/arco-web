@@ -126,9 +126,9 @@ export default function ArcoVsMultiLLMPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs MultiLLM:{" "}
+            Arco: the MultiLLM alternative{" "}
             <span className="text-primary">
-              400+ models, not just three.
+              with 400+ models to compare, not just three.
             </span>
           </h1>
 

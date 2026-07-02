@@ -136,9 +136,9 @@ export default function ArcoVsAiFiestaPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs AI Fiesta:{" "}
+            Arco: the AI Fiesta alternative{" "}
             <span className="text-primary">
-              compare models without burning through a credit pool.
+              without a credit pool that burns out mid-month.
             </span>
           </h1>
 

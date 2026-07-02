@@ -120,9 +120,9 @@ export default function ArcoVsChatHubPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs ChatHub:{" "}
+            Arco: the ChatHub alternative{" "}
             <span className="text-primary">
-              multi-model AI without the monthly bill.
+              without the monthly bill.
             </span>
           </h1>
 

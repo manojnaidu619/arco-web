@@ -124,9 +124,9 @@ export default function ArcoVsChatPlaygroundPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs ChatPlayground:{" "}
+            Arco: the ChatPlayground alternative{" "}
             <span className="text-primary">
-              400+ models, on your key, on your Mac.
+              with 400+ models on your own key, on your Mac.
             </span>
           </h1>
 

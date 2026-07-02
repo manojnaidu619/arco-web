@@ -125,9 +125,9 @@ export default function ArcoVsPoePage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco vs Poe:{" "}
+            Arco: the Poe alternative{" "}
             <span className="text-primary">
-              built for comparing model answers, not just accessing them.
+              for comparing model answers, not just accessing them.
             </span>
           </h1>
 
