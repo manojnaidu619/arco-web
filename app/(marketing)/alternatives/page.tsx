@@ -154,7 +154,7 @@ export default function AlternativesIndexPage() {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-lg">
-                        Arco vs {c.name}
+                        {c.name} vs Arco
                       </CardTitle>
                       <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
                     </div>
