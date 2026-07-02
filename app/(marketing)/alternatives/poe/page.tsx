@@ -13,10 +13,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-vs-poe.webp";
+
 export const metadata = constructMetadata({
   title: "Poe Alternative Without Compute Points | Arco",
   description:
     "Looking for a Poe alternative? Arco is built for comparing 400+ AI models with your own OpenRouter key. No compute points, no monthly bill, every chat stays on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 type Cell = "yes" | "no" | string;
@@ -161,7 +164,7 @@ export default function ArcoVsPoePage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-poe.webp"
+              src={banner}
               alt="Arco vs Poe"
               width={1600}
               height={900}

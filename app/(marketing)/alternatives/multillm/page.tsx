@@ -13,10 +13,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-vs-multillm.webp";
+
 export const metadata = constructMetadata({
   title: "MultiLLM Alternative with 400+ Models, Not Just Three | Arco",
   description:
     "Looking for a MultiLLM alternative? Arco lets you compare 400+ AI models on your own OpenRouter key, with no monthly subscription and every chat kept on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 type Cell = "yes" | "no" | string;
@@ -161,7 +164,7 @@ export default function ArcoVsMultiLLMPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-multillm.webp"
+              src={banner}
               alt="Arco vs MultiLLM"
               width={1600}
               height={900}

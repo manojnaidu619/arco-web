@@ -11,10 +11,13 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-alternatives.webp";
+
 export const metadata = constructMetadata({
   title: "Arco Alternatives & Comparisons | Find the Right Answer",
   description:
     "See how Arco compares to ChatHub, Poe, TypingMind, ChatPlayground, MultiLLM, ChatComparison, and AI Fiesta. 400+ models, BYOK, no subscription, every chat stays on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 const competitors = [

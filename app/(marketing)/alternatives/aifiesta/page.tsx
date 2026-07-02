@@ -13,10 +13,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-vs-aifiesta.webp";
+
 export const metadata = constructMetadata({
   title: "AI Fiesta Alternative That Doesn't Drain Credits | Arco",
   description:
     "Looking for an AI Fiesta alternative? Compare 400+ AI models with your own OpenRouter key. No credit pool, no monthly bill, every chat stays on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 type Cell = "yes" | "no" | string;
@@ -172,7 +175,7 @@ export default function ArcoVsAiFiestaPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-aifiesta.webp"
+              src={banner}
               alt="Arco vs AI Fiesta"
               width={1600}
               height={900}

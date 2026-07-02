@@ -18,10 +18,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-vs-typingmind.webp";
+
 export const metadata = constructMetadata({
   title: "TypingMind Alternative Built Around Model Comparison | Arco",
   description:
     "Looking for a TypingMind alternative? Arco is purpose-built for comparing 400+ AI models with one OpenRouter key. Multi-model comparison is free, not a $99 upsell. Every chat stays on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 type Cell = "yes" | "no" | string;
@@ -216,7 +219,7 @@ export default function ArcoVsTypingMindPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-typingmind.webp"
+              src={banner}
               alt="Arco vs TypingMind"
               width={1600}
               height={900}

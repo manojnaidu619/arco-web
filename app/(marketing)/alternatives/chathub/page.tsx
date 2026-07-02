@@ -13,10 +13,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
+const banner = "/_static/competitors/arco-vs-chathub.webp";
+
 export const metadata = constructMetadata({
   title: "ChatHub Alternative Without the Monthly Bill | Arco",
   description:
     "Looking for a ChatHub alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
+  image: banner,
 });
 
 type Cell = "yes" | "no" | string;
@@ -155,7 +158,7 @@ export default function ArcoVsChatHubPage() {
 
           <Card className="mt-6 w-full">
             <Image
-              src="/_static/competitors/arco-vs-chathub.webp"
+              src={banner}
               alt="Arco vs ChatHub"
               width={1600}
               height={900}

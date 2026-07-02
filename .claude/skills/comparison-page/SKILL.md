@@ -203,6 +203,7 @@ If the user says "default" or doesn't engage, proceed with Shape 2. If they pick
 - **Reuse existing shadcn/ui components as-is.** For every card-shaped block use `<Card>` + `<CardHeader>` + `<CardTitle>` + `<CardContent>` from `components/ui/card.tsx`. For callouts and inline advisories use `<Alert>` + `<AlertTitle>` + `<AlertDescription>` from `components/ui/alert.tsx`. For labels use `<Badge>`. For expand/collapse use `<Accordion>`. Do not hand-roll equivalents.
 - **Do not introduce custom border, radius, or color styling on containers.** No `rounded-2xl`, no `rounded-3xl`, no `border-l-4`, no `border-primary/30`, no `bg-primary/5` on generic wrappers. These read as AI-generated. The one exception: mirroring the existing landing `comparison-table.tsx` pattern (which uses `bg-primary/5` on the Arco column of comparison grids) is fine because that is an established codebase pattern. When unsure, use the plain shadcn component and let its default styling speak.
 - Import the SEO helper: `import { constructMetadata } from "@/lib/utils";` and export a `metadata` const on every page.
+- Declare `const banner = "/_static/competitors/arco-vs-{slug}.webp"` once per page. Pass `image: banner` to `constructMetadata` and use the same constant for the hero `<Image src={banner} />`. Do not hardcode the banner path in two places.
 - Keep JSX inline in the page file for maximum per-page flexibility. Each page can adjust anything without touching a shared template.
 - Placeholder banner on first emit: pick a suitable image from `public/_static/illustrations/` or `public/_static/landing/`.
 - No new component files created by this skill.
@@ -238,12 +239,12 @@ Read the current file before editing to preserve existing entries. Do not duplic
 - URL: `/alternatives/{slug}` — slug is lowercased and hyphenated.
 - `<title>`: `{Competitor} Alternative {specific pain or differentiator} | Arco` — every page title must be unique. Lead with the one thing that makes this competitor frustrating or limited for this specific audience. Do not use a generic template like "Why Teams Switch to Arco" across pages. Examples: `ChatHub Alternative Without the Monthly Bill | Arco`, `Poe Alternative Without Compute Points | Arco`, `MultiLLM Alternative with 400+ Models, Not Just Three | Arco`.
 - Meta description: 150–160 characters. Must include the competitor's name, the word "alternative", and one Arco differentiator (privacy / BYOK / no subscription / 400+ models). Like the title, make it specific to this competitor — do not reuse the same description shape across pages.
-- OG image: reuse `siteConfig.ogImage` until per-competitor OG images are designed.
+- OG image: pass the hero banner as `image: banner` in `constructMetadata`. The same `/_static/competitors/arco-vs-{slug}.webp` path serves both the page hero and the Open Graph / Twitter card image (`metadataBase` resolves the absolute URL).
 - Use `constructMetadata()` from `lib/utils.ts` — do not build a `Metadata` object by hand.
 
 ## Banner image workflow
 
-1. On first page emit, reference the **final WebP banner path** in the TSX hero directly: `/_static/competitors/arco-vs-{slug}.webp`. The image will 404 until the user saves a PNG and the skill converts it, but this means no TSX edit is needed later. Image models output PNG, so the handoff asks the user to save PNG; the skill converts to WebP on "added" so the reference resolves without any further code change.
+1. On first page emit, reference the **final WebP banner path** in the TSX hero directly: `/_static/competitors/arco-vs-{slug}.webp`. Wire the same path into `constructMetadata({ image: banner })` so social previews use the hero banner. The image will 404 until the user saves a PNG and the skill converts it, but this means no TSX edit is needed later. Image models output PNG, so the handoff asks the user to save PNG; the skill converts to WebP on "added" so the reference resolves without any further code change. No separate OG asset is needed per competitor.
 
 2. After the page is emitted, print the canonical banner prompt (below) with `{competitor-name}` filled in, plus explicit handoff instructions that include the **exact filename and folder** the user should save the generated image as. Never leave the user guessing what to name the file.
 
