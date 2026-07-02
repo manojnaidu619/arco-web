@@ -489,11 +489,11 @@ export default function ArcoVsChatPlaygroundPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Try Arco. Free forever tier. No card required.
+                400+ models, native on your Mac, on your own key.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay on
-                your Mac.
+                No browser tab, no curated shortlist. A native Mac app with
+                every model on OpenRouter, and every chat stored locally.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

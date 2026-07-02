@@ -473,11 +473,11 @@ export default function ArcoVsChatHubPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Try Arco. Free forever tier. No card required.
+                Stop paying monthly for a tool you use twice a week.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay on
-                your Mac.
+                Arco is a one-time purchase. Skip a month, pay nothing. Your
+                OpenRouter key covers 400+ models with no quotas.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

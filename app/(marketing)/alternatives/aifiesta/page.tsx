@@ -500,11 +500,11 @@ export default function ArcoVsAiFiestaPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Try Arco. Free forever tier. No card required.
+                Compare models without watching your credits drain.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay on
-                your Mac.
+                Arco uses your own OpenRouter key. No credit pool, no mid-month
+                top-ups. Pay only for the tokens you actually use.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

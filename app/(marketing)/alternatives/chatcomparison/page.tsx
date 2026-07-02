@@ -489,11 +489,11 @@ export default function ArcoVsChatComparisonPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Try Arco. Free forever tier. No card required.
+                400+ models on your key, not 40 on theirs.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay on
-                your Mac.
+                Bring your own OpenRouter key and pick from every model on the
+                market. New model drops? Add it yourself in seconds.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

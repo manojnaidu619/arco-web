@@ -12,9 +12,18 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
       <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-5">
         {footerLinks.map((section) => (
           <div key={section.title}>
-            <span className="text-sm font-medium text-foreground">
-              {section.title}
-            </span>
+            {section.title === "Alternatives" ? (
+              <Link
+                href="/alternatives"
+                className="text-sm font-medium text-foreground hover:text-primary"
+              >
+                {section.title}
+              </Link>
+            ) : (
+              <span className="text-sm font-medium text-foreground">
+                {section.title}
+              </span>
+            )}
             <ul className="mt-4 list-inside space-y-3">
               {section.items?.map((link) => (
                 <li key={link.title}>

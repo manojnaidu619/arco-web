@@ -550,11 +550,11 @@ export default function ArcoVsTypingMindPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Try Arco. Free forever tier. No card required.
+                Model comparison shouldn&apos;t be a paid add-on.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay on
-                your Mac.
+                Arco is built around side-by-side comparison from the start.
+                400+ models on your own key, every chat on your Mac.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton
