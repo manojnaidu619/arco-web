@@ -9,11 +9,11 @@ export default function DownloadCTA() {
       <MaxWidthWrapper>
         <div className="mx-auto max-w-xl text-center">
           <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl lg:text-[42px]">
-            Start comparing models today
+            Start making better decisions today
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Download Arco free. Bring your own OpenRouter key and you&apos;re
-            ready in under two minutes.
+            comparing answers in under two minutes.
           </p>
           <DownloadButton
             className={cn(

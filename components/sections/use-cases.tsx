@@ -8,8 +8,8 @@ export default function UseCases() {
       <MaxWidthWrapper>
         <HeaderSection
           label="Use Cases"
-          title="Who uses Arco"
-          subtitle="Anyone who wants better answers faster, without juggling multiple chat sites."
+          title="Who makes better decisions with Arco"
+          subtitle="Anyone who needs to know which answer to act on, not just which model to ask."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

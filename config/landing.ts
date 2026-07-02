@@ -9,9 +9,9 @@ import {
 
 export const infos: InfoLdg[] = [
   {
-    title: "One click to the best answer",
+    title: "One click to a confident decision",
     description:
-      "When multiple models reply, Arco's Summarize feature sends all their responses to a judge model of your choice. You get a structured breakdown of what each model said, where they agree, and which answer is strongest.",
+      "When multiple models reply, Arco's Summarize feature sends all their responses to a judge model of your choice. You get a structured breakdown: where models agree, where they diverge, and which answer you should act on. When models disagree, that's often the edge case you'd miss with just one.",
     image: "/_static/illustrations/work-from-home.jpg",
     list: [
       {
@@ -55,7 +55,7 @@ export const features: FeatureLdg[] = [
     icon: "✨",
     title: "AI-powered summary",
     description:
-      "Generate a structured comparison of all responses instantly. See where models agree, where they differ, and find the best answer in seconds.",
+      "Generate a structured comparison of all responses instantly. See where models agree, where they differ, and decide which answer to use, in seconds.",
   },
   {
     icon: "🧩",
@@ -94,9 +94,9 @@ export const howItWorksSteps: HowItWorksStep[] = [
   },
   {
     num: 3,
-    title: "Ask anything",
+    title: "Ask anything, see who nails it",
     description:
-      "Type your question once. Every model answers in parallel. Compare, copy, and keep chatting.",
+      "Type your question once. Every model answers in parallel. See where they agree, where they differ, and pick the strongest reply.",
     image: "/_static/landing/step-3.png",
   },
 ];
@@ -106,7 +106,7 @@ export const useCases: UseCaseLdg[] = [
     emoji: "🧑‍💻",
     title: "Developers",
     description:
-      "Debug code, compare architecture advice, and evaluate API design suggestions from multiple models at once.",
+      "Debug code, weigh architecture advice from multiple models, and commit to the approach that actually holds up.",
     example: {
       user: "How do I handle auth tokens securely in React?",
       ai: "Use httpOnly cookies and avoid localStorage for tokens…",
@@ -126,7 +126,7 @@ export const useCases: UseCaseLdg[] = [
     emoji: "🔬",
     title: "Researchers",
     description:
-      "Cross-check summaries, surface different perspectives on a topic, and validate sources across models.",
+      "Cross-check summaries, surface different perspectives, and decide which interpretation is backed by the strongest reasoning.",
     example: {
       user: "Summarise the key findings of this paper",
       ai: "Three models, three angles. Use Summarize to synthesise…",
@@ -136,7 +136,7 @@ export const useCases: UseCaseLdg[] = [
     emoji: "📊",
     title: "Business Teams",
     description:
-      "Draft reports, generate exec summaries, and pressure-test strategy ideas with diverse AI perspectives.",
+      "Draft reports, generate exec summaries, and pressure-test strategy ideas so you present the version you can defend.",
     example: {
       user: "Summarise Q3 performance for the board deck",
       ai: "Revenue grew 18% QoQ driven by enterprise…",

@@ -43,7 +43,7 @@ export default function ComparisonTable() {
         <HeaderSection
           label="Why Arco"
           title="How Arco compares"
-          subtitle="See how Arco stacks up against other multi-model apps and against using ChatGPT or Claude on their own."
+          subtitle="See how Arco stacks up against other multi-model apps, and why the comparison workflow matters more than any single model."
         />
 
         <div className="mt-10 overflow-x-auto rounded-2xl border">

@@ -8,8 +8,8 @@ export default function Features() {
       <MaxWidthWrapper>
           <HeaderSection
             label="Why Arco"
-            title="Everything in one place"
-            subtitle="Stop juggling separate chat sites. One prompt. Every answer. Instantly."
+            title="Everything you need to decide"
+            subtitle="One prompt. Every answer. A clear picture of which model to trust."
           />
 
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

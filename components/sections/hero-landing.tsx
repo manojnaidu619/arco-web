@@ -18,8 +18,8 @@ export default function HeroLanding() {
         </Badge>
 
         <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[60px]">
-          Ask once, reach every model,{" "}
-          <span className="text-primary">all staying private.</span>
+          Ask every model. Pick the best answer.{" "}
+          <span className="text-primary">All staying private.</span>
         </h1>
 
         <p className="mt-2 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">

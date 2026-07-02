@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "AI Fiesta Alternative That Doesn't Drain Credits | Arco",
   description:
-    "Looking for an AI Fiesta alternative? Compare 400+ AI models with your own OpenRouter key. No credit pool, no monthly bill, every chat stays on your Mac.",
+    "Looking for an AI Fiesta alternative? Compare 400+ AI models with your own OpenRouter key. No credit pool, no monthly bill, every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -500,11 +500,11 @@ export default function ArcoVsAiFiestaPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Compare models without watching your credits drain.
+                Decide with confidence, not with one eye on your credit balance.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Arco uses your own OpenRouter key. No credit pool, no mid-month
-                top-ups. Pay only for the tokens you actually use.
+                top-ups. Pay only for the tokens you actually use.{" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

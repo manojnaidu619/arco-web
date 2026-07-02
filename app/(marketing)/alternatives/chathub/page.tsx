@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "ChatHub Alternative Without the Monthly Bill | Arco",
   description:
-    "Looking for a ChatHub alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
+    "Looking for a ChatHub alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -473,11 +473,11 @@ export default function ArcoVsChatHubPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Stop paying monthly for a tool you use twice a week.
+                When you need a decision, not a subscription.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Arco is a one-time purchase. Skip a month, pay nothing. Your
-                OpenRouter key covers 400+ models with no quotas.
+                OpenRouter key covers 400+ models with no quotas.{" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

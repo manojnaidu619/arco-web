@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "MultiLLM Alternative with 400+ Models, Not Just Three | Arco",
   description:
-    "Looking for a MultiLLM alternative? Arco lets you compare 400+ AI models on your own OpenRouter key, with no monthly subscription and every chat kept on your Mac.",
+    "Looking for a MultiLLM alternative? Arco lets you compare 400+ AI models on your own OpenRouter key, with no monthly subscription and every chat kept on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -483,11 +483,12 @@ export default function ArcoVsMultiLLMPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Compare 400+ models, not just the big three.
+                The best decision comes from the widest view. Compare 400+, not three.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Arco connects to every model on OpenRouter. Mistral, Llama,
                 DeepSeek, Qwen, and hundreds more, all on your own key.
+                {" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

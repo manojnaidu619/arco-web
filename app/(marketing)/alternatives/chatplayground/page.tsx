@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "ChatPlayground Alternative for Mac with 400+ Models | Arco",
   description:
-    "Looking for a chatplayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
+    "Looking for a chatplayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -489,11 +489,11 @@ export default function ArcoVsChatPlaygroundPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                400+ models, native on your Mac, on your own key.
+                A native Mac app built to help you decide, not just compare.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 No browser tab, no curated shortlist. A native Mac app with
-                every model on OpenRouter, and every chat stored locally.
+                every model on OpenRouter, and every chat stored locally.{" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

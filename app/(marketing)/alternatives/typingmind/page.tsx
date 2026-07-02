@@ -21,7 +21,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "TypingMind Alternative Built Around Model Comparison | Arco",
   description:
-    "Looking for a TypingMind alternative? Arco is purpose-built for comparing 400+ AI models with one OpenRouter key. Multi-model comparison is free, not a $99 upsell. Every chat stays on your Mac.",
+    "Looking for a TypingMind alternative? Arco is purpose-built for comparing 400+ AI models with one OpenRouter key. Multi-model comparison is free, not a $99 upsell. Every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -550,11 +550,12 @@ export default function ArcoVsTypingMindPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Model comparison shouldn&apos;t be a paid add-on.
+                Deciding which model to trust shouldn&apos;t be a paid add-on.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Arco is built around side-by-side comparison from the start.
                 400+ models on your own key, every chat on your Mac.
+                {" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

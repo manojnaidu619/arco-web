@@ -73,7 +73,7 @@ export default function HowItWorks() {
         <HeaderSection
           label="How it works"
           title="Up and running in minutes"
-          subtitle="Three steps and you're comparing answers from the world's best models."
+          subtitle="Three steps and you're seeing which model gives the best answer."
         />
 
         <div

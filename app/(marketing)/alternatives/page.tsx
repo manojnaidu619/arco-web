@@ -12,9 +12,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "Arco Alternatives & Comparisons | Arco",
+  title: "Arco Alternatives & Comparisons | Find the Right Answer",
   description:
-    "See how Arco compares to ChatHub, Poe, TypingMind, ChatPlayground, MultiLLM, ChatComparison, and AI Fiesta. 400+ models, BYOK, no subscription, every chat stays on your Mac.",
+    "See how Arco compares to ChatHub, Poe, TypingMind, ChatPlayground, MultiLLM, ChatComparison, and AI Fiesta. 400+ models, BYOK, no subscription, every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 const competitors = [
@@ -87,17 +87,17 @@ export default function AlternativesIndexPage() {
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            How Arco compares to{" "}
+            How Arco compares to every multi-model AI tool.{" "}
             <span className="text-primary">
-              every multi-model AI tool
+              And helps you decide.
             </span>
           </h1>
 
           <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Most multi-model tools charge monthly, cap your usage, or store
-            your chats on their servers. Arco gives you 400+ models on your
-            own OpenRouter key, with every conversation stored locally on
-            your Mac.
+            Every multi-model tool lets you compare answers. Arco is the
+            one that helps you decide which answer to use. 400+ models on
+            your own OpenRouter key, no subscription, and every conversation
+            stays on your Mac.
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center gap-3 md:gap-4">
@@ -181,8 +181,8 @@ export default function AlternativesIndexPage() {
         <MaxWidthWrapper className="max-w-3xl">
           <HeaderSection
             label="The common thread"
-            title="What every comparison comes down to"
-            subtitle="Across all tools, the same three gaps keep showing up."
+            title="What actually helps you decide"
+            subtitle="Three things that turn a side-by-side view into a real decision."
           />
           <div className="mt-10 grid grid-rows-[1fr] gap-6 md:grid-cols-3">
             <Card className="flex h-full flex-col">
@@ -233,11 +233,11 @@ export default function AlternativesIndexPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Stop paying monthly for multi-model AI.
+                Start deciding with confidence, not guessing between tabs.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Compare 400+ models with your own OpenRouter key. Chats stay
-                on your Mac.
+                Compare 400+ models, see where they agree, and pick the
+                answer you trust. Your key, your Mac, your data.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

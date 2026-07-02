@@ -174,7 +174,7 @@ If the user says "default" or doesn't engage, proceed with Shape 2. If they pick
 ### 4. Three key differentiators
 - Purpose: prove *why* the wins in section 3 matter.
 - Structure: 3 blocks. Each has a bold headline + a 2–3 sentence contrast that names {Competitor}'s specific weakness.
-- Rules: pick differentiators from Arco's canonical list (read `MARKETING.md` + `config/landing.ts`) that expose *this competitor's* specific gap — not a generic top-3.
+- Rules: pick differentiators from Arco's canonical list (read `MARKETING.md` + `config/landing.ts`) that expose *this competitor's* specific gap — not a generic top-3. Where possible, frame at least one differentiator around the decision outcome: Arco helps the user decide which answer to act on, not just see answers side by side. This is Arco's narrative differentiator even when competitors share the same features.
 
 ### 5. Transparent pricing comparison
 - Purpose: kill hidden-cost fear.
@@ -196,7 +196,7 @@ If the user says "default" or doesn't engage, proceed with Shape 2. If they pick
   - "Do I need an OpenRouter account?"
   - "Can I switch back?"
   - "Is $49 really forever?"
-- Final CTA: headline must lead with the main benefit Arco has over this specific competitor. Each page gets a unique headline and a matching 1–2 sentence description tailored to that competitor's pain point. Do not reuse the same CTA across pages. Secondary link back to `/` labeled "See the full feature list".
+- Final CTA: headline must lead with the main benefit Arco has over this specific competitor. Frame the benefit as a decision outcome, not just a feature difference. Instead of "Compare without credits draining," write "Decide with confidence, not with one eye on your credit balance." The CTA should answer "what does the user walk away with," not "what does the tool do." Each page gets a unique headline and a matching 1–2 sentence description tailored to that competitor's pain point. Do not reuse the same CTA across pages. Secondary link back to `/` labeled "See the full feature list".
 
 ## TSX authoring rules
 

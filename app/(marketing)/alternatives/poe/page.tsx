@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "Poe Alternative Without Compute Points | Arco",
   description:
-    "Looking for a Poe alternative? Arco is built for comparing 400+ AI models with your own OpenRouter key. No compute points, no monthly bill, every chat stays on your Mac.",
+    "Looking for a Poe alternative? Arco is built for comparing 400+ AI models with your own OpenRouter key. No compute points, no monthly bill, every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -493,11 +493,12 @@ export default function ArcoVsPoePage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                Compare models without compute points getting in the way.
+                Make better decisions without compute points getting in the way.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Arco uses your own OpenRouter key. No points, no caps, no
                 monthly subscription. Just 400+ models and your questions.
+                {" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

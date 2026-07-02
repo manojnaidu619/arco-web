@@ -22,8 +22,8 @@ export default function InfoLanding({
               Summarize Feature
             </div>
             <h2 className="font-heading text-2xl text-foreground md:text-4xl lg:text-[36px]">
-              One click to the{" "}
-              <span className="text-primary">best answer</span>
+              One click to a{" "}
+              <span className="text-primary">confident decision</span>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {data.description}

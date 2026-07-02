@@ -16,7 +16,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 export const metadata = constructMetadata({
   title: "ChatComparison Alternative with 400+ Models on Your Key | Arco",
   description:
-    "Looking for a chatcomparison.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
+    "Looking for a chatcomparison.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
 });
 
 type Cell = "yes" | "no" | string;
@@ -489,11 +489,11 @@ export default function ArcoVsChatComparisonPage() {
           <Card>
             <CardContent className="p-10 text-center">
               <h2 className="font-heading text-3xl md:text-4xl">
-                400+ models on your key, not 40 on theirs.
+                Better decisions need better coverage. 400+ models on your key.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Bring your own OpenRouter key and pick from every model on the
-                market. New model drops? Add it yourself in seconds.
+                market. New model drops? Add it yourself in seconds.{" "}So you can stop guessing and start deciding.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
                 <DownloadButton

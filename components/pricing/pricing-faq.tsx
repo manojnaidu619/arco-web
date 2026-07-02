@@ -13,13 +13,13 @@ const pricingFaqData = [
     id: "item-1",
     question: "What is Arco?",
     answer:
-      "Arco is a native macOS app that lets you compare multiple AI models side by side in one window. Type your prompt once and get parallel responses from GPT-4o, Claude, Gemini, Mistral, and 400+ other models through OpenRouter. It helps you find better answers faster without switching between different chat websites.",
+      "Arco is a native macOS app that lets you compare multiple AI models side by side in one window. Type your prompt once and get parallel responses from GPT-4o, Claude, Gemini, Mistral, and 400+ other models through OpenRouter. It helps you decide which answer to trust without switching between different chat websites.",
   },
   {
     id: "item-2",
     question: "How is Arco different from other multi-model comparison apps?",
     answer:
-      "Other comparison apps also let you chat with multiple models side by side, and Arco does that too. Where Arco stands out is privacy, pricing, and model access. Your conversations stay on your Mac instead of on a third-party server. You bring your own OpenRouter API key and pay only for the tokens you use, with no monthly subscription for the app itself. You also get access to 400+ models through one key, without managing separate accounts for each provider. Arco is a native macOS app built for speed and focus, while most alternatives are browser-based and charge a recurring fee to access models on their terms.",
+      "Other comparison apps also let you chat with multiple models side by side, and Arco does that too. Where Arco stands out is privacy, pricing, and model access. Your conversations stay on your Mac instead of on a third-party server. You bring your own OpenRouter API key and pay only for the tokens you use, with no monthly subscription for the app itself. You also get access to 400+ models through one key, without managing separate accounts for each provider. And because you see every model's take in one view, you can make a faster, more informed decision about which answer to go with. Arco is a native macOS app built for speed and focus, while most alternatives are browser-based and charge a recurring fee to access models on their terms.",
   },
   {
     id: "item-3",
@@ -61,7 +61,7 @@ const pricingFaqData = [
     id: "item-9",
     question: "What is the Summarize feature?",
     answer:
-      "When you get responses from multiple models, Summarize analyzes them using a judge model of your choice. It shows you where the models agree, where they differ, and which response is strongest. This helps you quickly understand the consensus without reading every response in detail.",
+      "When you get responses from multiple models, Summarize analyzes them using a judge model of your choice. It shows you where the models agree, where they differ, and which response is strongest. This helps you quickly decide which answer to act on without reading every response in detail.",
   },
   {
     id: "item-10",
