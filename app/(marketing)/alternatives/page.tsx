@@ -19,28 +19,28 @@ export const metadata = constructMetadata({
 
 const competitors = [
   {
+    name: "AI Fiesta",
+    slug: "aifiesta",
+    pain: "Credit pool drains fast on multi-model queries",
+    pitch:
+      "AI Fiesta charges a subscription that includes credits. Every multi-model query burns credits in parallel, and the pool runs out well before the month ends. Arco has no credit system.",
+    banner: "/_static/competitors/arco-vs-aifiesta.webp",
+  },
+  {
+    name: "ChatComparison",
+    slug: "chatcomparison",
+    pain: "~40 curated models, no BYOK",
+    pitch:
+      "ChatComparison gives you around 40 models they picked. Arco gives you 400+ on your own key, so you add new models the day they ship.",
+    banner: "/_static/competitors/arco-vs-chatcomparison.webp",
+  },
+  {
     name: "ChatHub",
     slug: "chathub",
     pain: "Monthly subscription, even for occasional use",
     pitch:
       "ChatHub charges monthly whether you use it daily or twice a week. Arco is a one-time purchase with 400+ models on your own key.",
     banner: "/_static/competitors/arco-vs-chathub.webp",
-  },
-  {
-    name: "Poe",
-    slug: "poe",
-    pain: "Compute points that run out mid-month",
-    pitch:
-      "Poe bundles model access behind compute points. Run a few multi-model queries and the pool drains fast. Arco uses your own OpenRouter key with no points or caps.",
-    banner: "/_static/competitors/arco-vs-poe.webp",
-  },
-  {
-    name: "TypingMind",
-    slug: "typingmind",
-    pain: "Multi-model comparison locked behind the $99 tier",
-    pitch:
-      "TypingMind is a powerful AI workspace, but side-by-side comparison is a premium add-on. Arco is built around that workflow from the start.",
-    banner: "/_static/competitors/arco-vs-typingmind.webp",
   },
   {
     name: "ChatPlayground",
@@ -59,20 +59,20 @@ const competitors = [
     banner: "/_static/competitors/arco-vs-multillm.webp",
   },
   {
-    name: "ChatComparison",
-    slug: "chatcomparison",
-    pain: "~40 curated models, no BYOK",
+    name: "Poe",
+    slug: "poe",
+    pain: "Compute points that run out mid-month",
     pitch:
-      "ChatComparison gives you around 40 models they picked. Arco gives you 400+ on your own key, so you add new models the day they ship.",
-    banner: "/_static/competitors/arco-vs-chatcomparison.webp",
+      "Poe bundles model access behind compute points. Run a few multi-model queries and the pool drains fast. Arco uses your own OpenRouter key with no points or caps.",
+    banner: "/_static/competitors/arco-vs-poe.webp",
   },
   {
-    name: "AI Fiesta",
-    slug: "aifiesta",
-    pain: "Credit pool drains fast on multi-model queries",
+    name: "TypingMind",
+    slug: "typingmind",
+    pain: "Multi-model comparison locked behind the $99 tier",
     pitch:
-      "AI Fiesta charges a subscription that includes credits. Every multi-model query burns credits in parallel, and the pool runs out well before the month ends. Arco has no credit system.",
-    banner: "/_static/competitors/arco-vs-aifiesta.webp",
+      "TypingMind is a powerful AI workspace, but side-by-side comparison is a premium add-on. Arco is built around that workflow from the start.",
+    banner: "/_static/competitors/arco-vs-typingmind.webp",
   },
 ];
 
