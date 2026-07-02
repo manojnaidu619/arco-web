@@ -53,7 +53,18 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
       </div>
 
       <div className="border-t py-4">
-        <div className="container flex max-w-6xl items-center justify-center">
+        <div className="container flex max-w-6xl flex-col items-center justify-center gap-4">
+          <a
+            href="https://turbo0.com/item/arco"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://img.turbo0.com/badge-listed-light.svg"
+              alt="Listed on Turbo0"
+              style={{ height: "54px", width: "auto" }}
+            />
+          </a>
           <p className="text-center text-sm text-muted-foreground">
             © {new Date().getFullYear()} Arco. Built for Mac.
           </p>
