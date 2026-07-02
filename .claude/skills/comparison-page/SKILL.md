@@ -196,7 +196,7 @@ If the user says "default" or doesn't engage, proceed with Shape 2. If they pick
   - "Do I need an OpenRouter account?"
   - "Can I switch back?"
   - "Is $49 really forever?"
-- Final CTA: risk-free offer ("Download Arco. Free forever tier, no card required.") + secondary link back to `/` labeled "See the full feature list".
+- Final CTA: headline must lead with the main benefit Arco has over this specific competitor. Each page gets a unique headline and a matching 1–2 sentence description tailored to that competitor's pain point. Do not reuse the same CTA across pages. Secondary link back to `/` labeled "See the full feature list".
 
 ## TSX authoring rules
 
