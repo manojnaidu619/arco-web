@@ -14,7 +14,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "ChatHub Alternatives: Why Teams Switch to Arco | Arco",
+  title: "ChatHub Alternative Without the Monthly Bill | Arco",
   description:
     "Looking for a ChatHub alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
 });

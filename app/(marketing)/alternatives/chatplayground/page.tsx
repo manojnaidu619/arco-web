@@ -14,7 +14,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "ChatPlayground Alternatives: Why Teams Switch to Arco | Arco",
+  title: "ChatPlayground Alternative for Mac with 400+ Models | Arco",
   description:
     "Looking for a chatplayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac.",
 });

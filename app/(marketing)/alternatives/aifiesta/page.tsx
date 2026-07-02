@@ -14,7 +14,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "AI Fiesta Alternatives: Why Teams Switch to Arco | Arco",
+  title: "AI Fiesta Alternative That Doesn't Drain Credits | Arco",
   description:
     "Looking for an AI Fiesta alternative? Compare 400+ AI models with your own OpenRouter key. No credit pool, no monthly bill, every chat stays on your Mac.",
 });

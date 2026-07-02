@@ -14,7 +14,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "MultiLLM Alternatives: Why People Switch to Arco | Arco",
+  title: "MultiLLM Alternative with 400+ Models, Not Just Three | Arco",
   description:
     "Looking for a MultiLLM alternative? Arco lets you compare 400+ AI models on your own OpenRouter key, with no monthly subscription and every chat kept on your Mac.",
 });

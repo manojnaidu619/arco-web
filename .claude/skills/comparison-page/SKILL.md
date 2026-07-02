@@ -236,8 +236,8 @@ Read the current file before editing to preserve existing entries. Do not duplic
 ## SEO & metadata rules
 
 - URL: `/alternatives/{slug}` — slug is lowercased and hyphenated.
-- `<title>`: `{Competitor} Alternatives: Why Teams Switch to Arco | Arco`
-- Meta description: 150–160 characters. Must include the competitor's name, the word "alternative", and one Arco differentiator (privacy / BYOK / no subscription / 400+ models).
+- `<title>`: `{Competitor} Alternative {specific pain or differentiator} | Arco` — every page title must be unique. Lead with the one thing that makes this competitor frustrating or limited for this specific audience. Do not use a generic template like "Why Teams Switch to Arco" across pages. Examples: `ChatHub Alternative Without the Monthly Bill | Arco`, `Poe Alternative Without Compute Points | Arco`, `MultiLLM Alternative with 400+ Models, Not Just Three | Arco`.
+- Meta description: 150–160 characters. Must include the competitor's name, the word "alternative", and one Arco differentiator (privacy / BYOK / no subscription / 400+ models). Like the title, make it specific to this competitor — do not reuse the same description shape across pages.
 - OG image: reuse `siteConfig.ogImage` until per-competitor OG images are designed.
 - Use `constructMetadata()` from `lib/utils.ts` — do not build a `Metadata` object by hand.
 

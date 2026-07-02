@@ -14,7 +14,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "Poe Alternatives: Why Teams Switch to Arco | Arco",
+  title: "Poe Alternative Without Compute Points | Arco",
   description:
     "Looking for a Poe alternative? Arco is built for comparing 400+ AI models with your own OpenRouter key. No compute points, no monthly bill, every chat stays on your Mac.",
 });

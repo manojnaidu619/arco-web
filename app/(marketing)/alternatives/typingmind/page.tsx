@@ -19,7 +19,7 @@ import { UNLIMITED_CURRENT_BATCH_PRICE } from "@/config/subscriptions";
 import { cn, constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
-  title: "TypingMind Alternatives: Why Teams Switch to Arco | Arco",
+  title: "TypingMind Alternative Built Around Model Comparison | Arco",
   description:
     "Looking for a TypingMind alternative? Arco is purpose-built for comparing 400+ AI models with one OpenRouter key. Multi-model comparison is free, not a $99 upsell. Every chat stays on your Mac.",
 });
