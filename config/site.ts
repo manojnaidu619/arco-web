@@ -32,9 +32,9 @@ export const footerLinks: SidebarNavItem[] = [
     title: "Alternatives",
     items: [
       { title: "vs AI Fiesta", href: "/alternatives/aifiesta" },
-      { title: "vs ChatComparison", href: "/alternatives/chatcomparison" },
+      { title: "vs ChatComparison.ai", href: "/alternatives/chatcomparison" },
       { title: "vs ChatHub", href: "/alternatives/chathub" },
-      { title: "vs ChatPlayground", href: "/alternatives/chatplayground" },
+      { title: "vs ChatPlayground.ai", href: "/alternatives/chatplayground" },
       { title: "vs MultiLLM", href: "/alternatives/multillm" },
       { title: "vs Poe", href: "/alternatives/poe" },
       { title: "vs TypingMind", href: "/alternatives/typingmind" },

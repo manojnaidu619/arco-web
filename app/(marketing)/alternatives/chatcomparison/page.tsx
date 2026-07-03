@@ -16,9 +16,9 @@ import { cn, constructMetadata } from "@/lib/utils";
 const banner = "/_static/competitors/arco-vs-chatcomparison.webp";
 
 export const metadata = constructMetadata({
-  title: "ChatComparison Alternative with 400+ Models on Your Key | Arco",
+  title: "ChatComparison.ai Alternative with 400+ Models on Your Key | Arco",
   description:
-    "Looking for a chatcomparison.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
+    "Looking for a ChatComparison.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
   image: banner,
 });
 
@@ -47,17 +47,17 @@ const differentiators = [
   {
     icon: Cpu,
     title: "400+ models on your key, not 40 they picked for you.",
-    body: "ChatComparison gives you around 40 models in a curated catalog. Whatever they integrated is what you get, and when a new frontier model ships you wait for them to add it. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID.",
+    body: "ChatComparison.ai gives you around 40 models in a curated catalog. Whatever they integrated is what you get, and when a new frontier model ships you wait for them to add it. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID.",
   },
   {
     icon: Shield,
     title: "Your chats stay on your Mac. Not in a browser tab that talks to their servers.",
-    body: "ChatComparison runs in the browser and every prompt transits their infrastructure. Their privacy posture isn't published on the landing page. Arco stores everything locally on your Mac. There is no Arco server your prompt has to pass through, because we don't run one.",
+    body: "ChatComparison.ai runs in the browser and every prompt transits their infrastructure. Their privacy posture isn't published on the landing page. Arco stores everything locally on your Mac. There is no Arco server your prompt has to pass through, because we don't run one.",
   },
   {
     icon: EyeOff,
     title: "Pricing you can see before you hand over an email.",
-    body: "ChatComparison doesn't publish pricing on its landing page. You have to create an account and dig into the dashboard to find out what a plan costs. Arco's pricing is on the homepage, one click away. What you see is what you pay: one time.",
+    body: "ChatComparison.ai doesn't publish pricing on its landing page. You have to create an account and dig into the dashboard to find out what a plan costs. Arco's pricing is on the homepage, one click away. What you see is what you pay: one time.",
   },
 ];
 
@@ -82,27 +82,27 @@ const steps = [
 const faqs = [
   {
     q: "Is my data safe?",
-    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatComparison runs in the browser and routes every prompt through their infrastructure. Their public site doesn't publish a data-retention policy, so you're trusting whatever their internal defaults are.",
+    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatComparison.ai runs in the browser and routes every prompt through their infrastructure. Their public site doesn't publish a data-retention policy, so you're trusting whatever their internal defaults are.",
   },
   {
     q: "What if I'm on Windows or mobile?",
-    a: "ChatComparison is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatComparison runs in the browser, which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatComparison is a fair choice.",
+    a: "ChatComparison.ai is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatComparison.ai runs in the browser, which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatComparison.ai is a fair choice.",
   },
   {
-    q: "What does ChatComparison do better than Arco?",
-    a: "Two things. It runs in a browser, so it works on any OS (Arco is Mac only). And its models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). If either of those matters more than pricing transparency, privacy, or model breadth, ChatComparison is a fair choice.",
+    q: "What does ChatComparison.ai do better than Arco?",
+    a: "Two things. It runs in a browser, so it works on any OS (Arco is Mac only). And its models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). If either of those matters more than pricing transparency, privacy, or model breadth, ChatComparison.ai is a fair choice.",
   },
   {
     q: "Do I need an OpenRouter account?",
     a: "Yes. Sign up at openrouter.ai (free to create). You add credit and pay providers directly for the tokens you use. Arco does not touch the billing or take a cut. This is the trade you make for 400+ models, BYOK, and no subscription.",
   },
   {
-    q: "Why isn't ChatComparison's pricing on their landing page?",
+    q: "Why isn't ChatComparison.ai's pricing on their landing page?",
     a: "We don't know. We could only find the current numbers by creating an account and opening the dashboard, where the plan selector is shown. The pricing on this page reflects what we saw there: $20 a month, $15 a month on the annual plan ($180 a year), or a $575 lifetime deal marked down from $875. Third-party listings show older numbers, so those may not be current.",
   },
   {
     q: "Can I switch back?",
-    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatComparison subscription is still active. If Arco does not fit your workflow, keep using ChatComparison. There is nothing to cancel on Arco's side because there is no subscription.",
+    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatComparison.ai subscription is still active. If Arco does not fit your workflow, keep using ChatComparison.ai. There is nothing to cancel on Arco's side because there is no subscription.",
   },
 ];
 
@@ -123,18 +123,18 @@ export default function ArcoVsChatComparisonPage() {
       <section className="space-y-6 py-12 sm:py-16 lg:py-20">
         <MaxWidthWrapper className="flex max-w-4xl flex-col items-center gap-6 text-center">
           <Badge variant="outline" className="px-3 py-1">
-            ChatComparison alternative
+            ChatComparison.ai alternative
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco: the ChatComparison alternative{" "}
+            Arco: the ChatComparison.ai alternative{" "}
             <span className="text-primary">
               with 400+ models on your own key, not 40 on theirs.
             </span>
           </h1>
 
           <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            ChatComparison bundles around 40 models into a browser tab and
+            ChatComparison.ai bundles around 40 models into a browser tab and
             charges $180 a year for it. Arco lets you pick from 400+ models on
             your own OpenRouter key, pay only for the tokens you actually use,
             and keeps every chat on your Mac.
@@ -163,7 +163,7 @@ export default function ArcoVsChatComparisonPage() {
           <Card className="mt-6 w-full">
             <Image
               src={banner}
-              alt="Arco vs ChatComparison"
+              alt="Arco vs ChatComparison.ai"
               width={1600}
               height={900}
               className="h-auto w-full object-cover"
@@ -209,7 +209,7 @@ export default function ArcoVsChatComparisonPage() {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Where ChatComparison falls short</CardTitle>
+                <CardTitle>Where ChatComparison.ai falls short</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-muted-foreground">
@@ -240,7 +240,7 @@ export default function ArcoVsChatComparisonPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Pick ChatComparison if you&apos;re on Windows or Linux, or if
+                  Pick ChatComparison.ai if you&apos;re on Windows or Linux, or if
                   you want a browser tab you never have to configure. Pick Arco
                   if you&apos;re on a Mac, want access to every model on
                   OpenRouter, care where your chats live, and want to know what
@@ -257,7 +257,7 @@ export default function ArcoVsChatComparisonPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Side by side"
-            title="Arco vs ChatComparison, feature by feature"
+            title="Arco vs ChatComparison.ai, feature by feature"
             subtitle="Where each tool wins and where it falls short."
           />
           <Card className="mt-10 overflow-x-auto">
@@ -268,7 +268,7 @@ export default function ArcoVsChatComparisonPage() {
                   Arco
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatComparison
+                  ChatComparison.ai
                 </div>
               </div>
               {featureRows.map((row) => (
@@ -298,7 +298,7 @@ export default function ArcoVsChatComparisonPage() {
           <HeaderSection
             label="Why Arco"
             title="Three reasons people switch"
-            subtitle="The specific things ChatComparison can't match."
+            subtitle="The specific things ChatComparison.ai can't match."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {differentiators.map(({ icon: Icon, title, body }) => (
@@ -324,7 +324,7 @@ export default function ArcoVsChatComparisonPage() {
           <HeaderSection
             label="Pricing math"
             title="What you actually pay over 3 years"
-            subtitle="ChatComparison bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
+            subtitle="ChatComparison.ai bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
           />
           <Card className="mt-10 overflow-x-auto">
             <div className="min-w-[640px]">
@@ -336,12 +336,12 @@ export default function ArcoVsChatComparisonPage() {
                   Arco Unlimited
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatComparison
+                  ChatComparison.ai
                   <br />
                   <span className="text-xs font-normal">(monthly)</span>
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatComparison
+                  ChatComparison.ai
                   <br />
                   <span className="text-xs font-normal">(yearly)</span>
                 </div>
@@ -401,7 +401,7 @@ export default function ArcoVsChatComparisonPage() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li>
                   <strong className="text-foreground">
-                    ChatComparison does not publish pricing on their landing page.
+                    ChatComparison.ai does not publish pricing on their landing page.
                   </strong>{" "}
                   We could only find the current numbers by creating an account
                   and opening the dashboard. The prices above are what we saw
@@ -418,7 +418,7 @@ export default function ArcoVsChatComparisonPage() {
                   <strong className="text-foreground">
                     Arco&apos;s ongoing cost is your OpenRouter usage.
                   </strong>{" "}
-                  It can be $0 in a light month. ChatComparison bills the flat
+                  It can be $0 in a light month. ChatComparison.ai bills the flat
                   rate whether you used it or not.
                 </li>
               </ul>
@@ -432,7 +432,7 @@ export default function ArcoVsChatComparisonPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Switching"
-            title="Switching from ChatComparison? Here's how you start."
+            title="Switching from ChatComparison.ai? Here's how you start."
             subtitle="Three steps, about five minutes total."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -453,10 +453,10 @@ export default function ArcoVsChatComparisonPage() {
             ))}
           </div>
           <Alert className="mt-8">
-            <AlertTitle>What about my ChatComparison history?</AlertTitle>
+            <AlertTitle>What about my ChatComparison.ai history?</AlertTitle>
             <AlertDescription>
               Chat history isn&apos;t portable between the two apps. Most people
-              keep their ChatComparison subscription running for a week or two
+              keep their ChatComparison.ai subscription running for a week or two
               while they move over, then cancel once they&apos;re comfortable.
             </AlertDescription>
           </Alert>
@@ -469,7 +469,7 @@ export default function ArcoVsChatComparisonPage() {
           <HeaderSection
             label="FAQ"
             title="Questions people ask before switching"
-            subtitle="Straight answers, including where ChatComparison still wins."
+            subtitle="Straight answers, including where ChatComparison.ai still wins."
           />
           <Accordion type="single" collapsible className="mt-10">
             {faqs.map((item, i) => (

@@ -16,9 +16,9 @@ import { cn, constructMetadata } from "@/lib/utils";
 const banner = "/_static/competitors/arco-vs-chatplayground.webp";
 
 export const metadata = constructMetadata({
-  title: "ChatPlayground Alternative for Mac with 400+ Models | Arco",
+  title: "ChatPlayground.ai Alternative for Mac with 400+ Models | Arco",
   description:
-    "Looking for a chatplayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
+    "Looking for a ChatPlayground.ai alternative? Arco lets you compare 400+ AI models with your own OpenRouter key, no monthly subscription, and every chat stays on your Mac. Built to help you decide, not just compare.",
   image: banner,
 });
 
@@ -47,17 +47,17 @@ const differentiators = [
   {
     icon: Cpu,
     title: "400+ models on your key, not 30 they picked for you.",
-    body: "ChatPlayground gives you a curated shortlist of around 30 models. Whatever they integrated is what you get. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID. No waiting for their roadmap.",
+    body: "ChatPlayground.ai gives you a curated shortlist of around 30 models. Whatever they integrated is what you get. Arco connects to OpenRouter, so you can pick from 400+ models today and add whatever ships tomorrow by pasting a model ID. No waiting for their roadmap.",
   },
   {
     icon: Shield,
     title: "Your chats stay on your Mac. Not in a browser tab that talks to their servers.",
-    body: "ChatPlayground says they don't store your conversations, but every prompt still transits their infrastructure. You are trusting their claim. Arco stores everything locally. There is no Arco server your prompt has to pass through, because we don't run one.",
+    body: "ChatPlayground.ai says they don't store your conversations, but every prompt still transits their infrastructure. You are trusting their claim. Arco stores everything locally. There is no Arco server your prompt has to pass through, because we don't run one.",
   },
   {
     icon: Ban,
     title: "One payment, then it's yours. No renewal notices.",
-    body: "ChatPlayground charges $20 a month, or $180 a year on the annual plan. Skip a month and you still pay for that month. Arco is a one-time thing. Buy it once, keep it. Your only ongoing cost is the OpenRouter tokens you actually use.",
+    body: "ChatPlayground.ai charges $20 a month, or $180 a year on the annual plan. Skip a month and you still pay for that month. Arco is a one-time thing. Buy it once, keep it. Your only ongoing cost is the OpenRouter tokens you actually use.",
   },
 ];
 
@@ -82,15 +82,15 @@ const steps = [
 const faqs = [
   {
     q: "Is my data safe?",
-    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatPlayground says they don't store conversations either, but your prompts still travel through their servers. That is a different privacy posture than Arco's local-first model.",
+    a: "Yes. Every Arco conversation stays on your Mac. Nothing gets uploaded, nothing lives on our servers, because we do not run any. Your OpenRouter key is stored locally too. ChatPlayground.ai says they don't store conversations either, but your prompts still travel through their servers. That is a different privacy posture than Arco's local-first model.",
   },
   {
     q: "What if I'm on Windows or mobile?",
-    a: "ChatPlayground is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatPlayground runs in the browser (Chrome is required, with their extension), which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatPlayground is a fair choice.",
+    a: "ChatPlayground.ai is the better pick here. Arco is macOS 13+ on Apple Silicon only. ChatPlayground.ai runs in the browser (Chrome is required, with their extension), which means you can use it from Windows, Linux, or a phone. If cross-platform matters more than local storage or model breadth, ChatPlayground.ai is a fair choice.",
   },
   {
-    q: "What does ChatPlayground do better than Arco?",
-    a: "Three things. It runs in a browser, so it works on any OS (Arco is Mac only). It's turnkey. The models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). And it ships with a prompt template library built in (Arco doesn't have one yet). If any of those matter more than pricing, privacy, or model breadth, ChatPlayground is a fair choice.",
+    q: "What does ChatPlayground.ai do better than Arco?",
+    a: "Three things. It runs in a browser, so it works on any OS (Arco is Mac only). It's turnkey. The models are included in the subscription, so you don't set up OpenRouter first (Arco takes about 3 minutes to set up, but it is an extra step). And it ships with a prompt template library built in (Arco doesn't have one yet). If any of those matter more than pricing, privacy, or model breadth, ChatPlayground.ai is a fair choice.",
   },
   {
     q: "Do I need an OpenRouter account?",
@@ -98,11 +98,11 @@ const faqs = [
   },
   {
     q: "How many models can I compare at once?",
-    a: "Enough to cover the workflow. ChatPlayground lets you compare up to 4 models side by side. Arco handles the same use case comfortably, and you're picking from 400+ options instead of 30.",
+    a: "Enough to cover the workflow. ChatPlayground.ai lets you compare up to 4 models side by side. Arco handles the same use case comfortably, and you're picking from 400+ options instead of 30.",
   },
   {
     q: "Can I switch back?",
-    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatPlayground subscription is still active. If Arco does not fit your workflow, keep using ChatPlayground. There is nothing to cancel on Arco's side because there is no subscription.",
+    a: "Yes, and you can run both at once. Try Arco for a couple of weeks while your ChatPlayground.ai subscription is still active. If Arco does not fit your workflow, keep using ChatPlayground.ai. There is nothing to cancel on Arco's side because there is no subscription.",
   },
 ];
 
@@ -123,18 +123,18 @@ export default function ArcoVsChatPlaygroundPage() {
       <section className="space-y-6 py-12 sm:py-16 lg:py-20">
         <MaxWidthWrapper className="flex max-w-4xl flex-col items-center gap-6 text-center">
           <Badge variant="outline" className="px-3 py-1">
-            ChatPlayground alternative
+            ChatPlayground.ai alternative
           </Badge>
 
           <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[56px]">
-            Arco: the ChatPlayground alternative{" "}
+            Arco: the ChatPlayground.ai alternative{" "}
             <span className="text-primary">
               with 400+ models on your own key, on your Mac.
             </span>
           </h1>
 
           <p className="max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            ChatPlayground gives you around 30 models they picked, in a browser
+            ChatPlayground.ai gives you around 30 models they picked, in a browser
             tab, for $180 a year. Arco lets you pick from 400+ models on your
             own OpenRouter key, pay only for the tokens you actually use, and
             keeps every chat on your Mac.
@@ -163,7 +163,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <Card className="mt-6 w-full">
             <Image
               src={banner}
-              alt="Arco vs ChatPlayground"
+              alt="Arco vs ChatPlayground.ai"
               width={1600}
               height={900}
               className="h-auto w-full object-cover"
@@ -205,7 +205,7 @@ export default function ArcoVsChatPlaygroundPage() {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Where ChatPlayground falls short</CardTitle>
+                <CardTitle>Where ChatPlayground.ai falls short</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-muted-foreground">
@@ -232,7 +232,7 @@ export default function ArcoVsChatPlaygroundPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Pick ChatPlayground if you&apos;re on Windows or Linux, or if
+                  Pick ChatPlayground.ai if you&apos;re on Windows or Linux, or if
                   you want a browser tab you never have to configure. Pick Arco
                   if you&apos;re on a Mac, want access to every model on
                   OpenRouter, care where your chats live, and don&apos;t want
@@ -249,7 +249,7 @@ export default function ArcoVsChatPlaygroundPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Side by side"
-            title="Arco vs ChatPlayground, feature by feature"
+            title="Arco vs ChatPlayground.ai, feature by feature"
             subtitle="Where each tool wins and where it falls short."
           />
           <Card className="mt-10 overflow-x-auto">
@@ -260,7 +260,7 @@ export default function ArcoVsChatPlaygroundPage() {
                   Arco
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatPlayground.ai
                 </div>
               </div>
               {featureRows.map((row) => (
@@ -290,7 +290,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="Why Arco"
             title="Three reasons people switch"
-            subtitle="The specific things ChatPlayground can't match."
+            subtitle="The specific things ChatPlayground.ai can't match."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {differentiators.map(({ icon: Icon, title, body }) => (
@@ -316,7 +316,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="Pricing math"
             title="What you actually pay over 3 years"
-            subtitle="ChatPlayground bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
+            subtitle="ChatPlayground.ai bundles its subscription with API access. Arco separates them. You buy the app once and pay OpenRouter directly for the tokens you actually use. Here is the breakdown."
           />
           <Card className="mt-10 overflow-x-auto">
             <div className="min-w-[640px]">
@@ -328,12 +328,12 @@ export default function ArcoVsChatPlaygroundPage() {
                   Arco Unlimited
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatPlayground.ai
                   <br />
                   <span className="text-xs font-normal">(monthly)</span>
                 </div>
                 <div className="border-l p-4 text-center text-sm font-semibold text-muted-foreground">
-                  ChatPlayground
+                  ChatPlayground.ai
                   <br />
                   <span className="text-xs font-normal">(yearly)</span>
                 </div>
@@ -395,7 +395,7 @@ export default function ArcoVsChatPlaygroundPage() {
                   <strong className="text-foreground">
                     The Lifetime Deal isn&apos;t shown on their homepage.
                   </strong>{" "}
-                  ChatPlayground offers a $575 lifetime tier (marked down from
+                  ChatPlayground.ai offers a $575 lifetime tier (marked down from
                   $875), but you only see it after creating an account and
                   digging into the billing page. The public landing page shows
                   the $20/month and $15/month options only. Arco&apos;s pricing
@@ -403,13 +403,13 @@ export default function ArcoVsChatPlaygroundPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Every ChatPlayground user needs their own subscription.
+                    Every ChatPlayground.ai user needs their own subscription.
                   </strong>{" "}
                   No team-seat discount surfaced on their public pricing.
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    ChatPlayground requires Chrome and their browser extension.
+                    ChatPlayground.ai requires Chrome and their browser extension.
                   </strong>{" "}
                   Firefox and Safari users can&apos;t use it as their default
                   browser.
@@ -418,7 +418,7 @@ export default function ArcoVsChatPlaygroundPage() {
                   <strong className="text-foreground">
                     Arco&apos;s ongoing cost is your OpenRouter usage.
                   </strong>{" "}
-                  It can be $0 in a light month. ChatPlayground bills the flat
+                  It can be $0 in a light month. ChatPlayground.ai bills the flat
                   rate whether you used it or not.
                 </li>
               </ul>
@@ -432,7 +432,7 @@ export default function ArcoVsChatPlaygroundPage() {
         <MaxWidthWrapper>
           <HeaderSection
             label="Switching"
-            title="Switching from ChatPlayground? Here's how you start."
+            title="Switching from ChatPlayground.ai? Here's how you start."
             subtitle="Three steps, about five minutes total."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -453,10 +453,10 @@ export default function ArcoVsChatPlaygroundPage() {
             ))}
           </div>
           <Alert className="mt-8">
-            <AlertTitle>What about my ChatPlayground history?</AlertTitle>
+            <AlertTitle>What about my ChatPlayground.ai history?</AlertTitle>
             <AlertDescription>
               Chat history isn&apos;t portable between the two apps. Most people
-              keep their ChatPlayground subscription running for a week or two
+              keep their ChatPlayground.ai subscription running for a week or two
               while they move over, then cancel once they&apos;re comfortable.
             </AlertDescription>
           </Alert>
@@ -469,7 +469,7 @@ export default function ArcoVsChatPlaygroundPage() {
           <HeaderSection
             label="FAQ"
             title="Questions people ask before switching"
-            subtitle="Straight answers, including where ChatPlayground still wins."
+            subtitle="Straight answers, including where ChatPlayground.ai still wins."
           />
           <Accordion type="single" collapsible className="mt-10">
             {faqs.map((item, i) => (

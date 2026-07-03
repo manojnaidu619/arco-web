@@ -16,7 +16,7 @@ const banner = "/_static/competitors/arco-alternatives.webp";
 export const metadata = constructMetadata({
   title: "Arco Alternatives & Comparisons | Find the Right Answer",
   description:
-    "See how Arco compares to ChatHub, Poe, TypingMind, ChatPlayground, MultiLLM, ChatComparison, and AI Fiesta. 400+ models, BYOK, no subscription, every chat stays on your Mac. Built to help you decide, not just compare.",
+    "See how Arco compares to ChatHub, Poe, TypingMind, ChatPlayground.ai, MultiLLM, ChatComparison.ai, and AI Fiesta. 400+ models, BYOK, no subscription, every chat stays on your Mac. Built to help you decide, not just compare.",
   image: banner,
 });
 
@@ -30,11 +30,11 @@ const competitors = [
     banner: "/_static/competitors/arco-vs-aifiesta.webp",
   },
   {
-    name: "ChatComparison",
+    name: "ChatComparison.ai",
     slug: "chatcomparison",
     pain: "~40 curated models, no BYOK",
     pitch:
-      "ChatComparison gives you around 40 models they picked. Arco gives you 400+ on your own key, so you add new models the day they ship.",
+      "ChatComparison.ai gives you around 40 models they picked. Arco gives you 400+ on your own key, so you add new models the day they ship.",
     banner: "/_static/competitors/arco-vs-chatcomparison.webp",
   },
   {
@@ -46,11 +46,11 @@ const competitors = [
     banner: "/_static/competitors/arco-vs-chathub.webp",
   },
   {
-    name: "ChatPlayground",
+    name: "ChatPlayground.ai",
     slug: "chatplayground",
     pain: "Web-only with ~30 curated models",
     pitch:
-      "ChatPlayground runs in the browser with a fixed catalog of around 30 models. Arco is a native Mac app with 400+ models on your own key.",
+      "ChatPlayground.ai runs in the browser with a fixed catalog of around 30 models. Arco is a native Mac app with 400+ models on your own key.",
     banner: "/_static/competitors/arco-vs-chatplayground.webp",
   },
   {

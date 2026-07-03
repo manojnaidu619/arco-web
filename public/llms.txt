@@ -57,8 +57,8 @@ Arco offers two tiers:
 Head-to-head comparison pages between Arco and other multi-model AI chat tools. Visit each page for the full breakdown.
 
 - **Arco vs ChatHub** (https://arco.chat/alternatives/chathub): Contrasts Arco's BYOK model, local-first privacy, and 400+ model access against ChatHub's subscription-based, cloud-hosted approach with a curated model catalog.
-- **Arco vs ChatComparison** (https://arco.chat/alternatives/chatcomparison): Contrasts Arco's 400+ BYOK models, local Mac storage, and upfront pricing against ChatComparison's ~40 curated models, browser-only access, and subscription pricing that isn't published on their landing page.
-- **Arco vs ChatPlayground** (https://arco.chat/alternatives/chatplayground): Contrasts Arco's 400+ BYOK models and local-first storage against ChatPlayground's ~30 curated models, browser-only access (Chrome required), and monthly subscription.
+- **Arco vs ChatComparison.ai** (https://arco.chat/alternatives/chatcomparison): Contrasts Arco's 400+ BYOK models, local Mac storage, and upfront pricing against ChatComparison.ai's ~40 curated models, browser-only access, and subscription pricing that isn't published on their landing page.
+- **Arco vs ChatPlayground.ai** (https://arco.chat/alternatives/chatplayground): Contrasts Arco's 400+ BYOK models and local-first storage against ChatPlayground.ai's ~30 curated models, browser-only access (Chrome required), and monthly subscription.
 - **Arco vs MultiLLM** (https://arco.chat/alternatives/multillm): Highlights Arco's 400+ BYOK model access, local-first privacy, and pay-per-use cost model as the main differentiators.
 - **Arco vs Poe** (https://arco.chat/alternatives/poe): Contrasts Arco's purpose-built comparison workflow, BYOK model access, and local-first storage against Poe's aggregator model, compute-points metering (chat history included), and cloud-hosted chats.
 - **Arco vs AI Fiesta** (https://arco.chat/alternatives/aifiesta): Contrasts Arco's BYOK model access and local-first storage against AI Fiesta's credit-metered cloud subscription, where multi-model comparison burns the monthly token pool quickly and premium models count at 4x.
@@ -76,8 +76,8 @@ Head-to-head comparison pages between Arco and other multi-model AI chat tools. 
 - [FAQ](https://arco.chat/#faq): Frequently asked questions
 - [About](https://arco.chat/about): About Arco
 - [Arco vs ChatHub](https://arco.chat/alternatives/chathub): Head-to-head comparison with ChatHub
-- [Arco vs ChatComparison](https://arco.chat/alternatives/chatcomparison): Head-to-head comparison with ChatComparison
-- [Arco vs ChatPlayground](https://arco.chat/alternatives/chatplayground): Head-to-head comparison with ChatPlayground
+- [Arco vs ChatComparison.ai](https://arco.chat/alternatives/chatcomparison): Head-to-head comparison with ChatComparison.ai
+- [Arco vs ChatPlayground.ai](https://arco.chat/alternatives/chatplayground): Head-to-head comparison with ChatPlayground.ai
 - [Arco vs MultiLLM](https://arco.chat/alternatives/multillm): Head-to-head comparison with MultiLLM
 - [Arco vs Poe](https://arco.chat/alternatives/poe): Head-to-head comparison with Poe
 - [Arco vs AI Fiesta](https://arco.chat/alternatives/aifiesta): Head-to-head comparison with AI Fiesta
