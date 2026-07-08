@@ -1,18 +1,17 @@
 "use client";
 
-import { useState } from "react";
-// import { useEffect } from "react";
 import { UserSubscriptionPlan } from "@/types";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-// import { getUnlimitedSoldCount } from "@/actions/get-unlimited-sold-count";
+import { getUnlimitedSoldCount } from "@/actions/get-unlimited-sold-count";
 import { DownloadButton } from "@/components/shared/download-button";
 import { HeaderSection } from "@/components/shared/header-section";
 import { Icons } from "@/components/shared/icons";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
-// import { Progress } from "@/components/ui/progress";
-// import { Skeleton } from "@/components/ui/skeleton";
+import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
@@ -21,8 +20,8 @@ import {
 } from "@/components/ui/tooltip";
 import {
   pricingData,
-  // UNLIMITED_BATCH_LIMIT,
-  // UNLIMITED_NEXT_BATCH_PRICE,
+  UNLIMITED_BATCH_LIMIT,
+  UNLIMITED_NEXT_BATCH_PRICE,
 } from "@/config/subscriptions";
 import { cn } from "@/lib/utils";
 import { SubscriptionPlan } from "@/types/index";
@@ -54,12 +53,12 @@ function BenefitWithTooltip({ text, tooltip }: { text: string; tooltip: string }
 export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
   const PricingCard = ({ offer }: { offer: SubscriptionPlan }) => {
     const isPerpetual = offer.licenseTerm === "perpetual";
-    // const [sold, setSold] = useState<number | null>(null);
+    const [sold, setSold] = useState<number | null>(null);
 
-    // useEffect(() => {
-    //   if (!isPerpetual) return;
-    //   getUnlimitedSoldCount().then(setSold);
-    // }, [isPerpetual]);
+    useEffect(() => {
+      if (!isPerpetual) return;
+      getUnlimitedSoldCount().then(setSold);
+    }, [isPerpetual]);
 
     return (
       <div
@@ -98,7 +97,6 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
             </div>
           ) : null}
 
-          {/* Counter hidden for now — re-enable when batch pricing is active again
           {isPerpetual ? (
             <div className="space-y-1.5 pb-2 pt-2">
               {sold === null ? (
@@ -123,7 +121,6 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               </div>
             </div>
           ) : null}
-          */}
         </div>
 
         <div className="flex h-full flex-col justify-between gap-16 p-6">
