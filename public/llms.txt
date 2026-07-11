@@ -43,7 +43,6 @@ Arco offers two tiers:
 - Limited to 3 saved conversations
 - No updates or new features included
 
-**Unlimited — $49 one-time (early adopter pricing, then $89)**
 - Unlimited saved conversations
 - Perpetual license: one payment, use Arco forever
 - 1 year of updates and support included from date of purchase
