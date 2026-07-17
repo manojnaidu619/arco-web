@@ -7,6 +7,7 @@ import HeroLanding from "@/components/sections/hero-landing";
 import HowItWorks from "@/components/sections/how-it-works";
 import InfoLanding from "@/components/sections/info-landing";
 import PreviewLanding from "@/components/sections/preview-landing";
+import ProblemAgitation from "@/components/sections/problem-agitation";
 import UseCases from "@/components/sections/use-cases";
 import { infos } from "@/config/landing";
 import { siteConfig } from "@/config/site";
@@ -31,6 +32,7 @@ export default async function IndexPage() {
     <>
       <HeroLanding />
       <PreviewLanding />
+      <ProblemAgitation />
       <Features />
       <HowItWorks />
       <InfoLanding data={infos[0]} />
