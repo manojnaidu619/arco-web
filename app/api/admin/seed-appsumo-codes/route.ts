@@ -1,10 +1,13 @@
 /**
- * TEMPORARY — Seeds 1500 pre-generated AppSumo license codes into the licenses
- * table. Rows are INACTIVE with userId/productId=NULL and source=APPSUMO; buyers
- * activate them from the desktop app.
+ * DISABLED — seeds 1500 pre-generated AppSumo license codes into the licenses table.
  *
- * Hit once, copy the 1500 keys out of the DB into a CSV for AppSumo, then
- * DELETE this file. It is intentionally unauthenticated for a single manual run.
+ * The handler below is commented out so this file doesn't register a route
+ * (Next.js only picks up HTTP methods that are actually exported). To re-enable
+ * for the next batch: uncomment the POST export, redeploy, hit it once, then
+ * comment it out again.
+ *
+ * Rows created are INACTIVE with userId/productId=NULL and source=APPSUMO.
+ * Intentionally unauthenticated — only enable it for a single manual run.
  */
 
 import { prisma } from "@/lib/db";
@@ -13,6 +16,8 @@ import { LicenseSource, LicenseStatus } from "@prisma/client";
 
 const CODE_COUNT = 1500;
 
+// To re-enable, uncomment the entire block below.
+/*
 export async function POST() {
   try {
     const keys: string[] = [];
@@ -43,3 +48,4 @@ export async function POST() {
     );
   }
 }
+*/
