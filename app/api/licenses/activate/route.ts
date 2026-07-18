@@ -7,7 +7,7 @@
  * are the credentials.
  *
  * Request body:
- *   { "key": "ARCO-XXXX-XXXX-XXXX-XXXX", "deviceId": "<stable-device-id>" }
+ *   { "key": "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX", "deviceId": "<stable-device-id>" }
  *
  * Response (always 200, same shape for success and failure):
  *   { "isActivated": true,  "expiresAt": "2026-01-01T00:00:00.000Z" | null, "type": "pro" | "unlimited", "message": null }
@@ -23,7 +23,8 @@
 
 import { siteConfig } from "@/config/site";
 import { prisma } from "@/lib/db";
-import { LicenseStatus } from "@prisma/client";
+import { LicenseSource, LicenseStatus } from "@prisma/client";
+import moment from "moment";
 
 const MAX_LICENSE_KEY_LENGTH = 50;
 
@@ -152,6 +153,11 @@ export async function POST(req: Request) {
         return null;
       }
 
+      // AppSumo licenses are seeded with expiresAt=null and get a 365-day window
+      // that starts at redemption, so unclaimed codes never expire. Creem licenses
+      // already had expiresAt set at webhook time, so we leave those untouched.
+      const isAppSumo = existing.source === LicenseSource.APPSUMO;
+
       // Conditional update: only succeeds if still INACTIVE at write time.
       // Prevents double-activation when two devices race on the same key.
       const { count } = await tx.license.updateMany({
@@ -160,6 +166,9 @@ export async function POST(req: Request) {
           status: LicenseStatus.ACTIVE,
           activatedAt: new Date(),
           deviceIdentifier: deviceId,
+          ...(isAppSumo && {
+            expiresAt: moment().add(365, "days").endOf("day").toDate(),
+          }),
         },
       });
 

@@ -22,6 +22,11 @@ enum LicenseStatus {
   DISABLED
 }
 
+enum LicenseSource {
+  CREEM
+  APPSUMO
+}
+
 model Account {
   id                String   @id @default(cuid())
   userId            String
@@ -89,11 +94,16 @@ model VerificationToken {
 
 model License {
   id              String        @id @default(cuid())
-  userId          String
+  /// Nullable for partner-issued licenses (e.g. AppSumo) that are pre-generated
+  /// before any user record exists. Bound to a user only when Creem creates the row.
+  userId          String?
 
-  productId       String        @map(name: "product_id")
+  /// Nullable for partner-issued licenses that aren't tied to a Creem product SKU.
+  productId       String?       @map(name: "product_id")
   key             String        @unique
   status          LicenseStatus @default(INACTIVE)
+  /// Where this license originated. Defaults to CREEM so existing rows keep their meaning.
+  source          LicenseSource @default(CREEM)
   activationLimit Int           @default(1) @map(name: "activation_limit")
   activatedAt     DateTime?     @map(name: "activated_at")
   /// Set once on first successful activation; identifies the device the license is bound to.
@@ -104,7 +114,7 @@ model License {
   createdAt       DateTime        @default(now()) @map(name: "created_at")
   updatedAt       DateTime        @updatedAt @map(name: "updated_at")
 
-  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user            User?           @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([status])

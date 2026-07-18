@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `licenses` ADD COLUMN `source` ENUM('CREEM', 'APPSUMO') NOT NULL DEFAULT 'CREEM',
+    MODIFY `userId` VARCHAR(191) NULL,
+    MODIFY `product_id` VARCHAR(191) NULL;

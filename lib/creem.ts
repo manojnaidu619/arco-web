@@ -34,22 +34,21 @@ function generateSegment(length: number): string {
 }
 
 /**
- * Generates a new license key in the format: ARCO-XXXX-XXXX-XXXX-XXXX
+ * Generates a new license key in the format: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
  *
- * The "ARCO" prefix identifies the key as belonging to this product.
- * Each of the four segments is 4 characters drawn from a 32-character alphabet
+ * Five segments of 5 characters each drawn from a 32-character alphabet
  * (uppercase letters + digits, excluding ambiguous characters).
  *
- * Example output: ARCO-K7MN-Q3RB-9WXP-H4ZV
+ * Example output: 69UZQ-8J85F-28SXB-MCUS3-ZGA5Q
  */
 export function generateLicenseKey(): string {
   return [
-    "ARCO",
-    generateSegment(4),
-    generateSegment(4),
-    generateSegment(4),
-    generateSegment(4),
-  ].join("-").trim();
+    generateSegment(5),
+    generateSegment(5),
+    generateSegment(5),
+    generateSegment(5),
+    generateSegment(5),
+  ].join("-");
 }
 
 /**

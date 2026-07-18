@@ -131,7 +131,7 @@ export async function POST(req: Request) {
           );
         }
 
-        // Generate a license key in the format ARCO-XXXX-XXXX-XXXX-XXXX,
+        // Generate a license key in the format XXXXX-XXXXX-XXXXX-XXXXX-XXXXX,
         // verified to not already exist in our License table before use.
         // Creem does not provide a key in the checkout payload — we create
         // one ourselves and store it in our database.
