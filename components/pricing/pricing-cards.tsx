@@ -97,7 +97,9 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
             </div>
           ) : null}
 
-          {isPerpetual ? (
+          {/* Batch countdown hidden while AppSumo listing is under review so */}
+          {/* the price displays as a fixed $89. Uncomment to restore. */}
+          {/* {isPerpetual ? (
             <div className="space-y-1.5 pb-2 pt-2">
               {sold === null ? (
                 <Skeleton className="h-2 w-full rounded-full" />
@@ -120,7 +122,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
                 <span>Then ${UNLIMITED_NEXT_BATCH_PRICE}</span>
               </div>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
 
         <div className="flex h-full flex-col justify-between gap-16 p-6">

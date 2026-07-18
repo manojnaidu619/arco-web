@@ -13,7 +13,7 @@ export const CREEM_LIFETIME_CHECKOUT_URL = isDevelopment
 // When the current batch sells out, update these three by hand (and raise
 // the price on the Creem product itself) to start the next batch.
 export const UNLIMITED_BATCH_LIMIT = 39;
-export const UNLIMITED_CURRENT_BATCH_PRICE = 49;
+export const UNLIMITED_CURRENT_BATCH_PRICE = 89;
 export const UNLIMITED_NEXT_BATCH_PRICE = 89;
 // Licenses are only counted toward the current batch from this date forward.
 export const UNLIMITED_BATCH_START_DATE = new Date("2026-06-25T00:00:00Z");
